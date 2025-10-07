@@ -5,21 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>dawah অ্যাপ হোম</title>
 
-<!-- বাংলা ফন্ট -->
-<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+<!-- Hind Siliguri ফন্ট লোড -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-@font-face {
-  font-family: 'Al_Majeed_Quranic';
-  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
-  font-display: swap;
-}
-
-/* Arial Black অনলাইন লোড */
-@import url('https://fonts.cdnfonts.com/css/arial-black');
-
 body {
-  font-family: 'SolaimanLipi', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   background-color: #033E3E;
   color: #FFFFFF;
   text-align: center;
@@ -27,41 +18,47 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* অ্যাপ নাম স্টাইল */
 .app-title {
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   font-size: 48px;
   margin-top: 35px;
   color: #00FFFF;
-  text-shadow: 3px 3px 10px rgba(0,255,255,0.7);
+  font-weight: bold; /* বোল্ড করতে */
+  text-shadow: none; /* শ্যাডো রিমুভ করতে */
 }
 
-/* সাবটাইটেল স্টাইল */
+
+
 .app-subtitle {
-  font-family: 'SolaimanLipi', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   font-size: 20px;
   color: #AADDEE;
   margin-top: -10px;
   margin-bottom: 20px;
 }
 
-/* শিরোনাম */
-h1, h2 {
-  font-size: 26px;
-  margin-top: 25px;
-  background: linear-gradient(90deg, #FFFFFF, #00CCCC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
+.scrolling-text {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 18px;
+  color: #AADDEE;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  padding: 10px 0;
 }
 
-/* বাটন গ্রিড */
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 25s linear infinite; 
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
 .button-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -69,7 +66,6 @@ h1, h2 {
   margin-top: 20px;
 }
 
-/* বাটন ডিজাইন */
 a.button {
   display: flex;
   align-items: center;
@@ -78,15 +74,15 @@ a.button {
   text-align: center;
   background: linear-gradient(145deg, #046868, #022B2B);
   color: white;
-  padding: 18px 10px;
+   padding: 10px 8px; /* ভিতরের জায়গা ছোট হচ্ছে */
   border-radius: 14px;
   font-size: 20px;
   cursor: pointer;
-  font-family: 'SolaimanLipi', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   line-height: 1.4;
-  min-height: 85px;
+ min-height: auto; /* উচ্চতা লেখা অনুযায়ী */
 }
 
 a.button:hover {
@@ -99,15 +95,11 @@ a.button:active {
   transform: scale(0.97);
 }
 
-/* মোবাইল রেসপন্সিভ */
 @media (max-width: 600px) {
   a.button {
     font-size: 18px;
     padding: 14px 8px;
     min-height: 90px;
-  }
-  h1, h2 {
-    font-size: 22px;
   }
 }
 </style>
@@ -118,12 +110,22 @@ a.button:active {
 <div class="container">
 
   <!-- অ্যাপ নাম -->
-  <div class="app-title">dawah</div>
+  <div class="app-title">দাওয়াহ</div>
+
+  <!-- সাবটাইটেল -->
   <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
+
+  <!-- স্ক্রোলিং টেক্সট -->
+  <div class="scrolling-text">
+    <span id="scrolling-text-content">
+    
+    আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে এ আপনাকে স্বাগমত। এপ্স সম্পর্কিত যে কোন মতামত জানাতে ডেভেলপার নামক বাটনে মেসেজ দিন। 
+    
+    </span>
+  </div>
 
   <!-- শিরোনাম ১ -->
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
-  
   <div class="button-row">
     <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
     <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
@@ -132,17 +134,13 @@ a.button:active {
 
   <!-- শিরোনাম ২ -->
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
-  
   <div class="button-row">
     <a href="#" class="button">আয়াত <br>হাদিস<br>১</a>
     <a href="#" class="button">আয়াত <br>হাদিস<br>২</a>
     <a href="#" class="button">আয়াত <br>হাদিস<br>৩</a>
   </div>
- 
-</div>
 
-<!-- popup.js লোড -->
-<script src="https://abubokarbd.github.io/rco/popup.js"></script>
+</div>
 
 </body>
 </html>
