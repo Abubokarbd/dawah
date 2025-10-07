@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>দাওয়াহ অ্যাপ হোম</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* লোগো */
+.logo {
+  width: 240px;
+  margin-top: 35px;
+  background: transparent;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.45));
+}
+
+/* শিরোনাম */
+h1, h2 {
+  font-size: 26px;
+  margin-top: 25px;
+  background: linear-gradient(90deg, #FFFFFF, #00CCCC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* বাটন গ্রিড */
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* বাটন ডিজাইন */
+a.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  background: linear-gradient(145deg, #046868, #022B2B);
+  color: white;
+  padding: 18px 10px;
+  border-radius: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'SolaimanLipi', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  line-height: 1.4;
+  min-height: 85px;
+}
+
+a.button:hover {
+  background: linear-gradient(145deg, #0AAFAF, #055050);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+a.button:active {
+  transform: scale(0.97);
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 600px) {
+  a.button {
+    font-size: 18px;
+    padding: 14px 8px;
+    min-height: 90px;
+  }
+  h1, h2 {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- লোগো -->
+  <img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZl8e6vh-gq4aIaeyNhzVFHmLbydWeBGHQmjZKDrjqIB3LVWsg7QQJ7JXaCZ7c9aFFDPA7SyvauIEW0BFY4W8A5azcD9aA52P_oIDlXHN5fLvEZpqAEWNrhUNv27K7LDwH0icP9HA1TTh7F0ooa5AuZqvqVNiJYK7bq7Vm6jvIh-5r-0zxkZQ-fZ88CFw/w400-h144/dawah%20logo.png" alt="Dawah Logo">
+
+  <!-- শিরোনাম ১ -->
+  <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
+  
+  <div class="button-row">
+    <a href="#" class="button">আয়াত <br>১</a>
+    <a href="#" class="button"> আয়াত <br>২</a>
+    <a href="#" class="button"> আয়াত <br>৩</a>
+  </div>
+
+  <!-- শিরোনাম ২ -->
+  <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
+  
+  <div class="button-row">
+    <a href="#" class="button"> আয়াত <br>হাদিস<br>১ </a>
+    <a href="#" class="button"> আয়াত <br>হাদিস<br>২</a>
+    <a href="#" class="button">আয়াত <br>হাদিস<br>৩</a>
+  </div>
+ 
+</div>
+
+<!-- popup.js লোড -->
+<script src="https://abubokarbd.github.io/rco/popup.js"></script>
+
+</body>
+</html>
