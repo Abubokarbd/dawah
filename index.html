@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>দাওয়াহ অ্যাপ হোম</title>
+<title>dawah অ্যাপ হোম</title>
 
 <!-- বাংলা ফন্ট -->
 <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
@@ -14,6 +14,9 @@
   src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
   font-display: swap;
 }
+
+/* Arial Black অনলাইন লোড */
+@import url('https://fonts.cdnfonts.com/css/arial-black');
 
 body {
   font-family: 'SolaimanLipi', sans-serif;
@@ -30,18 +33,22 @@ body {
   padding: 20px;
 }
 
-/* লোগো */
-.logo {
-  width: 240px;
+/* অ্যাপ নাম স্টাইল */
+.app-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 48px;
   margin-top: 35px;
-  background: transparent;
-  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  color: #00FFFF;
+  text-shadow: 3px 3px 10px rgba(0,255,255,0.7);
 }
 
-.logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.45));
+/* সাবটাইটেল স্টাইল */
+.app-subtitle {
+  font-family: 'SolaimanLipi', sans-serif;
+  font-size: 20px;
+  color: #AADDEE;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 /* শিরোনাম */
@@ -110,24 +117,25 @@ a.button:active {
 
 <div class="container">
 
-  <!-- লোগো -->
-  <img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZl8e6vh-gq4aIaeyNhzVFHmLbydWeBGHQmjZKDrjqIB3LVWsg7QQJ7JXaCZ7c9aFFDPA7SyvauIEW0BFY4W8A5azcD9aA52P_oIDlXHN5fLvEZpqAEWNrhUNv27K7LDwH0icP9HA1TTh7F0ooa5AuZqvqVNiJYK7bq7Vm6jvIh-5r-0zxkZQ-fZ88CFw/w400-h144/dawah%20logo.png" alt="Dawah Logo">
+  <!-- অ্যাপ নাম -->
+  <div class="app-title">dawah</div>
+  <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
   <!-- শিরোনাম ১ -->
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
   
   <div class="button-row">
-    <a href="#" class="button">আয়াত <br>১</a>
-    <a href="#" class="button"> আয়াত <br>২</a>
-    <a href="#" class="button"> আয়াত <br>৩</a>
+    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
   </div>
 
   <!-- শিরোনাম ২ -->
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
   
   <div class="button-row">
-    <a href="#" class="button"> আয়াত <br>হাদিস<br>১ </a>
-    <a href="#" class="button"> আয়াত <br>হাদিস<br>২</a>
+    <a href="#" class="button">আয়াত <br>হাদিস<br>১</a>
+    <a href="#" class="button">আয়াত <br>হাদিস<br>২</a>
     <a href="#" class="button">আয়াত <br>হাদিস<br>৩</a>
   </div>
  
