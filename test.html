@@ -8,15 +8,15 @@
 <!-- বাংলা ফন্ট -->
 <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
 
+<!-- Hind Siliguri Font -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 @font-face {
   font-family: 'Al_Majeed_Quranic';
   src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
   font-display: swap;
 }
-
-/* Arial Black অনলাইন লোড */
-@import url('https://fonts.cdnfonts.com/css/arial-black');
 
 body {
   font-family: 'SolaimanLipi', sans-serif;
@@ -35,7 +35,7 @@ body {
 
 /* অ্যাপ নাম স্টাইল */
 .app-title {
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   font-size: 48px;
   margin-top: 35px;
   color: #00FFFF;
@@ -49,6 +49,27 @@ body {
   color: #AADDEE;
   margin-top: -10px;
   margin-bottom: 20px;
+}
+
+/* স্ক্রোল বার স্টাইল */
+.scrolling-text {
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* শিরোনাম */
@@ -118,16 +139,21 @@ a.button:active {
 <div class="container">
 
   <!-- অ্যাপ নাম -->
-  <div class="app-title">dawah</div>
-  <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
+  <div class="app-title">দাওয়াহ</div>
+  <div class="app-subtitle">আপনার কন্ঠের প্রস্তুতি</div>
+
+  <!-- স্ক্রোল -->
+  <div class="scrolling-text">
+    <span id="scrolling-text-content">ডেটা লোড হচ্ছে...</span>
+  </div>
 
   <!-- শিরোনাম ১ -->
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
   
   <div class="button-row">
-    <a href="#" class="button">আয়াত <br>১</a>
-    <a href="#" class="button">আয়াত <br>২</a>
-    <a href="#" class="button">আয়াত <br>৩</a>
+    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
   </div>
 
   <!-- শিরোনাম ২ -->
@@ -143,6 +169,24 @@ a.button:active {
 
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
+
+<!-- স্ক্রোলের জন্য JS -->
+<script>
+const proxyUrl = "https://api.allorigins.win/get?url=";
+const targetUrl = encodeURIComponent("https://docs.google.com/spreadsheets/d/e/2PACX-1vTiG84KhXhf_AlQWJ-SKLEIUB7srcDzASR2tEBthHBrhJ1f4WVJNgLJn1rFU3GVEXToXBgdNa59vOxl/pub?output=csv");
+
+fetch(proxyUrl + targetUrl)
+.then(response => response.json())
+.then(data => {
+    const csvText = data.contents;
+    const rows = csvText.split("\n");
+    const b2 = rows[1].split(",")[1];
+    document.getElementById('scrolling-text-content').textContent = b2;
+})
+.catch(err => {
+    document.getElementById('scrolling-text-content').textContent = "ডেটা লোড করতে ব্যর্থ হয়েছে";
+});
+</script>
 
 </body>
 </html>
