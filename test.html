@@ -3,21 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dawah অ্যাপ হোম</title>
+<title>দাওয়াহ অ্যাপ হোম</title>
 
 <!-- বাংলা ফন্ট -->
 <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
-
-<!-- Hind Siliguri Font -->
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
+<!-- Hind Siliguri ফন্ট -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap" rel="stylesheet"/>
 
 <style>
-@font-face {
-  font-family: 'Al_Majeed_Quranic';
-  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
-  font-display: swap;
-}
-
 body {
   font-family: 'SolaimanLipi', sans-serif;
   background-color: #033E3E;
@@ -33,42 +26,41 @@ body {
   padding: 20px;
 }
 
-/* অ্যাপ নাম স্টাইল */
+/* অ্যাপ নাম */
 .app-title {
   font-family: 'Hind Siliguri', sans-serif;
   font-size: 48px;
-  margin-top: 35px;
+  margin-top: 20px;
   color: #00FFFF;
   text-shadow: 3px 3px 10px rgba(0,255,255,0.7);
 }
 
-/* সাবটাইটেল স্টাইল */
+/* সাবটাইটেল */
 .app-subtitle {
   font-family: 'SolaimanLipi', sans-serif;
   font-size: 20px;
   color: #AADDEE;
-  margin-top: -10px;
+  margin-top: -5px;
   margin-bottom: 20px;
 }
 
-/* স্ক্রোল বার স্টাইল */
+/* স্ক্রোল টেক্সট */
 .scrolling-text {
-  background: rgba(0,0,0,0.2);
-  padding: 10px;
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
+  padding: 10px 0;
 }
 
-.scrolling-text span {
+.scrolling-text-content {
   display: inline-block;
   padding-left: 100%;
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 20s linear infinite;
 }
 
 @keyframes scroll-left {
-  0% { transform: translateX(0%); }
+  0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 
@@ -138,13 +130,13 @@ a.button:active {
 
 <div class="container">
 
-  <!-- অ্যাপ নাম -->
+  <!-- অ্যাপ নাম ও সাবটাইটেল -->
   <div class="app-title">দাওয়াহ</div>
-  <div class="app-subtitle">আপনার কন্ঠের প্রস্তুতি</div>
+  <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
   <!-- স্ক্রোল -->
   <div class="scrolling-text">
-    <span id="scrolling-text-content">ডেটা লোড হচ্ছে...</span>
+    <div id="scrolling-text-content" class="scrolling-text-content">লোড হচ্ছে...</div>
   </div>
 
   <!-- শিরোনাম ১ -->
@@ -170,7 +162,7 @@ a.button:active {
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
 
-<!-- স্ক্রোলের জন্য JS -->
+<!-- Google Sheets থেকে স্ক্রোল ডেটা লোড -->
 <script>
 const proxyUrl = "https://api.allorigins.win/get?url=";
 const targetUrl = encodeURIComponent("https://docs.google.com/spreadsheets/d/e/2PACX-1vTiG84KhXhf_AlQWJ-SKLEIUB7srcDzASR2tEBthHBrhJ1f4WVJNgLJn1rFU3GVEXToXBgdNa59vOxl/pub?output=csv");
@@ -180,10 +172,19 @@ fetch(proxyUrl + targetUrl)
 .then(data => {
     const csvText = data.contents;
     const rows = csvText.split("\n");
-    const b2 = rows[1].split(",")[1];
-    document.getElementById('scrolling-text-content').textContent = b2;
+    if(rows.length > 1) {
+        const columns = rows[1].split(",");
+        if(columns.length > 1) {
+            document.getElementById('scrolling-text-content').textContent = columns[1];
+        } else {
+            document.getElementById('scrolling-text-content').textContent = "B2 সেল খালি আছে";
+        }
+    } else {
+        document.getElementById('scrolling-text-content').textContent = "ডেটা নেই";
+    }
 })
 .catch(err => {
+    console.log(err);
     document.getElementById('scrolling-text-content').textContent = "ডেটা লোড করতে ব্যর্থ হয়েছে";
 });
 </script>
