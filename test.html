@@ -1,147 +1,173 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>দাওয়াহ অ্যাপ হোম</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>দাওয়াহ অ্যাপ হোম</title>
 
-<!-- বাংলা ফন্ট -->
-<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
-<!-- Hind Siliguri ফন্ট -->
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&display=swap" rel="stylesheet"/>
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="দাওয়াহ অ্যাপ: ইসলামী আয়াত ও হাদীসের সহজ তালিকা">
+  <meta name="keywords" content="দাওয়াহ, ইসলাম, আয়াত, হাদীস, বাংলা, অ্যাপ, ওয়েবভিউ">
+  <meta name="author" content="AbubokarBD">
+  <meta property="og:title" content="দাওয়াহ অ্যাপ হোম">
+  <meta property="og:description" content="আপনার কণ্ঠের প্রস্তুতি — ইসলামী আয়াত ও হাদীস">
+  <meta property="og:image" content="https://abubokarbd.github.io/dawah/logo.png">
+  <meta property="og:url" content="https://abubokarbd.github.io/dawah/index.html">
 
-<style>
-body {
-  font-family: 'SolaimanLipi', sans-serif;
-  background-color: #033E3E;
-  color: #FFFFFF;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+  <!-- App Icon & Favicon -->
+  <link rel="icon" href="https://abubokarbd.github.io/dawah/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://abubokarbd.github.io/dawah/app-icon.png">
+  <link rel="manifest" href="manifest.json">
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
+  <!-- Hind Siliguri ফন্ট -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
 
-/* অ্যাপ নাম */
-.app-title {
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 48px;
-  margin-top: 20px;
-  color: #00FFFF;
-  text-shadow: 3px 3px 10px rgba(0,255,255,0.7);
-}
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #033E3E;
+      color: #FFFFFF;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-/* সাবটাইটেল */
-.app-subtitle {
-  font-family: 'SolaimanLipi', sans-serif;
-  font-size: 20px;
-  color: #AADDEE;
-  margin-top: -5px;
-  margin-bottom: 20px;
-}
+    /* Loader */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #033E3E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-/* স্ক্রোল টেক্সট */
-.scrolling-text {
-  background: rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.scrolling-text-content {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-left 20s linear infinite;
-}
+    .app-title {
+      font-size: 48px;
+      margin-top: 35px;
+      color: #00FFFF;
+      font-weight: bold;
+    }
 
-@keyframes scroll-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
+    .app-subtitle {
+      font-size: 20px;
+      color: #AADDEE;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
 
-/* শিরোনাম */
-h1, h2 {
-  font-size: 26px;
-  margin-top: 25px;
-  background: linear-gradient(90deg, #FFFFFF, #00CCCC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-}
+    .scrolling-text {
+      font-size: 18px;
+      color: #AADDEE;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      padding: 10px 0;
+    }
 
-/* বাটন গ্রিড */
-.button-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 25s linear infinite;
+    }
 
-/* বাটন ডিজাইন */
-a.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  text-align: center;
-  background: linear-gradient(145deg, #046868, #022B2B);
-  color: white;
-  padding: 18px 10px;
-  border-radius: 14px;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: 'SolaimanLipi', sans-serif;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  line-height: 1.4;
-  min-height: 85px;
-}
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
 
-a.button:hover {
-  background: linear-gradient(145deg, #0AAFAF, #055050);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-}
+    .button-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-a.button:active {
-  transform: scale(0.97);
-}
+    a.button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 10px 8px;
+      border-radius: 14px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      line-height: 1.4;
+    }
 
-/* মোবাইল রেসপন্সিভ */
-@media (max-width: 600px) {
-  a.button {
-    font-size: 18px;
-    padding: 14px 8px;
-    min-height: 90px;
-  }
-  h1, h2 {
-    font-size: 22px;
-  }
-}
-</style>
+    a.button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    }
+
+    a.button:active {
+      transform: scale(0.97);
+    }
+
+    @media (max-width: 600px) {
+      a.button {
+        font-size: 18px;
+        padding: 14px 8px;
+        min-height: 90px;
+      }
+    }
+
+    /* Scrollbar polish */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #00FFFF;
+      border-radius: 3px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #CCCCCC;
+    }
+
+    footer a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- Loader -->
+<div id="loader"><h2 style="color:#00FFFF;">লোড হচ্ছে...</h2></div>
+
 <div class="container">
 
-  <!-- অ্যাপ নাম ও সাবটাইটেল -->
+  <!-- অ্যাপ নাম -->
   <div class="app-title">দাওয়াহ</div>
+
+  <!-- সাবটাইটেল -->
   <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
-  <!-- স্ক্রোল -->
+  <!-- স্ক্রোলিং টেক্সট -->
   <div class="scrolling-text">
-    <div id="scrolling-text-content" class="scrolling-text-content">লোড হচ্ছে...</div>
+    <span>আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে আপনাকে স্বাগতম। মতামত জানাতে ডেভেলপার বাটনে মেসেজ দিন।</span>
   </div>
 
   <!-- শিরোনাম ১ -->
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
-  
   <div class="button-row">
     <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
     <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
@@ -150,44 +176,30 @@ a.button:active {
 
   <!-- শিরোনাম ২ -->
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
-  
   <div class="button-row">
-    <a href="#" class="button">আয়াত <br>হাদিস<br>১</a>
-    <a href="#" class="button">আয়াত <br>হাদিস<br>২</a>
-    <a href="#" class="button">আয়াত <br>হাদিস<br>৩</a>
+    <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
+    <a href="https://abubokarbd.github.io/dawah/2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
+    <a href="https://abubokarbd.github.io/dawah/3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
+    <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
   </div>
- 
+
+  <!-- Footer -->
+  <footer>
+    <p>ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> আবুবকর  </a></p>
+    <p>© ২০২৫ দাওয়াহ | Version 1.0</p>
+  </footer>
+
 </div>
+
+<!-- Loader Script -->
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+  });
+</script>
 
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
-
-<!-- Google Sheets থেকে স্ক্রোল ডেটা লোড -->
-<script>
-const proxyUrl = "https://api.allorigins.win/get?url=";
-const targetUrl = encodeURIComponent("https://docs.google.com/spreadsheets/d/e/2PACX-1vTiG84KhXhf_AlQWJ-SKLEIUB7srcDzASR2tEBthHBrhJ1f4WVJNgLJn1rFU3GVEXToXBgdNa59vOxl/pub?output=csv");
-
-fetch(proxyUrl + targetUrl)
-.then(response => response.json())
-.then(data => {
-    const csvText = data.contents;
-    const rows = csvText.split("\n");
-    if(rows.length > 1) {
-        const columns = rows[1].split(",");
-        if(columns.length > 1) {
-            document.getElementById('scrolling-text-content').textContent = columns[1];
-        } else {
-            document.getElementById('scrolling-text-content').textContent = "B2 সেল খালি আছে";
-        }
-    } else {
-        document.getElementById('scrolling-text-content').textContent = "ডেটা নেই";
-    }
-})
-.catch(err => {
-    console.log(err);
-    document.getElementById('scrolling-text-content').textContent = "ডেটা লোড করতে ব্যর্থ হয়েছে";
-});
-</script>
 
 </body>
 </html>
