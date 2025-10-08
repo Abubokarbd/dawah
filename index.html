@@ -206,7 +206,8 @@
   © ২০২৫ দাওয়াহ | Version 1.0 | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> আবুবকর 
 </p>
   <div class="counter-row">
-    <span id="visitor-count">মোট ভিজিটর: ...</span> |  <span id="online-count">অনলাইনে আছেন: ... জন</span>
+    <span id="visitor-count">মোট ভিজিটর: ...</span> |
+    <span id="online-count">অনলাইনে আছেন: ... জন</span>
   </div>
 </footer>
 <!-- Loader Script -->
@@ -218,12 +219,12 @@
 
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
-
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
+  // Firebase config from your project
   const firebaseConfig = {
     apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
     authDomain: "dawah-352eb.firebaseapp.com",
@@ -231,35 +232,37 @@
     projectId: "dawah-352eb",
     storageBucket: "dawah-352eb.appspot.com",
     messagingSenderId: "129702043179",
-    appId: "1:129702043179:web:6318cd5c1b3c200810946e"
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
   };
 
+  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  const pageName = location.pathname;
-  db.ref("pageViews/" + pageName).transaction(n => (n || 0) + 1);
-</script>
+  // Visitor Counter
+  const visitorRef = db.ref("visitorCount");
+  visitorRef.transaction(current => {
+    return (current || 0) + 1;
+  });
 
-<script>
-  const db = firebase.database();
-  const pages = ["/index.html", "/verse.html", "/1-faith.html", "/2.ibadah.html", "/3-akhlaq.html", "/4-ethics.html"];
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + count;
+  });
 
-  let total = 0;
-  let loaded = 0;
+  // Online User Tracker
+  const onlineRef = db.ref("onlineUsers");
+  const userId = "user_" + Math.random().toString(36).substr(2, 9);
 
-  pages.forEach(page => {
-    db.ref("pageViews/" + page).once("value", snapshot => {
-      const count = snapshot.val() || 0;
-      total += count;
-      loaded++;
-      if (loaded === pages.length) {
-        document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + total;
-      }
-    });
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    document.getElementById("online-count").innerText = "অনলাইনে আছেন: " + onlineCount + " জন";
   });
 </script>
-
 
 
 </div>
