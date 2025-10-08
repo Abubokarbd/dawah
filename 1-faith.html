@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াত ও হাদিস তালিকা</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+
+<!-- তাওহিদ সেকশন হেডিং -->
+<div class="section-title">১. তাওহিদ (একত্ববাদ)</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা ইখলাস</div>
+  <div class="arabic-verse">قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ</div>
+  <div class="translation">বলো, তিনি আল্লাহ, এক ও অদ্বিতীয়। আল্লাহ অমুখাপেক্ষী। তিনি কাউকে জন্ম দেননি এবং তিনি কারো থেকে জন্মগ্রহণ করেননি। তাঁর কোনো সমতুল্য নেই।</div>
+  <div class="reference">[সূরা ইখলাস ১১২:১-৪]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। আয়াতুল কুরসী</div>
+  <div class="arabic-verse">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ</div>
+  <div class="translation">আল্লাহ, তিনি ছাড়া কোনো সত্য ইলাহ নেই, তিনি চিরঞ্জীব, সর্বস্তরের ধারক ও রক্ষক। তাঁকে তন্দ্রা বা নিদ্রা স্পর্শ করে না। আসমান ও জমিনে যা কিছু আছে, সব তাঁরই।</div>
+  <div class="reference">[সূরা বাকারা ২:২৫৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। কালেমার ফজিলত</div>
+  <div class="hadith-arabic">مَنْ قَالَ: لَا إِلَهَ إِلَّا اللَّهُ، وَكَفَرَ بِمَا يُعْبَدُ مِنْ dُونِ اللَّهِ، حَرُمَ مَالُهُ وَدَمُهُ، وَكَانَ حِسَابُهُ عَلَى اللَّهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি বলে, 'আল্লাহ ছাড়া কোনো সত্য ইলাহ নেই' এবং আল্লাহ ছাড়া যা পূজা করা হয় তা অস্বীকার করে, তার সম্পদ ও জীবন নিরাপদ হয় এবং তার হিসাব আল্লাহর উপর ন্যস্ত।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৭৩৭৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। তাসবিহ পাঠের ফজিলত</div>
+  <div class="hadith-arabic">مَنْ قَالَ: لَا إِلَهَ إِلَّا اللَّهُ، وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، فِي يَوْمٍ مِائَةَ مَرَّةٍ، كَانَتْ لَهُ عِدْلَ عَشْرِ رَقَبَاتٍ</div>
+  <div class="hadith-translation">যে ব্যক্তি দিনে একশত বার বলে, 'আল্লাহ ছাড়া কোনো সত্য ইলাহ নেই, তিনি এক, তাঁর কোনো শরিক নেই, তাঁরই সব রাজত্ব এবং তাঁরই সব প্রশংসা, তিনি সবকিছুর উপর ক্ষমতাবান,' তার জন্য এটি দশটি দাস মুক্ত করার সমান সওয়াব হবে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৩]</div>
+</div>
+
+<!-- আল্লাহর গুণাবলী সেকশন হেডিং -->
+<div class="section-title">২. আল্লাহর গুণাবলী</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আশ-শারহ</div>
+  <div class="arabic-verse">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ ۝ وَوَضَعْنَا عَنْكَ وِزْرَكَ ۝ الَّذِي أَنْقَضَ ظَهْرَكَ</div>
+  <div class="translation">আমি কি তোমার বুক প্রশস্ত করে দিইনি? এবং তোমার থেকে তোমার বোঝা সরিয়ে দিইনি, যা তোমার পিঠ ভেঙে দিয়েছিল?</div>
+  <div class="reference">[সূরা আশ-শারহ ৯৪:১-৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-হাশর</div>
+  <div class="arabic-verse">هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ ۖ عَالِمُ الْغَيْبِ وَالشَّهَادَةِ ۖ هُوَ الرَّحْمَٰنُ الرَّحِيمُ ۝ هُوَ اللَّهُ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْمَلِكُ الْقُدُّوسُ السَّلَامُ</div>
+  <div class="translation">তিনি আল্লাহ, যিনি ছাড়া কোনো সত্য ইলাহ নেই; তিনি অদৃশ্য ও দৃশ্যমানের জ্ঞানী; তিনি পরম দয়ালু, অতি দয়াময়। তিনি আল্লাহ, যিনি ছাড়া কোনো সত্য ইলাহ নেই; তিনি সর্বাধিপতি, পবিত্র, শান্তিদাতা।</div>
+  <div class="reference">[সূরা আল-হাশর ৫৯:২২-২৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। আল্লাহর নামসমূহের ফজিলত</div>
+  <div class="hadith-arabic">إِنَّ لِلَّهِ تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةً إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دَخَلَ الْجَنَّةَ</div>
+  <div class="hadith-translation">আল্লাহর নিরানব্বইটি নাম আছে, এক কম একশ। যে ব্যক্তি এগুলো মুখস্থ করবে, সে জান্নাতে প্রবেশ করবে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৭৩৯২]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। আল্লাহর সৌন্দর্য</div>
+  <div class="hadith-arabic">إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ</div>
+  <div class="hadith-translation">নিশ্চয় আল্লাহ সুন্দর, তিনি সৌন্দর্য পছন্দ করেন।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৬৭৭]</div>
+</div>
+
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
