@@ -497,6 +497,27 @@ buttons.forEach(btn => {
   });
 });
 </script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
+    authDomain: "dawah-352eb.firebaseapp.com",
+    databaseURL: "https://dawah-352eb-default-rtdb.firebaseio.com",
+    projectId: "dawah-352eb",
+    storageBucket: "dawah-352eb.appspot.com",
+    messagingSenderId: "129702043179",
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  const pageName = location.pathname;
+  db.ref("pageViews/" + pageName).transaction(n => (n || 0) + 1);
+</script>
 
 </body>
 </html>
