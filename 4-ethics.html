@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াত ও হাদিস তালিকা</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+
+
+<!-- পিতা-মাতার সাথে আচরণ সেকশন হেডিং -->
+<div class="section-title">৩১. পিতা-মাতার সাথে আচরণ</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">وَوَصَّيْنَا الْإِنْسَانَ بِوَالِدَيْهِ إِحْسَانًا ۖ حَمَلَتْهُ أُمُّهُ كُرْهًا وَوَضَعَتْهُ كُرْهًا</div>
+  <div class="translation">আমি মানুষকে তার পিতা-মাতার সাথে সদাচরণের নির্দেশ দিয়েছি। তার মা তাকে কষ্টে গর্ভে ধারণ করেছেন এবং কষ্টে প্রসব করেছেন।</div>
+  <div class="reference">[সূরা আল-আহকাফ ৪৬:১৫]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা বনি ইসরাঈল</div>
+  <div class="arabic-verse">وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا</div>
+  <div class="translation">আপনার রব নির্দেশ দিয়েছেন যে, তোমরা কেবল তাঁরই ইবাদত করবে এবং পিতা-মাতার সাথে সদাচরণ করবে।</div>
+  <div class="reference">[সূরা বনি ইসরাঈল ১৭:২৩]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। পিতা-মাতার সন্তুষ্টি</div>
+  <div class="hadith-arabic">رِضَا الرَّبِّ فِي رِضَا الْوَالِدِ، وَسَخَطُ الرَّبِّ فِي سَخَطِ الْوَالِدِ</div>
+  <div class="hadith-translation">প্রভুর সন্তুষ্টি পিতার সন্তুষ্টিতে এবং প্রভুর অসন্তুষ্টি পিতার অসন্তুষ্টিতে।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ১৮৯৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। মাতার বিশেষ মর্যাদা</div>
+  <div class="hadith-arabic">الْأُمُّ أَوْسَطُ أَبْوَابِ الْجَنَّةِ</div>
+  <div class="hadith-translation">মা জান্নাতের মধ্যম দরজা।</div>
+  <div class="hadith-reference">[সুনান ইবনে মাজাহ, হাদিস নং: ৩৬৬৩]</div>
+</div>
+
+<!-- আত্মীয়তার সম্পর্ক সেকশন হেডিং -->
+<div class="section-title">৩২. আত্মীয়তার সম্পর্ক</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَاتَّقُوا اللَّهَ الَّذِي تَسَاءَلُونَ بِهِ وَالْأَرْحَامَ ۚ إِنَّ اللَّهَ كَانَ عَلَيْكُمْ رَقِيبًا</div>
+  <div class="translation">আল্লাহকে ভয় করো, যার নামে তোমরা একে অপরের কাছে চাও এবং আত্মীয়-স্বজনের ব্যাপারে সতর্ক থাকো। নিশ্চয় আল্লাহ তোমাদের পর্যবেক্ষক।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আর-রাদ</div>
+  <div class="arabic-verse">وَالَّذِينَ يَصِلُونَ مَا أَمَرَ اللَّهُ بِهِ أَنْ يُوصَلَ وَيَخْشَوْنَ رَبَّهُمْ وَيَخَافُونَ سُوءَ الْحِسَابِ</div>
+  <div class="translation">এবং যারা সে সম্পর্ক বজায় রাখে, যা বজায় রাখার আল্লাহ আদেশ করেছেন এবং তাদের রবকে ভয় করে এবং কঠোর হিসাবের শঙ্কা করে।</div>
+  <div class="reference">[সূরা আর-রাদ ১৩:২১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। আত্মীয়তার সম্পর্ক রক্ষাকারী</div>
+  <div class="hadith-arabic">لَيْسَ الْوَاصِلُ بِالْمُكَافِئِ، وَلَكِنِ الْوَاصِلُ الَّذِي إِذَا قَطَعَتْ رَحِمُهُ وَصَلَهَا</div>
+  <div class="hadith-translation">আত্মীয়তার সম্পর্ক রক্ষাকারী সে নয় যে বদলা দিয়ে থাকে, বরং আত্মীয়তার সম্পর্ক রক্ষাকারী সে, যার আত্মীয়তা ছিন্ন করলেও সে তা সংযুক্ত রাখে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৫৯৯১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। রিজিক বৃদ্ধি ও আয়ু</div>
+  <div class="hadith-arabic">مَنْ سَرَّهُ أَنْ يُبْسَطَ لَهُ فِي رِزْقِهِ، وَأَنْ يُنْسَأَ لَهُ فِي أَثَرِهِ، فَلْيَصِلْ رَحِمَهُ</div>
+  <div class="hadith-translation">যে চায় যে তার রিজিক বৃদ্ধি পাক এবং তার আয়ু দীর্ঘ হোক, সে যেন তার আত্মীয়তার সম্পর্ক বজায় রাখে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ২০৬৭]</div>
+</div>
+
+<!-- প্রতিবেশীর হক সেকশন হেডিং -->
+<div class="section-title">৩৩. প্রতিবেশীর হক</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا ۖ وَبِالْوَالِدَيْنِ إِحْسَانًا وَبِذِي الْقُرْبَىٰ وَالْيَتَامَىٰ وَالْمَسَاكِينِ وَالْجَارِ ذِي الْقُرْبَىٰ وَالْجَارِ الْجُنُبِ</div>
+  <div class="translation">আল্লাহর ইবাদত করো এবং তাঁর সাথে কোনো কিছু শরিক করো না। পিতা-মাতার সাথে সদাচরণ করো, আত্মীয়-স্বজন, এতিম, মিসকিন, নিকটতম প্রতিবেশী এবং দূরবর্তী প্রতিবেশীর সাথে।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:৩৬]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَابْتَغِ فِيمَا آتَاكَ اللَّهُ الدَّارَ الْآخِرَةَ ۖ وَلَا تَنْسَ نَصِيبَكَ مِنَ الدُّنْيَا ۖ وَأَحْسِنْ كَمَا أَحْسَنَ اللَّهُ إِلَيْكَ</div>
+  <div class="translation">আল্লাহ তোমাকে যা দিয়েছেন, তা দ্বারা আখিরাতের আবাস অনুসন্ধান করো এবং দুনিয়া থেকে তোমার অংশ ভুলো না। তুমি সদাচরণ করো, যেমন আল্লাহ তোমার সাথে সদাচরণ করেছেন।</div>
+  <div class="reference">[সূরা আল-কাসাস ২৮:৭৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। প্রতিবেশীর সাথে সদাচরণ</div>
+  <div class="hadith-arabic">مَا زَالَ جِبْرِيلُ يُوصِينِي بِالْجَارِ حَتَّى ظَنَنْتُ أَنَّهُ سَيُوَرِّثُهُ</div>
+  <div class="hadith-translation">জিবরীল আমাকে প্রতিবেশীর ব্যাপারে এত বেশি ওয়াসিয়ত করতে থাকেন যে, আমি মনে করলাম যে, তিনি তাকে ওয়ারিশ বানিয়ে দেবেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০১৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। প্রকৃত মুমিন</div>
+  <div class="hadith-arabic">وَاللَّهِ لَا يُؤْمِنُ، وَاللَّهِ لَا يُؤْمِنُ، وَاللَّهِ لَا يُؤْمِنُ، قِيلَ: وَمَنْ يَا رَسُولَ اللَّهِ؟ قَالَ: الَّذِي لَا يَأْمَنُ جَارُهُ بَوَائِقَهُ</div>
+  <div class="hadith-translation">আল্লাহর শপথ! সে মুমিন নয়, আল্লাহর শপথ! সে মুমিন নয়, আল্লাহর শপথ! সে মুমিন নয়। জিজ্ঞেস করা হল: কে হে আল্লাহর রাসূল? তিনি বললেন: যার প্রতিবেশী তার অনিষ্ট থেকে নিরাপদ নয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০১৬]</div>
+</div>
+
+<!-- বিবাহ ও দাম্পত্য জীবন সেকশন হেডিং -->
+<div class="section-title">৩৪. বিবাহ ও দাম্পত্য জীবন</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আর-রুম</div>
+  <div class="arabic-verse">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً</div>
+  <div class="translation">আর তাঁর নিদর্শনাবলীর মধ্যে হলো যে, তিনি তোমাদের জন্য তোমাদের মধ্য থেকে স্ত্রী সৃষ্টি করেছেন, যাতে তোমরা তাদের কাছে শান্তি পাও এবং তিনি তোমাদের মধ্যে ভালোবাসা ও দয়া সৃষ্টি করেছেন।</div>
+  <div class="reference">[সূরা আর-রুম ৩০:২১]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَعَاشِرُوهُنَّ بِالْمَعْرُوفِ</div>
+  <div class="translation">তোমরা তাদের সাথে সদ্ভাবে জীবনযাপন করো।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। উত্তম মুসলিম</div>
+  <div class="hadith-arabic">خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ، وَأَنَا خَيْرُكُمْ لِأَهْلِي</div>
+  <div class="hadith-translation">তোমাদের মধ্যে সেই উত্তম যে তার পরিবারের কাছে উত্তম। আর আমি আমার পরিবারের কাছে তোমাদের মধ্যে সবচেয়ে উত্তম।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ৩৮৯৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। স্ত্রীর অধিকার</div>
+  <div class="hadith-arabic">اسْتَوْصُوا بِالنِّسَاءِ خَيْرًا</div>
+  <div class="hadith-translation">নারীদের ব্যাপারে তোমরা কল্যাণের ওয়াসিয়ত গ্রহণ করো।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৫১৮৬]</div>
+</div>
+
+<!-- সন্তান লালন-পালন সেকশন হেডিং -->
+<div class="section-title">৩৫. সন্তান লালন-পালন</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আত-তাহরীম</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا قُوا أَنْفُسَكُمْ وَأَهْلِيكُمْ نَارًا</div>
+  <div class="translation">হে ঈমানদারগণ! তোমরা নিজেদের এবং তোমাদের পরিবার-পরিজনকে জাহান্নামের আগুন থেকে রক্ষা করো।</div>
+  <div class="reference">[সূরা আত-তাহরীম ৬৬:৬]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা লুকমান</div>
+  <div class="arabic-verse">يَا بُنَيَّ أَقِمِ الصَّلَاةَ وَأْمُرْ بِالْمَعْرُوفِ وَانْهَ عَنِ الْمُنْكَرِ وَاصْبِرْ عَلَىٰ مَا أَصَابَكَ</div>
+  <div class="translation">হে বৎস! নামায কায়েম করো, সৎকাজের আদেশ দাও, মন্দ কাজ থেকে নিষেধ করো এবং তোমার উপর যা বিপদ আসে, তাতে ধৈর্য ধারণ করো।</div>
+  <div class="reference">[সূরা লুকমান ৩১:১৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। সন্তানের অধিকার</div>
+  <div class="hadith-arabic">كُلُّكُمْ رَاعٍ وَكُلُّكُمْ مَسْئُولٌ عَنْ رَعِيَّتِهِ</div>
+  <div class="hadith-translation">তোমাদের প্রত্যেকেই দায়িত্বশীল এবং তোমাদের প্রত্যেককেই তার দায়িত্ব সম্পর্কে জিজ্ঞাসা করা হবে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ২৫৫৮]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। উত্তম শিক্ষা</div>
+  <div class="hadith-arabic">مَا نَحَلَ وَالِدٌ وَلَدًا مِنْ نَحْلٍ أَفْضَلَ مِنْ أَدَبٍ حَسَنٍ</div>
+  <div class="hadith-translation">কোনো পিতা তার সন্তানকে উত্তম আদব-শিক্ষার চেয়ে উত্তম কোনো উপহার দিতে পারে না।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ১৯৫২]</div>
+</div>
+
+  <!-- দান ও সদকা সেকশন হেডিং -->
+<div class="section-title">৩৬. দান ও সদকা</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">مَثَلُ الَّذِينَ يُنْفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنْبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنْبُلَةٍ مِائَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَنْ يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ</div>
+  <div class="translation">যারা আল্লাহর পথে তাদের সম্পদ ব্যয় করে, তাদের উদাহরণ একটি বীজের মতো যা সাতটি শিষ জন্মায়, প্রতিটি শিষে একশত দানা। আর আল্লাহ যাকে ইচ্ছা তার জন্য বহুগুণ বাড়িয়ে দেন। আল্লাহ সর্বব্যাপী, সর্বজ্ঞ।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৬১]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">إِنْ تُبْدُوا الصَّدَقَاتِ فَنِعِمَّا هِيَ ۖ وَإِنْ تُخْفُوهَا وَتُؤْتُوهَا الْفُقَرَاءَ فَهُوَ خَيْرٌ لَكُمْ ۚ وَيُكَفِّرُ عَنْكُمْ مِنْ سَيِّئَاتِكُمْ</div>
+  <div class="translation">যদি তোমরা প্রকাশ্যে সদকা দাও, তবে তা ভালো। আর যদি তা গোপনে দাও এবং দরিদ্রদের দাও, তবে তা তোমাদের জন্য উত্তম। এটি তোমাদের পাপ মোচন করবে।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৭১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। সদকার প্রভাব</div>
+  <div class="hadith-arabic">الصَّدَقَةُ تُطْفِئُ الْخَطِيئَةَ كَمَا يُطْفِئُ الْمَاءُ النَّارَ</div>
+  <div class="hadith-translation">সদকা পাপকে নিভিয়ে দেয়, যেমন পানি আগুন নিভিয়ে দেয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ১৪১০]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। ছোট সদকার মূল্য</div>
+  <div class="hadith-arabic">مَنْ تَصَدَّقَ بِعَدْلِ تَمْرَةٍ مِنْ كَسْبٍ طَيِّبٍ، وَلَا يَقْبَلُ اللَّهُ إِلَّا الطَّيِّبَ، فَإِنَّ اللَّهَ يَقْبَلُهَا بِيَمِينِهِ ثُمَّ يُرَبِّيهَا لِصَاحِبِهَا</div>
+  <div class="hadith-translation">যে ব্যক্তি পবিত্র উপার্জন থেকে একটি খেজুর পরিমাণ সদকা দেয়, আর আল্লাহ শুধু পবিত্র জিনিসই কবুল করেন, তবে আল্লাহ তা ডান হাতে গ্রহণ করেন এবং তার জন্য তা বৃদ্ধি করেন।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১০১৪]</div>
+</div>
+
+<!-- মুসলিম ভ্রাতৃত্ব সেকশন হেডিং -->
+<div class="section-title">৩৭. মুসলিম ভ্রাতৃত্ব</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-হুজুরাত</div>
+  <div class="arabic-verse">إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ ۚ وَاتَّقُوا اللَّهَ লَعَلَّكُمْ تُرْحَمُونَ</div>
+  <div class="translation">মুমিনরা তো ভাই ভাই। সুতরাং তোমাদের দুই ভাইয়ের মধ্যে মীমাংসা করে দাও এবং আল্লাহকে ভয় করো, যাতে তোমরা রহমত প্রাপ্ত হও।</div>
+  <div class="reference">[সূরা আল-হুজুরাত ৪৯:১০]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا ۚ وَاذْكُرُوا نِعْمَتَ اللَّهِ عَلَيْكُمْ إِذْ كُنْتُمْ أَعْدَاءً فَأَلَّفَ بَيْنَ قُلُوبِكُمْ</div>
+  <div class="translation">তোমরা সবাই মিলে আল্লাহর রজ্জুকে দৃঢ়ভাবে ধরো এবং বিভক্ত হয়ো না। আল্লাহর নিয়ামত স্মরণ করো, যখন তোমরা শত্রু ছিলে, তিনি তোমাদের হৃদয়ের মধ্যে সম্প্রীতি স্থাপন করেছেন।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:১০৩]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। মুসলিমের অধিকার</div>
+  <div class="hadith-arabic">الْمُسْلِمُ أَخُو الْمُسْلِمِ، لَا يَظْلِمُهُ وَلَا يُسْلِمُهُ</div>
+  <div class="hadith-translation">মুসলিম মুসলিমের ভাই, সে তার উপর অত্যাচার করে না এবং তাকে বিপদে ফেলে না।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০৬৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। মুমিনদের দৃষ্টান্ত</div>
+  <div class="hadith-arabic">مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى</div>
+  <div class="hadith-translation">মুমিনদের পারস্পরিক ভালোবাসা, দয়া ও সহানুভূতির উদাহরণ দেহের মতো। যখন দেহের একটি অঙ্গ কষ্ট পায়, তখন পুরো দেহ জাগ্রত হয় এবং জ্বরে আক্রান্ত হয়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৫৬৪]</div>
+</div>
+
+  <!-- দরিদ্র ও এতিমের প্রতি দয়া সেকশন হেডিং -->
+<div class="section-title">৩৮. দরিদ্র ও এতিমের প্রতি দয়া</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আদ-দুহা</div>
+  <div class="arabic-verse">فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ ۝ وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ</div>
+  <div class="translation">এতিমের উপর জুলুম করো না এবং প্রার্থনাকারীকে ধমক দিয়ো না।</div>
+  <div class="reference">[সূরা আদ-দুহা ৯৩:৯-১০]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">لَيْسَ الْبِرَّ أَنْ تُوَلُّوا وُجُوهَكُمْ قِبَلَ الْمَشْرِقِ وَالْمَغْرِبِ وَلَٰكِنَّ الْبِرَّ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَالْمَلَائِكَةِ وَالْكِتَابِ وَالنَّبِيِّينَ وَآتَى الْمَالَ عَلَىٰ حُبِّهِ ذَوِي الْقُرْبَىٰ وَالْيَتَامَىٰ وَالْمَسَاكِينَ</div>
+  <div class="translation">সৎকর্ম এই নয় যে, তোমরা তোমাদের মুখ পূর্ব বা পশ্চিম দিকে ফিরাও। বরং সৎকর্ম হলো যে ব্যক্তি আল্লাহ, আখিরাত, ফেরেশতা, কিতাব ও নবীদের প্রতি ঈমান আনে এবং সম্পদ দিয়েছে, তা ভালোবেসে, আত্মীয়, এতিম ও অভাবীদের।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৭৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। এতিমের পৃষ্ঠপোষকের পুরস্কার</div>
+  <div class="hadith-arabic">أَنَا وَكَافِلُ الْيَتِيمِ فِي الْجَنَّةِ هَكَذَا، وَأَشَارَ بِالسَّبَّابَةِ وَالْوُسْطَى وَفَرَّجَ بَيْنَهُمَا شَيْئًا</div>
+  <div class="hadith-translation">আমি এবং এতিমের পৃষ্ঠপোষক জান্নাতে এমন হবে, এবং তিনি তর্জনী ও মধ্যমা আঙুল দেখিয়ে তাদের মধ্যে সামান্য ফাঁক রাখলেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০০৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। বিধবা ও অভাবীদের সাহায্যকারী</div>
+  <div class="hadith-arabic">السَّاعِي عَلَى الْأَرْمَلَةِ وَالْمِسْكِينِ كَالْمُجَاهِدِ فِي سَبِيلِ اللَّهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি বিধবা ও অভাবীদের জন্য চেষ্টা করে, সে আল্লাহর পথে জিহাদকারীর মতো।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৯৮৩]</div>
+</div>
+
+<!-- অতিথিপরায়ণতা সেকশন হেডিং -->
+<div class="section-title">৩৯. অতিথিপরায়ণতা</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আয-যারিয়াত</div>
+  <div class="arabic-verse">هَلْ أَتَاكَ حَدِيثُ ضَيْفِ إِبْرَاهِيمَ الْمُكْرَمِينَ ۝ إِذْ دَخَلُوا عَلَيْهِ فَقَالُوا سَلَامًا ۖ قَالَ سَلَامٌ قَوْمٌ مُنْكَرُونَ ۝ فَرَاغَ إِلَىٰ أَهْلِهِ فَجَاءَ بِعِجْلٍ سَمِينٍ</div>
+  <div class="translation">তোমার কাছে কি ইব্রাহিমের সম্মানিত অতিথিদের কথা পৌঁছেছে? যখন তারা তার কাছে এলো এবং বলল, সালাম। তিনি বললেন, সালাম, অপরিচিত লোক। তারপর তিনি তার পরিবারের কাছে গিয়ে একটি মোটা বাছুর নিয়ে এলেন।</div>
+  <div class="reference">[সূরা আয-যারিয়াত ৫১:২৪-২৬]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আদ-দুহা</div>
+  <div class="arabic-verse">أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ</div>
+  <div class="translation">তিনি কি তোমাকে এতিম অবস্থায় পাননি এবং আশ্রয় দেননি?</div>
+  <div class="reference">[সূরা আদ-দুহা ৯৩:৬]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। অতিথির সম্মান</div>
+  <div class="hadith-arabic">مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ضَيْفَهُ</div>
+  <div class="hadith-translation">যে আল্লাহ ও আখিরাতের প্রতি ঈমান রাখে, সে যেন তার অতিথিকে সম্মান করে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬১৩৮]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। অতিথি আপ্যায়ন</div>
+  <div class="hadith-arabic">مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُكْرِمْ ضَيْفَهُ، وَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ</div>
+  <div class="hadith-translation">যে আল্লাহ ও আখিরাতের প্রতি ঈমান রাখে, সে যেন তার অতিথিকে সম্মান করে এবং ভালো কথা বলে, নতুবা চুপ থাকে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ৪৮]</div>
+</div>
+
+<!-- সম্প্রদায়ের ঐক্য সেকশন হেডিং -->
+<div class="section-title">৪০. সম্প্রদায়ের ঐক্য</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا ۚ وَاذْكُرُوا نِعْمَتَ اللَّهِ عَلَيْكُمْ إِذْ كُنْتُمْ أَعْدَاءً فَأَلَّفَ بَيْنَ قُلُوبِكُمْ فَأَصْبَحْتُمْ بِنِعْمَتِهِ إِخْوَانًا</div>
+  <div class="translation">তোমরা সবাই মিলে আল্লাহর রজ্জুকে দৃঢ়ভাবে ধরো এবং বিভক্ত হয়ো না। আল্লাহর নিয়ামত স্মরণ করো, যখন তোমরা শত্রু ছিলে, তিনি তোমাদের হৃদয়ের মধ্যে সম্প্রীতি স্থাপন করেছেন, ফলে তাঁর অনুগ্রহে তোমরা ভাই হয়েছ।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:১০৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-আনফাল</div>
+  <div class="arabic-verse">وَأَطِيعُوا اللَّهَ وَرَسُولَهُ وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رِيحُكُمْ ۖ وَاصْبِرُوا ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</div>
+  <div class="translation">আল্লাহ ও তাঁর রাসূলের আনুগত্য করো এবং পরস্পরের সাথে বিবাদ করো না, তাহলে তোমরা ব্যর্থ হবে এবং তোমাদের শক্তি লোপ পাবে। ধৈর্য ধরো, নিশ্চয় আল্লাহ ধৈর্যশীলদের সাথে আছেন।</div>
+  <div class="reference">[সূরা আল-আনফাল ৮:৪৬]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। আল্লাহর সন্তুষ্টির বিষয়</div>
+  <div class="hadith-arabic">إِنَّ اللَّهَ يَرْضَى لَكُمْ ثَلَاثًا: أَنْ تَعْبُدُوهُ وَلَا تُشْرِكُوا بِهِ شَيْئًا، وَأَنْ تَعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا</div>
+  <div class="hadith-translation">আল্লাহ তোমাদের জন্য তিনটি বিষয়ে সন্তুষ্ট হন: যে তোমরা তাঁর ইবাদত করবে এবং তাঁর সাথে কাউকে শরিক করবে না, তোমরা সবাই মিলে আল্লাহর রজ্জুকে ধরবে এবং বিভক্ত হবে না।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০৬৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। জামাত থেকে বিচ্ছিন্নতা</div>
+  <div class="hadith-arabic">مَنْ خَرَجَ مِنَ الْجَمَاعَةِ قِيدَ شِبْرٍ فَقَدْ خَلَعَ رِبْقَةَ الْإِسْلَامِ مِنْ عُنُقِهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি জামাত থেকে এক বিঘত পরিমাণ দূরে সরে যায়, সে তার গলা থেকে ইসলামের বন্ধন খুলে ফেলে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১৮৪৯]</div>
+</div>
+  
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
