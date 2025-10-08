@@ -1,130 +1,184 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dawah অ্যাপ হোম</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>দাওয়াহ অ্যাপ হোম</title>
 
-<!-- Hind Siliguri ফন্ট লোড -->
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="দাওয়াহ অ্যাপ: ইসলামী আয়াত ও হাদীসের সহজ তালিকা">
+  <meta name="keywords" content="দাওয়াহ, ইসলাম, আয়াত, হাদীস, বাংলা, অ্যাপ, ওয়েবভিউ">
+  <meta name="author" content="AbubokarBD">
+  <meta property="og:title" content="দাওয়াহ অ্যাপ হোম">
+  <meta property="og:description" content="আপনার কণ্ঠের প্রস্তুতি — ইসলামী আয়াত ও হাদীস">
+  <meta property="og:image" content="https://abubokarbd.github.io/dawah/logo.png">
+  <meta property="og:url" content="https://abubokarbd.github.io/dawah/index.html">
 
-<style>
-body {
-  font-family: 'Hind Siliguri', sans-serif;
-  background-color: #033E3E;
-  color: #FFFFFF;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+  <!-- App Icon & Favicon -->
+  <link rel="icon" href="https://abubokarbd.github.io/dawah/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://abubokarbd.github.io/dawah/app-icon.png">
+  <link rel="manifest" href="manifest.json">
 
-.app-title {
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 48px;
-  margin-top: 35px;
-  color: #00FFFF;
-  font-weight: bold; /* বোল্ড করতে */
-  text-shadow: none; /* শ্যাডো রিমুভ করতে */
-}
+  <!-- Hind Siliguri ফন্ট -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #033E3E;
+      color: #FFFFFF;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #033E3E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-.app-subtitle {
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 20px;
-  color: #AADDEE;
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.scrolling-text {
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 18px;
-  color: #AADDEE;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
-  background: rgba(0,0,0,0.2);
-  padding: 10px 0;
-}
+    .app-title {
+      font-size: 48px;
+      margin-top: 35px;
+      color: #00FFFF;
+      font-weight: bold;
+    }
 
-.scrolling-text span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-left 25s linear infinite; 
-}
+    .app-subtitle {
+      font-size: 20px;
+      color: #AADDEE;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
 
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
-}
+    .date-widget {
+      margin-top: 10px;
+      margin-bottom: -5px;
+    }
 
-.button-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
+    .scrolling-text {
+      font-size: 18px;
+      color: #AADDEE;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      padding: 10px 0;
+    }
 
-a.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  text-align: center;
-  background: linear-gradient(145deg, #046868, #022B2B);
-  color: white;
-   padding: 10px 8px; /* ভিতরের জায়গা ছোট হচ্ছে */
-  border-radius: 14px;
-  font-size: 20px;
-  cursor: pointer;
-  font-family: 'Hind Siliguri', sans-serif;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  line-height: 1.4;
- min-height: auto; /* উচ্চতা লেখা অনুযায়ী */
-}
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 25s linear infinite;
+    }
 
-a.button:hover {
-  background: linear-gradient(145deg, #0AAFAF, #055050);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-}
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
 
-a.button:active {
-  transform: scale(0.97);
-}
+    .button-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-@media (max-width: 600px) {
-  a.button {
-    font-size: 18px;
-    padding: 14px 8px;
-    min-height: 90px;
-  }
-}
-</style>
+    a.button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 10px 8px;
+      border-radius: 14px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      line-height: 1.4;
+    }
+
+    a.button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    }
+
+    a.button:active {
+      transform: scale(0.97);
+    }
+
+    @media (max-width: 600px) {
+      a.button {
+        font-size: 18px;
+        padding: 14px 8px;
+        min-height: 90px;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #00FFFF;
+      border-radius: 3px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #CCCCCC;
+    }
+
+    footer a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+
+    .counter-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #00FFFF;
+    }
+  </style>
 </head>
 
 <body>
 
+<div id="loader"><h2 style="color:#00FFFF;">লোড হচ্ছে...</h2></div>
+
 <div class="container">
 
-  <!-- অ্যাপ নাম -->
   <div class="app-title">দাওয়াহ</div>
-
-  <!-- সাবটাইটেল -->
   <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
-  <!-- স্ক্রোলিং টেক্সট -->
-  <div class="scrolling-text">
-    <span id="scrolling-text-content">
-    
-    আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে এ আপনাকে স্বাগমত। এপ্স সম্পর্কিত যে কোন মতামত জানাতে ডেভেলপার নামক বাটনে মেসেজ দিন। 
-    
-    </span>
+  <div class="date-widget">
+    <iframe src="https://abubokarbd.github.io/tools/bangla-hijri-eng-date-widget.html" 
+            style="width:100%; height:60px; border:none; background:transparent; overflow:hidden;" 
+            scrolling="no" loading="lazy"></iframe>
   </div>
 
-  <!-- শিরোনাম ১ -->
+  <div class="scrolling-text">
+    <span>আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে আপনাকে স্বাগতম। মতামত জানাতে ডেভেলপার বাটনে মেসেজ দিন।</span>
+  </div>
+
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
   <div class="button-row">
     <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
@@ -132,19 +186,86 @@ a.button:active {
     <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
   </div>
 
-  <!-- শিরোনাম ২ -->
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button"> আক্বিদা  <br> ও  <br> বিশ্বাস </a>
-    <a href="https://abubokarbd.github.io/dawah/2.ibadah.html" class="button"> ইবাদাত <br> বা <br> বন্দেগী </a>
-    <a href="https://abubokarbd.github.io/dawah/3-akhlaq.html" class="button"> আখলাক  <br>ও <br> নৈতিকতা </a>
-    <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button"> সম্প্রীতি  <br>ও <br>আচরণ</a>
+    <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
+    <a href="https://abubokarbd.github.io/dawah/2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
+    <a href="https://abubokarbd.github.io/dawah/3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
+    <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
   </div>
 
-</div>
+  <h2>অনুসন্ধান ও খুতবা বিভাগ</h2>
+  <div class="button-row">
+    <a href="https://abubokarbd.github.io/tools/khutba-list.html" class="button">খুতবা <br> তালিকা</a>
+    <a href="https://example.com/quran-search.html" class="button">কুরআন <br> সার্চ</a>
+    <a href="https://example.com/hadith-search.html" class="button">হাদিস <br> সার্চ</a>
+  </div>
 
-  <!-- popup.js লোড -->
+  <footer>
+  <p>
+  © ২০২৫ দাওয়াহ | Version 1.0 | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> আবুবকর 
+</p>
+  <div class="counter-row">
+    <span id="visitor-count">মোট ভিজিটর: ...</span> |
+    <span id="online-count">অনলাইনে আছেন: ... জন</span>
+  </div>
+</footer>
+<!-- Loader Script -->
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+  });
+</script>
+
+<!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase config from your project
+  const firebaseConfig = {
+    apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
+    authDomain: "dawah-352eb.firebaseapp.com",
+    databaseURL: "https://dawah-352eb-default-rtdb.firebaseio.com",
+    projectId: "dawah-352eb",
+    storageBucket: "dawah-352eb.appspot.com",
+    messagingSenderId: "129702043179",
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Visitor Counter
+  const visitorRef = db.ref("visitorCount");
+  visitorRef.transaction(current => {
+    return (current || 0) + 1;
+  });
+
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + count;
+  });
+
+  // Online User Tracker
+  const onlineRef = db.ref("onlineUsers");
+  const userId = "user_" + Math.random().toString(36).substr(2, 9);
+
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    document.getElementById("online-count").innerText = "অনলাইনে আছেন: " + onlineCount + " জন";
+  });
+</script>
+
+
+</div>
 
 </body>
 </html>
