@@ -32,7 +32,6 @@
       padding: 0;
     }
 
-    /* Loader */
     #loader {
       position: fixed;
       top: 0; left: 0;
@@ -131,7 +130,6 @@
       }
     }
 
-    /* Scrollbar polish */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -141,7 +139,7 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 20px;
       font-size: 14px;
       color: #CCCCCC;
     }
@@ -150,39 +148,37 @@
       color: #00FFFF;
       text-decoration: none;
     }
+
+    .counter-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #00FFFF;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Loader -->
 <div id="loader"><h2 style="color:#00FFFF;">লোড হচ্ছে...</h2></div>
 
 <div class="container">
 
-  <!-- অ্যাপ নাম -->
   <div class="app-title">দাওয়াহ</div>
-
-  <!-- সাবটাইটেল -->
   <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
+  <div class="date-widget">
+    <iframe src="https://abubokarbd.github.io/tools/bangla-hijri-eng-date-widget.html" 
+            style="width:100%; height:60px; border:none; background:transparent; overflow:hidden;" 
+            scrolling="no" loading="lazy"></iframe>
+  </div>
 
-<!-- তারিখ উইজেট -->
-<div class="date-widget">
-  <iframe src="https://abubokarbd.github.io/tools/bangla-hijri-eng-date-widget.html" 
-          style="width:100%; height:60px; border:none; background:transparent; overflow:hidden;" 
-          scrolling="no" loading="lazy"></iframe>
-</div>
-
-
-
-
-  <!-- স্ক্রোলিং টেক্সট -->
   <div class="scrolling-text">
     <span>আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে আপনাকে স্বাগতম। মতামত জানাতে ডেভেলপার বাটনে মেসেজ দিন।</span>
   </div>
 
-  <!-- শিরোনাম ১ -->
   <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
   <div class="button-row">
     <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
@@ -190,7 +186,6 @@
     <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
   </div>
 
-  <!-- শিরোনাম ২ -->
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
   <div class="button-row">
     <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
@@ -199,7 +194,6 @@
     <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
   </div>
 
-  <!-- শিরোনাম ৩ -->
   <h2>অনুসন্ধান ও খুতবা বিভাগ</h2>
   <div class="button-row">
     <a href="https://abubokarbd.github.io/tools/khutba-list.html" class="button">খুতবা <br> তালিকা</a>
@@ -207,14 +201,15 @@
     <a href="https://example.com/hadith-search.html" class="button">হাদিস <br> সার্চ</a>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <p>ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> আবুবকর </a></p>
-    <p>© ২০২৫ দাওয়াহ | Version 1.0</p>
-  </footer>
-
-</div>
-
+  <p>
+  © ২০২৫ দাওয়াহ | Version 1.0 | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> আবুবকর 
+</p>
+  <div class="counter-row">
+    <span id="visitor-count">মোট ভিজিটর: ...</span> |
+    <span id="online-count">অনলাইনে আছেন: ... জন</span>
+  </div>
+</footer>
 <!-- Loader Script -->
 <script>
   window.addEventListener('load', function() {
@@ -224,6 +219,53 @@
 
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase config from your project
+  const firebaseConfig = {
+    apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
+    authDomain: "dawah-352eb.firebaseapp.com",
+    databaseURL: "https://dawah-352eb-default-rtdb.firebaseio.com",
+    projectId: "dawah-352eb",
+    storageBucket: "dawah-352eb.appspot.com",
+    messagingSenderId: "129702043179",
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Visitor Counter
+  const visitorRef = db.ref("visitorCount");
+  visitorRef.transaction(current => {
+    return (current || 0) + 1;
+  });
+
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + count;
+  });
+
+  // Online User Tracker
+  const onlineRef = db.ref("onlineUsers");
+  const userId = "user_" + Math.random().toString(36).substr(2, 9);
+
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    document.getElementById("online-count").innerText = "অনলাইনে আছেন: " + onlineCount + " জন";
+  });
+</script>
+
+
+</div>
 
 </body>
 </html>
