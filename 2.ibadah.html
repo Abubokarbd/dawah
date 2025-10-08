@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াত ও হাদিস তালিকা</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+<!-- সালাত (নামায) সেকশন হেডিং -->
+<div class="section-title">১১. সালাত (নামায)</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ</div>
+  <div class="translation">তোমরা নামায কায়েম করো, যাকাত দাও এবং রুকুকারীদের সাথে রুকু করো।</div>
+  <div class="reference">[সূরা বাকারা ২:৪৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা হুদ</div>
+  <div class="arabic-verse">وَأَقِمِ الصَّلَاةَ طَرَفَيِ النَّهَارِ وَزُلَفًا مِنَ اللَّيْلِ ۚ إِنَّ الْحَسَنَاتِ يُذْهِبْنَ السَّيِّئَاتِ</div>
+  <div class="translation">দিনের দুই প্রান্তে এবং রাতের কিছু অংশে নামায কায়েম করো। নিশ্চয় ভালো কাজগুলো মন্দ কাজ দূর করে।</div>
+  <div class="reference">[সূরা হুদ ১১:১১৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। ইসলামের স্তম্ভ</div>
+  <div class="hadith-arabic">بُنِيَ الْإِسْلَامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، وَإِقَامِ الصَّلَاةِ، وَإِيتَاءِ الزَّكَاةِ، وَحَجِّ الْبَيْتِ، وَصَوْمِ رَمَضَانَ</div>
+  <div class="hadith-translation">ইসলাম পাঁচটি স্তম্ভের উপর প্রতিষ্ঠিত: সাক্ষ্য দেওয়া যে, আল্লাহ ছাড়া কোনো ইলাহ নেই এবং মুহাম্মাদ (সা.) আল্লাহর রাসূল, নামায কায়েম করা, যাকাত দেওয়া, বাইতুল্লাহর হজ্জ করা এবং রমজানের রোজা পালন করা।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৫২৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। নামাযের কাফফারা</div>
+  <div class="hadith-arabic">الصَّلَوَاتُ الْخَمْسُ، وَالْجُمُعَةُ إِلَى الْجُمُعَةِ، وَرَمَضَانُ إِلَى رَمَضَانَ، مُكَفِّرَاتٌ مَا بَيْنَهُنَّ إِذَا اجْتَنَبَ الْكَبَائِرَ</div>
+  <div class="hadith-translation">পাঁচ ওয়াক্ত নামায, এক জুমু'আ থেকে পরবর্তী জумু'আ, এবং এক রমজান থেকে পরবর্তী রমজান, এগুলোর মধ্যবর্তী পাপের জন্য কাফফারা হয়, যদি বড় পাপ থেকে বিরত থাকা যায়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১৬]</div>
+</div>
+
+<!-- যাকাত সেকশন হেডিং -->
+<div class="section-title">১২. যাকাত</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ ۚ وَمَا تُقَدِّমُوا لِأَنْفُسِكُمْ مِنْ خَيْرٍ تَجِدُوهُ عِنْدَ اللَّهِ</div>
+  <div class="translation">নামায কায়েম করো এবং যাকাত দাও। তোমরা নিজেদের জন্য যে ভালো কাজ অগ্রিম পাঠাও, তা আল্লাহর কাছে পাবে।</div>
+  <div class="reference">[সূরা বাকারা ২:১১০]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আত-তাওবা</div>
+  <div class="arabic-verse">وَالْمُؤْمِنُونَ وَالْمُؤْمِنَاتُ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۚ يَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنْكَرِ وَيُقِيمُونَ الصَّلَاةَ وَيُؤْتُونَ الزَّكَاةَ</div>
+  <div class="translation">মুমিন পুরুষ ও মুমিন নারীরা একে অপরের সাহায্যকারী। তারা ভালো কাজের আদেশ দেয়, মন্দ কাজে নিষেধ করে, নামায কায়েম করে এবং যাকাত দেয়।</div>
+  <div class="reference">[সূরা আত-তাওবা ৯:৭১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। যাকাত না দেওয়ার শাস্তি</div>
+  <div class="hadith-arabic">مَنْ آتَاهُ اللَّهُ مَالًا فَلَمْ يُؤَدِّ زَكَاتَهُ، مُثِّلَ لَهُ مَالُهُ يَوْمَ الْقِيَامَةِ شُجَاعًا أَقْرَعَ</div>
+  <div class="hadith-translation">যাকে আল্লাহ সম্পদ দিয়েছেন, অথচ সে তার যাকাত আদায় করেনি, কিয়ামতের দিন তার সম্পদ তার জন্য বিষধর সাপের আকারে উপস্থিত করা হবে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ১৪০৩]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। স্বর্ণ-রৌপ্যের যাকাত</div>
+  <div class="hadith-arabic">مَا مِنْ صَاحِبِ ذَهَبٍ وَلَا فِضَّةٍ لَا يُؤَدِّي زَكَاتَهَا إِلَّا إِذَا كَانَ يَوْمُ الْقِيَامَةِ صُفِّحَتْ لَهُ صَفَائِحُ مِنْ نَارٍ</div>
+  <div class="hadith-translation">যে ব্যক্তির স্বর্ণ বা রৌপ্য আছে, কিন্তু সে তার যাকাত আদায় করে না, কিয়ামতের দিন তার জন্য আগুনের পাত তৈরি করা হবে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ৯৮৭]</div>
+</div>
+
+  <!-- সাওম (রোজা) সেকশন হেডিং -->
+<div class="section-title">১৩. সাওম (রোজা)</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِنْ قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ</div>
+  <div class="translation">হে ঈমানদারগণ! তোমাদের উপর রোজা ফরয করা হয়েছে, যেমন তোমাদের পূর্ববর্তীদের উপর ফরয করা হয়েছিল, যাতে তোমরা তাকওয়া অর্জন করতে পারো।</div>
+  <div class="reference">[সূরা বাকারা ২:১৮৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা বাকারা</div>
+  <div class="arabic-verse">أُحِلَّ لَكُمْ لَيْلَةَ الصِّيَامِ الرَّفَثُ إِلَىٰ نِسَائِكُمْ ۚ هُنَّ لِبَاسٌ لَكُمْ وَأَنْتُمْ لِبَاسٌ لَهُنَّ</div>
+  <div class="translation">রোজার রাতে তোমাদের জন্য তোমাদের স্ত্রীদের সাথে সহবাস বৈধ করা হয়েছে। তারা তোমাদের জন্য পোশাক এবং তোমরা তাদের জন্য পোশাক।</div>
+  <div class="reference">[সূরা বাকারা ২:১৮৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। রমজানের রোজার ফজিলত</div>
+  <div class="hadith-arabic">مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি ঈমানের সাথে এবং সওয়াবের আশায় রমজানের রোজা পালন করে, তার পূর্বের পাপ ক্ষমা করা হয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ১৮৯৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। রোজার আদব</div>
+  <div class="hadith-arabic">الصِّيَامُ جُنَّةٌ، فَإِذَا كَانَ يَوْمَ صَوْمِ أَحَدِكُمْ فَلَا يَرْفُثْ وَلَا يَصْخَبْ</div>
+  <div class="hadith-translation">রোজা হলো ঢাল। যখন তোমাদের কেউ রোজা রাখে, সে যেন অশ্লীল কথা না বলে এবং হৈচৈ না করে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১১৫১]</div>
+</div>
+
+<!-- হজ্জ সেকশন হেডিং -->
+<div class="section-title">১৪. হজ্জ</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">فِيهِ آيَاتٌ بَيِّنَاتٌ مَقَامُ إِبْرَاهِيمَ ۖ وَمَنْ دَخَلَهُ كَانَ آمِنًا ۗ وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا</div>
+  <div class="translation">তাতে সুস্পষ্ট নিদর্শন রয়েছে, ইব্রাহিমের মাকাম। যে তাতে প্রবেশ করে সে নিরাপদ হয়। আর আল্লাহর জন্য মানুষের উপর বাইতুল্লাহর হজ্জ ফরয, যারা সেখানে যাওয়ার সামর্থ্য রাখে।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:৯৭]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-হাজ্জ</div>
+  <div class="arabic-verse">وَأَذِّنْ فِي النَّاسِ بِالْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِنْ كُلِّ فَجٍّ عَمِيقٍ</div>
+  <div class="translation">মানুষের মাঝে হজ্জের ঘোষণা দাও, তারা তোমার কাছে পায়ে হেঁটে এবং প্রতিটি দূরবর্তী পথ থেকে উটের পিঠে চড়ে আসবে।</div>
+  <div class="reference">[সূরা আল-হাজ্জ ২২:২৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। হজ্জের ফজিলত</div>
+  <div class="hadith-arabic">مَنْ حَجَّ لِلَّهِ فَلَمْ يَرْفُثْ وَلَمْ يَفْসُقْ، رَجَعَ كَيَوْمِ وَلَدَتْهُ أُمُّهُ</div>
+  <div class="hadith-translation">যে ব্যক্তি আল্লাহর জন্য হজ্জ করে এবং অশ্লীল কথা বা পাপাচার না করে, সে তার মায়ের গর্ভ থেকে জন্মের দিনের মতো (পাপমুক্ত) ফিরে আসে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ১৫২১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। কবুল হজ্জের প্রতিদান</div>
+  <div class="hadith-arabic">الْحَجُّ الْمَبْرُورُ لَيْسَ لَهُ جَزَاءٌ إِلَّا الْجَنَّةُ</div>
+  <div class="hadith-translation">কবুল হজ্জের প্রতিদান জান্নাত ছাড়া আর কিছুই নয়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১৩৫০]</div>
+</div>
+
+<!-- দুআ ও যিকর সেকশন হেডিং -->
+<div class="section-title">১৫. দুআ ও যিকর</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ</div>
+  <div class="translation">যখন আমার বান্দারা আমার সম্পর্কে তোমাকে জিজ্ঞাসা করে, তখন বলো, আমি নিকটে আছি। যে আমাকে ডাকে, আমি তার ডাকে সাড়া দিই।</div>
+  <div class="reference">[সূরা বাকারা ২:১৮৬]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-আরাফ</div>
+  <div class="arabic-verse">ادْعُوا رَبَّكُمْ تَضَرُّعًا وَخُفْيَةً ۚ إِنَّهُ لَا يُحِبُّ الْمُعْتَدِينَ</div>
+  <div class="translation">তোমরা তোমাদের রবকে বিনয়ের সাথে এবং গোপনে ডাকো। নিশ্চয় তিনি সীমালঙ্ঘনকারীদের পছন্দ করেন না।</div>
+  <div class="reference">[সূরা আল-আরাফ ৭:৫৫]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। দুআর গুরুত্ব</div>
+  <div class="hadith-arabic">الدُّعَاءُ هُوَ الْعِبَادَةُ</div>
+  <div class="hadith-translation">দুআই হলো ইবাদত।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬৩৪০]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। দুআ কবুলের শর্ত</div>
+  <div class="hadith-arabic">مَا مِنْ مُسْلِمٍ يَدْعُو بِدَعْوَةٍ لَيْسَ فِيهَا إِثْمٌ وَلَا قَطِيعَةُ رَحِمٍ، إِلَّا أَعْطَاهُ اللَّهُ بِهَا إِحْدَى ثَلَاثٍ</div>
+  <div class="hadith-translation">কোনো মুসলিম যদি এমন দুআ করে যাতে পাপ বা আত্মীয়তার সম্পর্ক ছিন্ন করার কিছু নেই, তবে আল্লাহ তাকে তিনটির একটি দেন।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ৩৩৭২]</div>
+</div>
+  
+
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
