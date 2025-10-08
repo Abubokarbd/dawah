@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔍 কুরআন সার্চ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #033E3E;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    * {
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #00FFFF;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h3 {
+      color: #AADDEE;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      background-color: #022B2B;
+      color: #FFFFFF;
+    }
+
+    input::placeholder {
+      font-family: 'Hind Siliguri', sans-serif;
+      color: #CCCCCC;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+    }
+
+    .result {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .ayah {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #AADDEE;
+    }
+
+    .translation {
+      font-size: 18px;
+      color: #CCCCCC;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      input[type="text"] {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 কুরআন সার্চ</h1>
+
+    <div class="search-box">
+      <h3>আরবি সার্চ</h3>
+      <input type="text" id="arabicInput" placeholder="যেমন: الرحمن, الصلاة">
+      <br>
+      <button onclick="searchArabic()">সার্চ করুন</button>
+      <div id="arabicResults" class="result"></div>
+    </div>
+
+    <div class="search-box">
+      <h3>বাংলা সার্চ</h3>
+      <input type="text" id="banglaInput" placeholder="যেমন: রহমত, নামাজ, ঈমান">
+      <br>
+      <button onclick="searchBangla()">সার্চ করুন</button>
+      <div id="banglaResults" class="result"></div>
+    </div>
+  </div>
+
+  <script>
+    async function searchBangla() {
+      const query = document.getElementById("banglaInput").value.trim();
+      const resultsDiv = document.getElementById("banglaResults");
+      resultsDiv.innerHTML = "লোড হচ্ছে...";
+
+      try {
+        const res = await fetch(`https://alquran-api.pages.dev/search/${encodeURIComponent(query)}?lang=bn`);
+        const data = await res.json();
+
+        if (!data.matches || data.matches.length === 0) {
+          resultsDiv.innerHTML = "<p>কোনো ফলাফল পাওয়া যায়নি।</p>";
+          return;
+        }
+
+        resultsDiv.innerHTML = "";
+        data.matches.slice(0, 5).forEach(match => {
+          const ayah = match.text;
+          const translation = match.translation;
+          const surah = match.surah.name;
+          const number = match.number.inSurah;
+
+          resultsDiv.innerHTML += `
+            <div class="ayah"><b>${surah} (${number})</b>: ${ayah}</div>
+            <div class="translation">অনুবাদ: ${translation}</div>
+            <hr style="border-color:#055050;">
+          `;
+        });
+      } catch (error) {
+        resultsDiv.innerHTML = "<p>সার্ভারে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।</p>";
+      }
+    }
+
+    async function searchArabic() {
+      const query = document.getElementById("arabicInput").value.trim();
+      const resultsDiv = document.getElementById("arabicResults");
+      resultsDiv.innerHTML = "جارٍ البحث...";
+
+      try {
+        const res = await fetch(`https://api.quran.com:443/v4/search?q=${encodeURIComponent(query)}&language=ar`);
+        const data = await res.json();
+
+        if (!data.matches || data.matches.length === 0) {
+          resultsDiv.innerHTML = "<p>لم يتم العثور على نتائج.</p>";
+          return;
+        }
+
+        resultsDiv.innerHTML = "";
+        data.matches.slice(0, 5).forEach(match => {
+          const ayah = match.text;
+          const surah = match.surah.name;
+          const number = match.number.inSurah;
+
+          resultsDiv.innerHTML += `
+            <div class="ayah"><b>${surah} (${number})</b>: ${ayah}</div>
+            <hr style="border-color:#055050;">
+          `;
+        });
+      } catch (error) {
+        resultsDiv.innerHTML = "<p>حدث خطأ في الخادم. حاول مرة أخرى لاحقًا.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
