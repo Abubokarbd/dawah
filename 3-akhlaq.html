@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াত ও হাদিস তালিকা</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+<!-- সত্যবাদিতা সেকশন হেডিং -->
+<div class="section-title">২১. সত্যবাদিতা</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আত-তাওবা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ</div>
+  <div class="translation">হে ঈমানদারগণ! আল্লাহকে ভয় করো এবং সত্যবাদীদের সাথে থাকো।</div>
+  <div class="reference">[সূরা আত-তাওবা ৯:১১৯]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-আহযাব</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِيدًا</div>
+  <div class="translation">হে ঈমানদারগণ! আল্লাহকে ভয় করো এবং সঠিক কথা বলো।</div>
+  <div class="reference">[সূরা আল-আহযাব ৩৩:৭০]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। সত্যবাদিতার ফজিলত</div>
+  <div class="hadith-arabic">عَلَيْكُمْ بِالصِّدْقِ، فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ</div>
+  <div class="hadith-translation">তোমরা সত্যবাদিতা অবলম্বন করো, কারণ সত্যবাদিতা সৎকর্মের দিকে পরিচালিত করে, আর সৎকর্ম জান্নাতের দিকে পরিচালিত করে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০৯৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। সত্য ও মিথ্যার পরিণতি</div>
+  <div class="hadith-arabic">إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ</div>
+  <div class="hadith-translation">নিশ্চয় সত্যবাদিতা সৎকর্মের দিকে পথ দেখায়, আর মিথ্যা পাপের দিকে পথ দেখায়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৬০৭]</div>
+</div>
+
+<!-- আমানতদারি সেকশন হেডিং -->
+<div class="section-title">২২. আমানতদারি</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নিসা</div>
+  <div class="arabic-verse">إِنَّ اللَّهَ يَأْمُرُكُمْ أَنْ تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا وَإِذَا حَكَمْتُمْ بَيْنَ النَّاسِ أَنْ تَحْكُمُوا بِالْعَدْلِ</div>
+  <div class="translation">নিশ্চয় আল্লাহ তোমাদের নির্দেশ দেন যে, তোমরা আমানত তার প্রাপকদের কাছে পৌঁছে দাও এবং মানুষের মধ্যে বিচার করার সময় ন্যায়বিচার করো।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:৫৮]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-মু’মিনূন</div>
+  <div class="arabic-verse">وَالَّذِينَ هُمْ لِأَمَانَاتِهِمْ وَعَهْدِهِمْ رَاعُونَ</div>
+  <div class="translation">এবং যারা তাদের আমানত ও প্রতিশ্রুতি পালন করে।</div>
+  <div class="reference">[সূরা আল-মু’মিনূন ২৩:৮]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। আমানতদারি ও ঈমান</div>
+  <div class="hadith-arabic">مَنْ لَا أَمَانَةَ لَهُ لَا إِيمَانَ لَهُ</div>
+  <div class="hadith-translation">যার আমানতদারি নেই, তার ঈমান নেই।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৩৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। আমানত ও প্রতিশ্রুতি</div>
+  <div class="hadith-arabic">لَا إِيمَانَ لِمَنْ لَا أَمَانَةَ لَهُ، وَلَا دِينَ لِمَنْ لَا عَهْدَ لَهُ</div>
+  <div class="hadith-translation">যার আমানতদারি নেই তার ঈমান নেই, আর যার প্রতিশ্রুতি পালন নেই তার দ্বীন নেই।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ১৪৫]</div>
+</div>
+
+<!-- ধৈর্য (সবর) সেকশন হেডিং -->
+<div class="section-title">২৩. ধৈর্য (সবর)</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা বাকারা</div>
+  <div class="arabic-verse">وَلَنَبْلُوَنَّكُمْ بِشَيْءٍ مِنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِنَ الْأَمْوَالِ وَالْأَنْفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ</div>
+  <div class="translation">আমি অবশ্যই তোমাদের পরীক্ষা করব কিছু ভয়, ক্ষুধা, সম্পদের ক্ষতি, জীবন ও ফলের ক্ষতি দিয়ে। আর ধৈর্যশীলদের সুসংবাদ দাও।</div>
+  <div class="reference">[সূরা বাকারা ২:১৫৫]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اصْبِرُوا وَصَابِرُوا وَرَابِطُوا وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُفْلِحُونَ</div>
+  <div class="translation">হে ঈমানদারগণ! ধৈর্য ধরো, ধৈর্যে অটল থাকো, প্রস্তুত থাকো এবং আল্লাহকে ভয় করো, যাতে তোমরা সফল হতে পারো।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:২০০]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। ধৈর্যের প্রতিদান</div>
+  <div class="hadith-arabic">مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلَا وَصَبٍ وَلَا هَمٍّ وَلَا حُزْنٍ وَلَا أَذًى وَلَا غَمٍّ، حَتَّى الشَّوْكَةُ يُشَاكُهَا، إِلَّا كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ</div>
+  <div class="hadith-translation">কোনো মুসলিমের উপর যে ক্লান্তি, রোগ, দুশ্চিন্তা, দুঃখ, কষ্ট বা বিরক্তি আসে, এমনকি যে কাঁটা তাকে বিঁধে, তা দিয়ে আল্লাহ তার পাপ মোচন করেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ১৪৬৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। মুমিনের অবস্থা</div>
+  <div class="hadith-arabic">عَجَبًا لِأَمْرِ الْمُؤْمِنِ، إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ، إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ، وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ</div>
+  <div class="hadith-translation">মুমিনের ব্যাপারে আশ্চর্য, তার সব বিষয়ই কল্যাণকর। যদি তার কাছে সুখ আসে, সে শুকরিয়া করে, তবে তা তার জন্য কল্যাণকর। আর যদি তার উপর দুঃখ আসে, সে ধৈর্য ধরে, তবে তাও তার জন্য কল্যাণকর।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৫৭৩]</div>
+</div>
+
+  <!-- কৃতজ্ঞতা (শুকর) সেকশন হেডিং -->
+<div class="section-title">২৪. কৃতজ্ঞতা (শুকর)</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা লুকমান</div>
+  <div class="arabic-verse">وَلَقَدْ آتَيْنَا لُقْمَانَ الْحِكْمَةَ أَنِ اشْكُرْ لِلَّهِ ۚ وَمَنْ يَشْكُرْ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِ</div>
+  <div class="translation">আমি লুকমানকে হিকমাহ দান করেছি যে, আল্লাহর প্রতি কৃতজ্ঞতা প্রকাশ করো। আর যে কৃতজ্ঞতা প্রকাশ করে, সে নিজের জন্যই তা করে।</div>
+  <div class="reference">[সূরা লুকমান ৩১:১২]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা ইব্রাহীম</div>
+  <div class="arabic-verse">وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ</div>
+  <div class="translation">তোমাদের রব ঘোষণা করেছেন, যদি তোমরা কৃতজ্ঞতা প্রকাশ করো, আমি অবশ্যই তোমাদের জন্য আরো বাড়িয়ে দেব। আর যদি অকৃতজ্ঞ হও, তবে আমার শাস্তি কঠোর।</div>
+  <div class="reference">[সূরা ইব্রাহীম ১৪:৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। মানুষের প্রতি কৃতজ্ঞতা</div>
+  <div class="hadith-arabic">مَنْ لَمْ يَشْكُرِ النَّاسَ لَمْ يَشْكُرِ اللَّهَ</div>
+  <div class="hadith-translation">যে মানুষের প্রতি কৃতজ্ঞতা প্রকাশ করে না, সে আল্লাহর প্রতি কৃতজ্ঞতা প্রকাশ করে না।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৮১৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। কৃতজ্ঞতা প্রকাশের পদ্ধতি</div>
+  <div class="hadith-arabic">مَنْ أُعْطِيَ عَطَاءً فَوَجَدَ فَلْيَشْكُرْ، وَإِنْ لَمْ يَجِدْ فَلْيُثْنِ عَلَى اللَّهِ</div>
+  <div class="hadith-translation">যাকে কিছু দেওয়া হয়, সে যদি পায় তবে কৃতজ্ঞতা প্রকাশ করুক। আর যদি না পায়, তবে আল্লাহর প্রশংসা করুক।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ১৯৫৪]</div>
+</div>
+
+<!-- বিনয় ও নম্রতা সেকশন হেডিং -->
+<div class="section-title">২৫. বিনয় ও নম্রতা</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-ফুরকান</div>
+  <div class="arabic-verse">وَعِبَادُ الرَّحْمَٰنِ الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا</div>
+  <div class="translation">রহমানের বান্দারা তারা, যারা পৃথিবীতে নম্রভাবে চলে এবং অজ্ঞ লোকেরা তাদের সাথে কথা বললে তারা শান্তির কথা বলে।</div>
+  <div class="reference">[সূরা আল-ফুরকান ২৫:৬৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা লুকমান</div>
+  <div class="arabic-verse">وَاقْصِدْ فِي مَشْيِكَ وَاغْضُضْ مِنْ صَوْتِكَ ۚ إِنَّ أَنْكَرَ الْأَصْوَاتِ لَصَوْتُ الْحَمِيرِ</div>
+  <div class="translation">তোমার চলনে মধ্যম পন্থা অবলম্বন করো এবং তোমার কণ্ঠস্বর নিচু রাখো। নিশ্চয় সবচেয়ে অপ্রীতিকর কণ্ঠ হলো গাধার কণ্ঠ।</div>
+  <div class="reference">[সূরা লুকমান ৩১:১৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। নম্রতার প্রতিদান</div>
+  <div class="hadith-arabic">مَنْ تَوَاضَعَ لِلَّهِ رَفَعَهُ اللَّهُ</div>
+  <div class="hadith-translation">যে আল্লাহর জন্য নম্রতা অবলম্বন করে, আল্লাহ তাকে উচ্চ মর্যাদা দান করেন।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৫৯১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। নম্রতার নির্দেশ</div>
+  <div class="hadith-arabic">إِنَّ اللَّهَ أَوْحَى إِلَيَّ أَنْ تَوَاضَعُوا حَتَّى لَا يَفْخَرَ أَحَدٌ عَلَى أَحَدٍ</div>
+  <div class="hadith-translation">আল্লাহ আমার কাছে ওহী পাঠিয়েছেন যে, তোমরা নম্রতা অবলম্বন করো, যাতে কেউ কারো উপর গর্ব না করে।</div>
+  <div class="hadith-reference">[সুনান ইবনে মাজাহ, হাদিস নং: ৪১৭৪]</div>
+</div>
+
+<!-- ক্ষমা ও দয়া সেকশন হেডিং -->
+<div class="section-title">২৬. ক্ষমা ও দয়া</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আশ-শুরা</div>
+  <div class="arabic-verse">وَجَزَاءُ سَيِّئَةٍ سَيِّئَةٌ مِثْلُهَا ۖ فَمَنْ عَفَا وَأَصْلَحَ فَأَجْرُهُ عَلَى اللَّهِ ۚ إِنَّهُ لَا يُحِبُّ الظَّالِمِينَ</div>
+  <div class="translation">মন্দের প্রতিদান মন্দ, তার সমান। কিন্তু যে ক্ষমা করে এবং সংশোধন করে, তার প্রতিদান আল্লাহর কাছে। নিশ্চয় তিনি জালিমদের পছন্দ করেন না।</div>
+  <div class="reference">[সূরা আশ-শুরা ৪২:৪০]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নূর</div>
+  <div class="arabic-verse">وَلَا يَأْتَلِ أُولُو الْفَضْلِ مِنْكُمْ وَالسَّعَةِ أَنْ يُؤْتُوا أُولِي الْقُرْبَىٰ وَالْمَسَاكِينَ وَالْمُهَاجِرِينَ فِي سَبِيلِ اللَّهِ ۖ وَلْيَعْفُوا وَلْيَصْفَحُوا</div>
+  <div class="translation">তোমাদের মধ্যে যারা সম্মানিত ও সম্পদশালী, তারা যেন আত্মীয়, অভাবী এবং আল্লাহর পথে হিজরতকারীদের প্রতি দান করতে শপথ না করে। তাদের ক্ষমা করা উচিত এবং উপেক্ষা করা উচিত।</div>
+  <div class="reference">[সূরা আন-নূর ২৪:২২]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। দয়া ও ক্ষমার প্রতিদান</div>
+  <div class="hadith-arabic">ارْحَمُوا تُرْحَمُوا، وَاغْفِرُوا يَغْفِرِ اللَّهُ لَكُمْ</div>
+  <div class="hadith-translation">তোমরা দয়া করো, তাহলে তোমাদের উপর দয়া করা হবে। ক্ষমা করো, তাহলে আল্লাহ তোমাদের ক্ষমা করবেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬১২৬]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। রাগ সংযত করার ফজিলত</div>
+  <div class="hadith-arabic">مَنْ كَظَمَ غَيْظًا وَهُوَ قَادِرٌ عَلَى أَنْ يُنْفِذَهُ دَعَاهُ اللَّهُ عَزَّ وَجَلَّ عَلَى رُءُوسِ الْخَلَائِقِ يَوْمَ الْقِيَامَةِ حَتَّى يُخَيِّرَهُ مِنَ الْحُورِ الْعِينِ</div>
+  <div class="hadith-translation">যে ব্যক্তি রাগ সংযত করে যদিও সে তা প্রয়োগ করতে সক্ষম ছিল, আল্লাহ কিয়ামতের দিন তাকে সবার সামনে ডেকে হুরদের মধ্য থেকে পছন্দ করার সুযোগ দেবেন।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৫৮৮]</div>
+</div>
+
+  <!-- আত্মসংযম সেকশন হেডিং -->
+<div class="section-title">২৭. আত্মসংযম</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</div>
+  <div class="translation">হে ঈমানদারগণ! ধৈর্য এবং নামাযের মাধ্যমে সাহায্য প্রার্থনা করো। নিশ্চয় আল্লাহ ধৈর্যশীলদের সাথে আছেন।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৫৩]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-আরাফ</div>
+  <div class="arabic-verse">وَإِمَّا يَنْزَغَنَّكَ مِنَ الشَّيْطَانِ نَزْغٌ فَاسْتَعِذْ بِاللَّهِ ۚ إِنَّهُ سَمِيعٌ عَلِيمٌ</div>
+  <div class="translation">যদি শয়তানের কাছ থেকে কোনো প্ররোচনা তোমাকে স্পর্শ করে, তবে আল্লাহর কাছে আশ্রয় প্রার্থনা করো। নিশ্চয় তিনি সর্বশ্রোতা, সর্বজ্ঞ।</div>
+  <div class="reference">[সূরা আল-আরাফ ৭:২০০]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। প্রকৃত শক্তিশালী</div>
+  <div class="hadith-arabic">لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ</div>
+  <div class="hadith-translation">শক্তিশালী সে নয় যে কুস্তিতে জয়ী হয়, বরং শক্তিশালী সে যে রাগের সময় নিজেকে নিয়ন্ত্রণ করে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬১১৪]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। রাগ সংযতকারীর পুরস্কার</div>
+  <div class="hadith-arabic">مَنْ كَفَّ غَضَبَهُ كَفَّ اللَّهُ عَنْهُ عَذَابَهُ</div>
+  <div class="hadith-translation">যে তার রাগ সংযত করে, আল্লাহ তার উপর থেকে শাস্তি সরিয়ে নেন।</div>
+  <div class="hadith-reference">[সুনান তিরমিযী, হাদিস নং: ২০২১]</div>
+</div>
+
+<!-- রাগ নিয়ন্ত্রণ সেকশন হেডিং -->
+<div class="section-title">২৮. রাগ নিয়ন্ত্রণ</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">الَّذِينَ يُنْفِقُونَ فِي السَّرَّاءِ وَالضَّرَّاءِ وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ</div>
+  <div class="translation">যারা সুখে-দুঃখে দান করে, রাগ সংযত করে এবং মানুষকে ক্ষমা করে, আল্লাহ সৎকর্মশীলদের ভালোবাসেন।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:১৩৪]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আশ-শুরা</div>
+  <div class="arabic-verse">وَالَّذِينَ يَجْتَنِبُونَ كَبَائِرَ الْإِثْمِ وَالْفَوَاحِشَ وَإِذَا مَا غَضِبُوا هُمْ يَغْفِرُونَ</div>
+  <div class="translation">যারা বড় পাপ ও অশ্লীল কাজ থেকে দূরে থাকে এবং যখন তারা রাগান্বিত হয়, তখন ক্ষমা করে।</div>
+  <div class="reference">[সূরা আশ-শুরা ৪২:৩৭]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। রাগের সময় চুপ থাকা</div>
+  <div class="hadith-arabic">إِذَا غَضِبَ أَحَدُكُمْ فَلْيَسْكُتْ</div>
+  <div class="hadith-translation">তোমাদের কেউ রাগান্বিত হলে সে যেন চুপ থাকে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ২৬০৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। রাগ প্রশমনের পদ্ধতি</div>
+  <div class="hadith-arabic">إِذَا غَضِبَ أَحَدُكُمْ وَهُوَ قَائِمٌ فَلْيَجْلِسْ، فَإِنْ ذَهَبَ عَنْهُ الْغَضَبُ، وَإِلَّا فَلْيَضْطَجِعْ</div>
+  <div class="hadith-translation">তোমাদের কেউ রাগান্বিত হলে, যদি সে দাঁড়ানো থাকে তবে বসে পড়ুক। যদি রাগ না যায়, তবে শুয়ে পড়ুক।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস নং: ৪৭৭৯]</div>
+</div>
+
+<!-- সৌজন্য ও শিষ্টাচার সেকশন হেডিং -->
+<div class="section-title">২৯. সৌজন্য ও শিষ্টাচার</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-হুজুরাত</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اجْتَنِبُوا كَثِيرًا مِنَ الظَّنِّ إِنَّ بَعْضَ الظَّنِّ إِثْمٌ ۖ وَلَا تَجَسَّسُوا وَلَا يَغْتَبْ بَعْضُكُمْ بَعْضًا</div>
+  <div class="translation">হে ঈমানদারগণ! বেশি অনুমান থেকে বিরত থাকো, কারণ কিছু অনুমান পাপ। গোপনে তদন্ত করো না এবং একে অপরের গীবত করো না।</div>
+  <div class="reference">[সূরা আল-হুজুরাত ৪৯:১২]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা লুকমান</div>
+  <div class="arabic-verse">وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّ اللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ</div>
+  <div class="translation">মানুষের দিকে তোমার গাল ফিরিয়ে নিও না এবং পৃথিবীতে অহংকার করে চলো না। নিশ্চয় আল্লাহ কোনো অহংকারী গর্বিত ব্যক্তিকে পছন্দ করেন না।</div>
+  <div class="reference">[সূরা লукমান ৩১:১৮]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। প্রতিবেশীর অধিকার</div>
+  <div class="hadith-arabic">مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيُحْسِنْ إِلَى جَارِهِ</div>
+  <div class="hadith-translation">যে আল্লাহ ও আখিরাতের প্রতি ঈমান রাখে, সে যেন তার প্রতিবেশীর সাথে ভালো ব্যবহার করে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬০৩১]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। ছোট-বড় সকলের প্রতি আচরণ</div>
+  <div class="hadith-arabic">لَيْسَ مِنَّا مَنْ لَمْ يَرْحَمْ صَغِيرَنَا وَيُوَقِّرْ كَبِيرَنَا</div>
+  <div class="hadith-translation">যে আমাদের ছোটদের প্রতি দয়া করে না এবং বড়দের সম্মান করে না, সে আমাদের মধ্যে নয়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস নং: ৪৮]</div>
+</div>
+
+<!-- সৎ সঙ্গের গুরুত্ব সেকশন হেডিং -->
+<div class="section-title">৩০. সৎ সঙ্গের গুরুত্ব</div>
+
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আত-তাওবা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ</div>
+  <div class="translation">হে ঈমানদারগণ! আল্লাহকে ভয় করো এবং সত্যবাদীদের সাথে থাকো।</div>
+  <div class="reference">[সূরা আত-তাওবা ৯:১১৯]</div>
+</div>
+
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-কাহফ</div>
+  <div class="arabic-verse">وَاصْبِرْ نَفْسَكَ مَعَ الَّذِينَ يَدْعُونَ رَبَّهُمْ بِالْغَدَاةِ وَالْعَشِيِّ يُرِيدُونَ وَجْهَهُ</div>
+  <div class="translation">তোমার নিজেকে তাদের সাথে ধৈর্য ধরে রাখো, যারা সকাল-সন্ধ্যায় তাদের রবকে ডাকে, তাঁর সন্তুষ্টি কামনা করে।</div>
+  <div class="reference">[সূরা আল-কাহফ ১৮:২৮]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">১। বন্ধুর প্রভাব</div>
+  <div class="hadith-arabic">الرَّجُلُ عَلَى دِينِ خَلِيلِهِ، فَلْيَنْظُرْ أَحَدُكُمْ مَنْ يُخَالِلُ</div>
+  <div class="hadith-translation">মানুষ তার বন্ধুর দ্বীনের উপর থাকে, তাই তোমাদের প্রত্যেকের উচিত দেখা, কার সাথে সে বন্ধুত্ব করে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস নং: ৬১৬৯]</div>
+</div>
+
+<div class="hadith-container">
+  <div class="hadith-title">২। সৎ ও অসৎ সঙ্গীর উদাহরণ</div>
+  <div class="hadith-arabic">مَثَلُ الْجَلِيسِ الصَّالِحِ وَالْجَلِيسِ السَّوْءِ كَمَثَلِ صَاحِبِ الْمِسْكِ وَكِيرِ الْحَدَّادِ</div>
+  <div class="hadith-translation">সৎ সঙ্গী এবং খারাপ সঙ্গীর উদাহরণ হলো কস্তুরির বিক্রেতা এবং লোহার কামারের মতো।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস নং: ৪৮৩৩]</div>
+</div>
+
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
