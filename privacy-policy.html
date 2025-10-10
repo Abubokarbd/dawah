@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Dawah App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  
+    <style>
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #033E3E;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  .language-btn {
+    background: linear-gradient(145deg, #046868, #022B2B);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+  }
+  .language-btn:hover {
+    background: linear-gradient(145deg, #0AAFAF, #055050);
+  }
+  .content {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    color: #00FFFF;
+    font-size: 2rem;
+  }
+  p {
+    line-height: 1.6;
+    color: #AADDEE;
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  @media (max-width: 600px) {
+    .content {
+      max-width: 100%;
+      padding: 10px;
+    }
+    .language-btn {
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .content {
+      max-width: 1000px;
+    }
+  }
+</style>
+</head>
+<body>
+  <button class="language-btn" onclick="toggleLanguage()">বাংলা</button>
+  <div class="content" id="privacy-content">
+    <h1>Privacy Policy</h1>
+    <p>Last Updated: October 10, 2025</p>
+    <p>Welcome to the Dawah App. We are committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our app.</p>
+    <p><strong>No Personal Data Collection:</strong> The Dawah App does not collect, store, or share any personal information such as your name, email, or location. We respect your privacy and do not use cookies or tracking technologies to identify you.</p>
+    <p><strong>Analytics Data:</strong> We use Firebase to anonymously track the number of visitors and online users for statistical purposes only. This data is not linked to any personal identity and is used to improve the app's performance.</p>
+    <p><strong>Third-Party Links:</strong> The app includes links to external content hosted on Google Drive or GitHub. We are not responsible for the privacy practices of these third-party services.</p>
+    <p><strong>Changes to This Policy:</strong> We may update this Privacy Policy from time to time. Any changes will be posted here with an updated date.</p>
+    <p>For any questions, contact the developer at: <a href="https://abubokarbd.github.io/kankirhat/deve.html" style="color: #00FFFF;">Muhammad Abubokar Siddik</a>.</p>
+  </div>
+
+  <script>
+    let isBengali = false;
+    function toggleLanguage() {
+      const content = document.getElementById('privacy-content');
+      if (!isBengali) {
+        content.innerHTML = `
+          <h1>গোপনীয়তা নীতি</h1>
+          <p>সর্বশেষ আপডেট: ১০ অক্টোবর, ২০২৫</p>
+          <p>দাওয়াহ অ্যাপে স্বাগতম। আমরা আপনার গোপনীয়তা রক্ষায় commit করেছি। এই গোপনীয়তা নীতি ব্যাখ্যা করে কীভাবে আমরা আপনার ডেটা পরিচালনা করি।</p>
+          <p><strong>ব্যক্তিগত ডেটা সংগ্রহ নেই:</strong> দাওয়াহ অ্যাপ কোনো ব্যক্তিগত তথ্য যেমন নাম, ইমেইল, বা অবস্থান সংগ্রহ, সঞ্চয়, বা শেয়ার করে না। আমরা আপনার গোপনীয়তা সম্মান করি এবং আপনাকে চিহ্নিত করার জন্য কুকি বা ট্র্যাকিং প্রযুক্তি ব্যবহার করি না।</p>
+          <p><strong>অ্যানালিটিক্স ডেটা:</strong> আমরা Firebase ব্যবহার করে শুধু পরিসংখ্যানের উদ্দেশ্যে অ্যানোনিমাস ভিজিটর এবং অনলাইন ইউজারের সংখ্যা ট্র্যাক করি। এই ডেটা কোনো ব্যক্তিগত পরিচয়ের সাথে সংযুক্ত নয় এবং অ্যাপের পারফরম্যান্স উন্নত করতে ব্যবহৃত হয়।</p>
+          <p><strong>তৃতীয় পক্ষের লিঙ্ক:</strong> অ্যাপে গুগল ড্রাইভ বা গিটহাবে হোস্ট করা বাহ্যিক কনটেন্টের লিঙ্ক রয়েছে। আমরা এই তৃতীয় পক্ষের পরিষেবার গোপনীয়তা প্রক্রিয়ার জন্য দায়ী নই।</p>
+          <p><strong>নীতিতে পরিবর্তন:</strong> আমরা এই গোপনীয়তা নীতি মাঝে মাঝে আপডেট করতে পারি। কোনো পরিবর্তন এখানে আপডেট তারিখ সহ পোস্ট করা হবে।</p>
+          <p>কোনো প্রশ্নের জন্য, ডেভেলপারের সাথে যোগাযোগ করুন: <a href="https://abubokarbd.github.io/kankirhat/deve.html" style="color: #00FFFF;">মুহা আবুবকর ছিদ্দিক</a>.</p>
+        `;
+        isBengali = true;
+      } else {
+        content.innerHTML = `
+          <h1>Privacy Policy</h1>
+          <p>Last Updated: October 10, 2025</p>
+          <p>Welcome to the Dawah App. We are committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our app.</p>
+          <p><strong>No Personal Data Collection:</strong> The Dawah App does not collect, store, or share any personal information such as your name, email, or location. We respect your privacy and do not use cookies or tracking technologies to identify you.</p>
+          <p><strong>Analytics Data:</strong> We use Firebase to anonymously track the number of visitors and online users for statistical purposes only. This data is not linked to any personal identity and is used to improve the app's performance.</p>
+          <p><strong>Third-Party Links:</strong> The app includes links to external content hosted on Google Drive or GitHub. We are not responsible for the privacy practices of these third-party services.</p>
+          <p><strong>Changes to This Policy:</strong> We may update this Privacy Policy from time to time. Any changes will be posted here with an updated date.</p>
+          <p>For any questions, contact the developer at: <a href="https://abubokarbd.github.io/kankirhat/deve.html" style="color: #00FFFF;">Muhammad Abubokar Siddik</a>.</p>
+        `;
+        isBengali = false;
+      }
+    }
+  </script>
+</body>
+</html>
