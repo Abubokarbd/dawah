@@ -51,7 +51,7 @@
 
     .app-title {
       font-size: 48px;
-      margin-top: 35px;
+      margin-top: 10px;
       color: #00FFFF;
       font-weight: bold;
     }
@@ -60,7 +60,7 @@
       font-size: 20px;
       color: #AADDEE;
       margin-top: -10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .date-widget {
@@ -130,6 +130,30 @@
       }
     }
 
+    .about-button {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    .about-button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    }
+
+    .about-button:active {
+      transform: scale(0.97);
+    }
+
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -179,37 +203,45 @@
     <span>আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে আপনাকে স্বাগতম। মতামত জানাতে ডেভেলপার বাটনে মেসেজ দিন।</span>
   </div>
 
-  <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
+  <h2>সংক্ষিপ্ত আয়াত তালিকা</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
-    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
-    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
+    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত<br>গুচ্ছ<br>১</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত<br>গুচ্ছ<br>২</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত<br>গুচ্ছ<br>৩</a>
   </div>
 
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
-    <a href="https://abubokarbd.github.io/dawah/2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
-    <a href="https://abubokarbd.github.io/dawah/3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
-    <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
+    <a href="1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
+    <a href="2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
+    <a href="3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
+    <a href="4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
   </div>
 
-  <h2>অনুসন্ধান ও খুতবা বিভাগ</h2>
+  <h2>খুতবাহ ও দারস</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/dawah/khutba-list.html" class="button">খুতবা <br> তালিকা</a>
-    <a href="https://abubokarbd.github.io/dawah/quran-search.html" class="button">কুরআন <br> সার্চ</a>
-    <a href="https://example.com/hadith-search.html" class="button">হাদিস <br> সার্চ</a>
+    <a href="khutba-list.html" class="button">খুতবা <br> তালিকা</a>
+    <a href="#" class="button">দারসুল<br>কুরআন</a>
+    <a href="#" class="button">দারসুল<br>হাদিস</a>
+  </div>
+    <h2> আমল ও অন্যান্য </h2> 
+  <div class="button-row">
+    <a href="#" class="button"> সকাল <br> সন্ধ্যার <br> আমল </a>
+    <a href="#" class="button"> অর্থসহ <br>  নামাজের <br>  দোয়া </a>
+    <a href="#" class="button"> কুরআনের <br> ছোট <br>  সুরা </a>
   </div>
 
   <footer>
-  <p>
-  © ২০২৫ দাওয়াহ | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> মুহা আবুবকর ছিদ্দিক
-</p>
-  <div class="counter-row">
-    <span id="visitor-count">মোট ভিজিটর: ...</span> |
-    <span id="online-count">অনলাইনে আছেন: ... জন</span>
-  </div>
-</footer>
+    <a href="#" class="about-button">App সম্পর্কে</a>
+    <p>
+      © ২০২৫ দাওয়াহ | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> মুহা আবুবকর ছিদ্দিক
+    </p>
+    <div class="counter-row">
+      <span id="visitor-count">ভিজিটরস: ...</span> |
+      <span id="online-count">অনলাইনে: ... জন</span>
+    </div>
+  </footer>
+
 <!-- Loader Script -->
 <script>
   window.addEventListener('load', function() {
@@ -248,7 +280,7 @@
 
   visitorRef.on("value", snapshot => {
     const count = snapshot.val();
-    document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + count;
+    document.getElementById("visitor-count").innerText = "ভিজিটরস: " + count;
   });
 
   // Online User Tracker
@@ -260,22 +292,13 @@
 
   onlineRef.on("value", snapshot => {
     const onlineCount = snapshot.numChildren();
-    document.getElementById("online-count").innerText = "অনলাইনে আছেন: " + onlineCount + " জন";
+    document.getElementById("online-count").innerText = "অনলাইনে: " + onlineCount + " জন";
   });
 </script>
-
 
 </div>
 
    <!-- service worker script-->
-  <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(() => {
-      console.log('Service Worker registered successfully');
-    }).catch((error) => {
-      console.error('Service Worker registration failed:', error);
-    });
-  }
-</script>
+ 
 </body>
 </html>
