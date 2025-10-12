@@ -503,6 +503,7 @@ buttons.forEach(btn => {
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
+  // Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
     authDomain: "dawah-352eb.firebaseapp.com",
@@ -510,14 +511,42 @@ buttons.forEach(btn => {
     projectId: "dawah-352eb",
     storageBucket: "dawah-352eb.appspot.com",
     messagingSenderId: "129702043179",
-    appId: "1:129702043179:web:6318cd5c1b3c200810946e"
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
   };
 
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  const pageName = location.pathname;
-  db.ref("pageViews/" + pageName).transaction(n => (n || 0) + 1);
+  // Visitor Counter (গ্লোবাল, ডেইলি চেক)
+  const visitorRef = db.ref("visitorCount");
+  const today = new Date().toDateString();
+  if (localStorage.getItem('lastVisit') !== today) {
+    visitorRef.transaction(current => (current || 0) + 1);
+    localStorage.setItem('lastVisit', today);
+  }
+
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    const visitorEl = document.getElementById("visitor-count");
+    if (visitorEl) visitorEl.innerText = "ভিজিটরস: " + count;  // এটা skip হবে, কারণ ID নেই
+  });
+
+  // Online User Tracker (গ্লোবাল, userId পার্সিস্টেন্ট)
+  const onlineRef = db.ref("onlineUsers");
+  let userId = localStorage.getItem('dawahUserId');
+  if (!userId) {
+    userId = "user_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('dawahUserId', userId);
+  }
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    const onlineEl = document.getElementById("online-count");
+    if (onlineEl) onlineEl.innerText = "অনলাইনে: " + onlineCount + " জন";  // এটা skip হবে
+  });
 </script>
 
 </body>
