@@ -21,143 +21,173 @@
 
   <!-- Hind Siliguri ফন্ট -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #033E3E;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 
-  <style>
-    body {
-      font-family: 'Hind Siliguri', sans-serif;
-      background-color: #033E3E;
-      color: #FFFFFF;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #033E3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
 
-    #loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #033E3E;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
+  .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 20px;
-    }
+  .app-title {
+    font-size: 48px;
+    margin-top: 10px;
+    color: #00FFFF;
+    font-weight: bold;
+  }
 
-    .app-title {
-      font-size: 48px;
-      margin-top: 35px;
-      color: #00FFFF;
-      font-weight: bold;
-    }
+  .app-subtitle {
+    font-size: 20px;
+    color: #AADDEE;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
 
-    .app-subtitle {
-      font-size: 20px;
-      color: #AADDEE;
-      margin-top: -10px;
-      margin-bottom: 20px;
-    }
+  .date-widget {
+    margin-top: 10px;
+    margin-bottom: -5px;
+  }
 
-    .date-widget {
-      margin-top: 10px;
-      margin-bottom: -5px;
-    }
+  .scrolling-text {
+    font-size: 18px;
+    color: #AADDEE;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    padding: 10px 0;
+  }
 
-    .scrolling-text {
-      font-size: 18px;
-      color: #AADDEE;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 100%;
-      background: rgba(0,0,0,0.2);
-      padding: 10px 0;
-    }
+  .scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 25s linear infinite;
+  }
 
-    .scrolling-text span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 25s linear infinite;
-    }
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
 
-    @keyframes scroll-left {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
-    }
+  .button-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* ফিক্সড 3 কলাম সকল ডিভাইসে */
+    gap: 15px;
+    margin-top: 20px;
+  }
 
-    .button-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
+  a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: linear-gradient(145deg, #046868, #022B2B);
+    color: white;
+    padding: 10px 8px;
+    border-radius: 14px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    line-height: 1.4;
+  }
 
+  a.button:hover {
+    background: linear-gradient(145deg, #0AAFAF, #055050);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  }
+
+  a.button:active {
+    transform: scale(0.97);
+  }
+
+  @media (max-width: 600px) {
     a.button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      background: linear-gradient(145deg, #046868, #022B2B);
-      color: white;
-      padding: 10px 8px;
-      border-radius: 14px;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      line-height: 1.4;
+      font-size: 18px;
+      padding: 14px 8px;
+      min-height: 90px;
     }
+    
+    /* ছোট স্ক্রিনে 3 কলাম অ্যাডজাস্টমেন্ট যাতে ফিট হয় */
+    .button-row {
+      grid-template-columns: repeat(3, minmax(80px, 1fr)); /* মিন প্রস্থ কমিয়ে স্কুইজ এড়ানো */
+      gap: 10px; /* গ্যাপ কমানো */
+    }
+  }
 
-    a.button:hover {
-      background: linear-gradient(145deg, #0AAFAF, #055050);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-    }
+  .about-button {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(145deg, #046868, #022B2B);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
 
-    a.button:active {
-      transform: scale(0.97);
-    }
+  .about-button:hover {
+    background: linear-gradient(145deg, #0AAFAF, #055050);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+  }
 
-    @media (max-width: 600px) {
-      a.button {
-        font-size: 18px;
-        padding: 14px 8px;
-        min-height: 90px;
-      }
-    }
+  .about-button:active {
+    transform: scale(0.97);
+  }
 
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: #00FFFF;
-      border-radius: 3px;
-    }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #00FFFF;
+    border-radius: 3px;
+  }
 
-    footer {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #CCCCCC;
-    }
+  footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #CCCCCC;
+  }
 
-    footer a {
-      color: #00FFFF;
-      text-decoration: none;
-    }
+  footer a {
+    color: #00FFFF;
+    text-decoration: none;
+  }
 
-    .counter-row {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 10px;
-      font-size: 16px;
-      color: #00FFFF;
-    }
-  </style>
+  .counter-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #00FFFF;
+  }
+</style>
+  
 </head>
 
 <body>
@@ -179,37 +209,45 @@
     <span>আসসালামুয়ালাইকুম, দাওয়াহ মোবাইল এপসে আপনাকে স্বাগতম। মতামত জানাতে ডেভেলপার বাটনে মেসেজ দিন।</span>
   </div>
 
-  <h1>সংক্ষিপ্ত আয়াত তালিকা</h1>
+  <h2>সংক্ষিপ্ত আয়াত তালিকা</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত <br>১</a>
-    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>২</a>
-    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত <br>৩</a>
+    <a href="https://abubokarbd.github.io/rco/verse.html" class="button">আয়াত<br>গুচ্ছ<br>১</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত<br>গুচ্ছ<br>২</a>
+    <a href="https://abubokarbd.github.io/rco/verse1.html" class="button">আয়াত<br>গুচ্ছ<br>৩</a>
   </div>
 
   <h2>বিষয় ভিত্তিক আয়াত ও হাদীস</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/dawah/1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
-    <a href="https://abubokarbd.github.io/dawah/2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
-    <a href="https://abubokarbd.github.io/dawah/3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
-    <a href="https://abubokarbd.github.io/dawah/4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
+    <a href="1-faith.html" class="button">আক্বিদা <br>ও <br>বিশ্বাস</a>
+    <a href="2.ibadah.html" class="button">ইবাদাত <br>বা <br>বন্দেগী</a>
+    <a href="3-akhlaq.html" class="button">আখলাক <br>ও <br>নৈতিকতা</a>
+    <a href="4-ethics.html" class="button">সম্প্রীতি <br>ও <br>আচরণ</a>
   </div>
 
-  <h2>অনুসন্ধান ও খুতবা বিভাগ</h2>
+  <h2>খুতবাহ ও দারস</h2>
   <div class="button-row">
-    <a href="https://abubokarbd.github.io/dawah/khutba-list.html" class="button">খুতবা <br> তালিকা</a>
-    <a href="https://abubokarbd.github.io/dawah/quran-search.html" class="button">কুরআন <br> সার্চ</a>
-    <a href="https://example.com/hadith-search.html" class="button">হাদিস <br> সার্চ</a>
+    <a href="khutba-list.html" class="button">খুতবা <br> তালিকা</a>
+    <a href="on-test-page.html" class="button">দারসুল<br>কুরআন</a>
+    <a href="on-test-page.html" class="button">দারসুল<br>হাদিস</a>
+  </div>
+    <h2> আমল ও অন্যান্য </h2> 
+  <div class="button-row">
+    <a href="on-test-page.html" class="button"> সকাল <br> সন্ধ্যার <br> আমল </a>
+    <a href="on-test-page.html" class="button"> অর্থসহ <br>  নামাজের <br>  দোয়া </a>
+    <a href="on-test-page.html" class="button"> কুরআনের <br> ছোট <br>  সুরা </a>
   </div>
 
   <footer>
-  <p>
-  © ২০২৫ দাওয়াহ | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> মুহা আবুবকর ছিদ্দিক
-</p>
-  <div class="counter-row">
-    <span id="visitor-count">মোট ভিজিটর: ...</span> |
-    <span id="online-count">অনলাইনে আছেন: ... জন</span>
-  </div>
-</footer>
+    <a href="on-test-page.html" class="about-button">App সম্পর্কে</a>
+    <p>
+      © ২০২৫ দাওয়াহ | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html"> মুহা আবুবকর ছিদ্দিক
+    </p>
+    <div class="counter-row">
+      <span id="visitor-count">ভিজিটরস: ...</span> |
+      <span id="online-count">অনলাইনে: ... জন</span>
+    </div>
+  </footer>
+
 <!-- Loader Script -->
 <script>
   window.addEventListener('load', function() {
@@ -219,12 +257,14 @@
 
 <!-- popup.js লোড -->
 <script src="https://abubokarbd.github.io/rco/popup.js"></script>
+
+
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
-  // Firebase config from your project
+  // Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
     authDomain: "dawah-352eb.firebaseapp.com",
@@ -236,36 +276,42 @@
     measurementId: "G-Z0E49NGVDG"
   };
 
-  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  // Visitor Counter
+  // Visitor Counter (গ্লোবাল, ডেইলি চেক)
   const visitorRef = db.ref("visitorCount");
-  visitorRef.transaction(current => {
-    return (current || 0) + 1;
-  });
+  const today = new Date().toDateString();
+  if (localStorage.getItem('lastVisit') !== today) {
+    visitorRef.transaction(current => (current || 0) + 1);
+    localStorage.setItem('lastVisit', today);
+  }
 
   visitorRef.on("value", snapshot => {
     const count = snapshot.val();
-    document.getElementById("visitor-count").innerText = "মোট ভিজিটর: " + count;
+    const visitorEl = document.getElementById("visitor-count");
+    if (visitorEl) visitorEl.innerText = "ভিজিটরস: " + count;
   });
 
-  // Online User Tracker
+  // Online User Tracker (গ্লোবাল, userId পার্সিস্টেন্ট)
   const onlineRef = db.ref("onlineUsers");
-  const userId = "user_" + Math.random().toString(36).substr(2, 9);
-
+  let userId = localStorage.getItem('dawahUserId');
+  if (!userId) {
+    userId = "user_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('dawahUserId', userId);
+  }
   onlineRef.child(userId).set(true);
   onlineRef.child(userId).onDisconnect().remove();
 
   onlineRef.on("value", snapshot => {
     const onlineCount = snapshot.numChildren();
-    document.getElementById("online-count").innerText = "অনলাইনে আছেন: " + onlineCount + " জন";
+    const onlineEl = document.getElementById("online-count");
+    if (onlineEl) onlineEl.innerText = "অনলাইনে: " + onlineCount + " জন";
   });
 </script>
-
-
 </div>
 
+   <!-- service worker script-->
+ 
 </body>
 </html>
