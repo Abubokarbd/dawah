@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কুরআন হিফজ রিডার</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  margin: 0;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+.quran-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+.ayah {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.loading {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+.error {
+  color: red;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<h2>📖 কুরআন হিফজ রিডার</h2>
+<div id="content">
+  <div class="loading">কুরআন লোড হচ্ছে...</div>
+</div>
+
+<script>
+// API URL (চাওলে নিজস্ব হিফজ API দিতে পারো)
+const API_URL = "https://api.alquran.cloud/v1/page/1/quran-uthmani";
+
+const content = document.getElementById('content');
+
+async function loadQuran() {
+    try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+
+        if (data && data.data && data.data.ayahs) {
+            displayAyahs(data.data.ayahs);
+            // First-time offline save
+            localStorage.setItem("quranData", JSON.stringify(data));
+        } else {
+            throw "No data";
+        }
+    } catch (e) {
+        console.log("Error:", e);
+        const cached = localStorage.getItem("quranData");
+        if (cached) {
+            const data = JSON.parse(cached);
+            displayAyahs(data.data.ayahs, true);
+        } else {
+            content.innerHTML = `<div class="error">⚠️ ইন্টারনেট সংযোগ নেই এবং কোনো ডেটা সংরক্ষিত নেই।</div>`;
+        }
+    }
+}
+
+function displayAyahs(ayahs, offline=false) {
+    let html = '';
+    ayahs.forEach(a => {
+        html += `
+        <div class="quran-container">
+            <div class="ayah">
+                <p style="font-size:22px; direction:rtl;">${a.text}</p>
+                <p>সূরা: ${a.surah.englishName} — আয়াত: ${a.numberInSurah}</p>
+            </div>
+        </div>`;
+    });
+    content.innerHTML = offline ? `<h4 style="text-align:center;">(অফলাইন মোড)</h4>` + html : html;
+}
+
+loadQuran();
+</script>
+</body>
+</html>
