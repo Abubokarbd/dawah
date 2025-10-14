@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> জিহাদ ও শান্তি  </title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+
+<div class="section-title">৫১. জিহাদের ধারণা </div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-হজ্জ</div>
+  <div class="arabic-verse">جَاهِدُوا فِي اللَّهِ حَقَّ جِهَادِهِ</div>
+  <div class="translation">আল্লাহর পথে তোমাদের জিহাদের যথাযথভাবে জিহাদ করো।</div>
+  <div class="reference">[সূরা আল-হজ্জ ২২:৭৮]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">قَاتِلُوا الَّذِينَ يُقَاتِلُونَكُمْ وَلَا تَعْتَدُوا ۚ إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ</div>
+  <div class="translation">তোমরা তাদের বিরুদ্ধে যুদ্ধ করো, যারা তোমাদের বিরুদ্ধে যুদ্ধ করে, কিন্তু সীমালঙ্ঘন করো না। নিশ্চয়ই আল্লাহ সীমালঙ্ঘনকারীদের ভালোবাসেন না।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৯০]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। সর্বোত্তম জিহাদ</div>
+  <div class="hadith-arabic">أَفْضَلُ الْجِهَادِ كَلِمَةُ حَقٍّ عِنْدَ سُلْطَانٍ جَائِرٍ</div>
+  <div class="hadith-translation">সর্বোত্তম জিহাদ হলো জালিম শাসকের সামনে সত্য কথা বলা।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস: ৪৩৪৪]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। জান্নাতের দ্বার</div>
+  <div class="hadith-arabic">الْجِهَادُ بَابٌ مِنْ أَبْوَابِ الْجَنَّةِ فَتَحَهُ اللَّهُ لِخَاصَّةِ أَوْلِيَائِهِ</div>
+  <div class="hadith-translation">জিহাদ জান্নাতের একটি দ্বার, যা আল্লাহ তাঁর বিশেষ বান্দাদের জন্য খুলে দেন।</div>
+  <div class="hadith-reference">[তিরমিযী, হাদিস: ১৬৫৯]</div>
+</div>
+<div class="section-title">৫২. নফসের বিরুদ্ধে জিহাদ</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নাযিয়াত</div>
+  <div class="arabic-verse">وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِ وَنَهَى النَّفْسَ عَنِ الْهَوَى</div>
+  <div class="translation">আর যে তার প্রভুর সামনে দাঁড়ানোর ভয় করে এবং নিজের আত্মাকে কামনার থেকে বিরত রাখে।</div>
+  <div class="reference">[সূরা আন-নাযিয়াত ৭৯:৪০]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা ইউসুফ</div>
+  <div class="arabic-verse">إِنَّ النَّفْسَ لَأَمَّارَةٌ بِالسُّوءِ</div>
+  <div class="translation">নিশ্চয়ই আত্মা অশুভের প্রতি উৎসাহিত করে।</div>
+  <div class="reference">[সূরা ইউসুফ ১২:৫৩]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। আত্মার বিরুদ্ধে সর্বোত্তম জিহাদ</div>
+  <div class="hadith-arabic">أَجْرَى الْجِهَادِ الْجِهَادُ مَعَ الْجَمَاعَةِ، وَالْجِهَادُ الْأَكْبَرُ مَعَ النَّفْسِ</div>
+  <div class="hadith-translation">সর্বোত্তম জিহাদ হলো নিজের আত্মার বিরুদ্ধে জিহাদ।</div>
+  <div class="hadith-reference">[মুসনাদ আহমদ, হাদিস: ২৩২৫০]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। প্রকৃত মুজাহিদ</div>
+  <div class="hadith-arabic">الْمُجَاهِدُ مَنْ جَاهَدَ نَفْسَهُ فِي طَاعَةِ اللَّهِ</div>
+  <div class="hadith-translation">জিহাদী হলো সেই ব্যক্তি যে আল্লাহর আনুগত্যে তার আত্মার বিরুদ্ধে জিহাদ করে।</div>
+  <div class="hadith-reference">[ইবনু হিব্বান, হাদিস: ৪৬০৪]</div>
+</div>
+<div class="section-title">৫৩. শান্তি ও সমঝোতা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-আনফাল</div>
+  <div class="arabic-verse">وَإِنْ جَنَحُوا لِلسَّلْمِ فَاجْنَحْ لَهَا وَتَوَكَّلْ عَلَى اللَّهِ</div>
+  <div class="translation">যদি তারা শান্তির প্রতি ঝুঁকে, তাহলে তুমিও তার প্রতি ঝুঁক এবং আল্লাহর উপর ভরসা কর।</div>
+  <div class="reference">[সূরা আল-আনফাল ৮:৬১]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">فَصُلْحُوهُمَا بَيْنَهُمَا بِالْمَعْرُوفِ</div>
+  <div class="translation">তাদের মধ্যে সদ্ভাবনার সাথে সমঝোতা করাও।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১১৪]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। শান্তির মর্যাদা</div>
+  <div class="hadith-arabic">السِّلْمُ خَيْرٌ</div>
+  <div class="hadith-translation">শান্তি উত্তম।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ২৭২৮]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। সমঝোতার ফজিলত</div>
+  <div class="hadith-arabic">إِصْلَاحُ ذَاتِ الْبَيْنِ أَفْضَلُ مِنْ صَلَاةٍ فِي مَسْجِدِي هَذَا سَبْعِينَ خَرْبَةً</div>
+  <div class="hadith-translation">মানুষের মধ্যে সমঝোতা করা এই মসজিদে সত্তর বছরের নামাযের চেয়ে উত্তম।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস: ৪৯১৯]</div>
+</div>
+<div class="section-title">৫৪. যুদ্ধের নৈতিকতা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">وَلَا تَعْتَدُوا ۚ إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ</div>
+  <div class="translation">তোমরা সীমালঙ্ঘন করো না। নিশ্চয়ই আল্লাহ সীমালঙ্ঘনকারীদের ভালোবাসেন না।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৯০]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-ইসরা</div>
+  <div class="arabic-verse">وَلَا تَقْتُلُوا النَّفْسَ الَّتِي حَرَّمَ اللَّهُ إِلَّا بِالْحَقِّ</div>
+  <div class="translation">আল্লাহ যাকে হত্যা নিষিদ্ধ করেছেন, তাকে হত্যা করো না, যদি না যথাযথ কারণে হয়।</div>
+  <div class="reference">[সূরা আল-ইসরা ১৭:৩৩]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। নিরপরাধদের হত্যা নিষিদ্ধ</div>
+  <div class="hadith-arabic">لَا تَقْتُلُوا وَلِيدًا وَلَا امْرَأَةً وَلَا شَيْخًا كَبِيرًا فَانِيًا لَا يُقَاتَلُ</div>
+  <div class="hadith-translation">শিশু, নারী, বৃদ্ধ এবং যুদ্ধ না করতে পারার মতো ব্যক্তিকে হত্যা করো না।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৩০১৫]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। যুদ্ধক্ষেত্রেই সীমিত হত্যা</div>
+  <div class="hadith-arabic">إِنَّمَا الْقَتْلُ فِي الْقِتَالِ</div>
+  <div class="hadith-translation">হত্যা কেবল যুদ্ধক্ষেত্রে যথাযথ।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৭৩১]</div>
+</div>
+<div class="section-title">৫৫. ধৈর্য ও কষ্টে সহনশীলতা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নাহল</div>
+  <div class="arabic-verse">وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ</div>
+  <div class="translation">ধৈর্য ধারণ করো এবং তোমার ধৈর্য কেবল আল্লাহর উপর নির্ভরশীল।</div>
+  <div class="reference">[সূরা আন-নাহল ১৬:১২৭]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ</div>
+  <div class="translation">হে ঈমানদারগণ! ধৈর্য এবং নামাযের মাধ্যমে সাহায্য চাও।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৫৩]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। ধৈর্য ঈমানের অংশ</div>
+  <div class="hadith-arabic">الصَّبْرُ مِنَ الْإِيمَانِ مَا كَانَ لِلْعَبْدِ أَنْ يَقُولَ إِنَّمَا أَنَا إِنْسَانٌ</div>
+  <div class="hadith-translation">ধৈর্য ঈমানের অংশ; বান্দা বলতে পারে না যে সে কেবল মানুষ।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ১৪৬৯]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। কষ্টের মাধ্যমে পাপ মোচন</div>
+  <div class="hadith-arabic">مَا مِنْ مُسْلِمٍ يُصِيبُهُ أَذًى حَتَّىْ دَمْ أَوْ جَرْحٌ إِلَّا حَطَّ اللَّهُ بِهِ سَيِّئَاتِهِ كَمَا يَحُطُّ الْوَرَقَ مِنَ الشَّجَرِ</div>
+  <div class="hadith-translation">কোনো মুসলিমকে কোনো কষ্ট যা রক্তপাত বা আঘাত না হলেও আঘাত করে না, যাতে আল্লাহ তার পাপ ক্ষমা না করেন, যেমন গাছ থেকে পাতা ঝরে পড়ে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৫৬৪১]</div>
+</div>
+<div class="section-title">৫৬. দাওয়াহ ও ইসলাম প্রচার</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নাহল</div>
+  <div class="arabic-verse">ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ ۖ وَجَادِلْهُمْ بِالَّتِي هِيَ أَحْسَنُ</div>
+  <div class="translation">তোমার প্রভুর পথে প্রজ্ঞা ও সুন্দর উপদেশের মাধ্যমে দাওয়াত দাও এবং তাদের সাথে উত্তম পন্থায় বিতর্ক করো।</div>
+  <div class="reference">[সূরা আন-নাহল ১৬:১২৫]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা ইউসুফ</div>
+  <div class="arabic-verse">قُلْ هَٰذِهِ سَبِيلِي أَدْعُو إِلَى اللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا وَمَنِ اتَّبَعَنِي</div>
+  <div class="translation">বলো, এটাই আমার পথ, আমি ও আমার অনুসারীরা সুস্পষ্ট প্রমাণের ভিত্তিতে আল্লাহর দিকে দাওয়াত দিই।</div>
+  <div class="reference">[সূরা ইউসুফ ১২:১০৮]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। ভালো কাজে দাওয়াত</div>
+  <div class="hadith-arabic">مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি কোনো ভালো কাজের দিকে পথ দেখায়, তার জন্য তা পালনকারীর সমান সওয়াব রয়েছে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৮৯৩]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। ইসলামের বার্তা প্রচার</div>
+  <div class="hadith-arabic">بَلِّغُوا عَنِّي وَلَوْ آيَةً</div>
+  <div class="hadith-translation">আমার পক্ষ থেকে (ইসলামের বাণী) প্রচার করো, এমনকি যদি তা একটি আয়াত হয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৩৪৬১]</div>
+</div>
+<div class="section-title">৫৭. অমুসলিমদের সাথে সম্পর্ক</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-মুমতাহিনা</div>
+  <div class="arabic-verse">لَا يَنْهَاكُمُ اللَّهُ عَنِ الَّذِينَ لَمْ يُقَاتِلُوكُمْ فِي الدِّينِ وَلَمْ يُخْرِجُوكُمْ مِنْ دِيَارِكُمْ أَنْ تَبَرُّوهُمْ وَتُقْسِطُوا إِلَيْهِمْ</div>
+  <div class="translation">আল্লাহ তোমাদের নিষেধ করেন না যারা দ্বীনের ব্যাপারে তোমাদের সাথে যুদ্ধ করেনি এবং তোমাদেরকে তোমাদের ঘর থেকে বের করে দেয়নি, তাদের সাথে সদাচরণ ও ন্যায়বিচার করতে।</div>
+  <div class="reference">[সূরা আল-মুমতাহিনা ৬০:৮]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">قُلْ يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ</div>
+  <div class="translation">বলো, হে আহলে কিতাব! এসো, আমাদের ও তোমাদের মধ্যে একটি সাধারণ কথার দিকে।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:৬৪]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। জিম্মিদের প্রতি সদাচরণ</div>
+  <div class="hadith-arabic">مَنْ آذَى ذِمِّيًّا فَقَدْ آذَانِي</div>
+  <div class="hadith-translation">যে ব্যক্তি কোনো জিম্মি (অমুসলিম নাগরিক)কে কষ্ট দেয়, সে আমাকে কষ্ট দেয়।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস: ৩০৫২]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। নম্রতার গুরুত্ব</div>
+  <div class="hadith-arabic">إِنَّ اللَّهَ يُحِبُّ الرِّفْقَ فِي الْأَمْرِ كُلِّهِ</div>
+  <div class="hadith-translation">নিশ্চয়ই আল্লাহ সকল কাজে নম্রতা পছন্দ করেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৬০২৪]</div>
+</div>
+<div class="section-title">৫৮. বিপদে ধৈর্য</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">وَلَنَبْلُوَنَّكُمْ بِشَيْءٍ مِنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِنَ الْأَمْوَالِ وَالْأَنْفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ</div>
+  <div class="translation">আমি অবশ্যই তোমাদেরকে ভয়, ক্ষুধা, সম্পদের ক্ষতি, জীবন ও ফসলের ক্ষতি দিয়ে পরীক্ষা করব। আর ধৈর্যশীলদের সুসংবাদ দাও।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৫৫]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আয-যুমার</div>
+  <div class="arabic-verse">إِنَّمَا يُوَفَّى الصَّابِرُونَ أَجْرَهُمْ بِغَيْرِ حِسَابٍ</div>
+  <div class="translation">নিশ্চয়ই ধৈর্যশীলদের তাদের পুরস্কার অপরিমিত দেওয়া হবে।</div>
+  <div class="reference">[সূরা আয-যুমার ৩৯:১০]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। বিপদে গুনাহ মোচন</div>
+  <div class="hadith-arabic">مَا مِنْ مُصِيبَةٍ تُصِيبُ الْمُسْلِمَ إِلَّا كَفَّرَ اللَّهُ بِهَا عَنْهُ حَتَّى الشَّوْكَةِ يُشَاكُهَا</div>
+  <div class="hadith-translation">কোনো মুসলিমের উপর কোনো বিপদ আসে না, এমনকি কাঁটার আঘাতও, তবে আল্লাহ তা দিয়ে তার গুনাহ মাফ করেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৫৬৪০]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। প্রথম ধাক্কায় ধৈর্য</div>
+  <div class="hadith-arabic">الصَّبْرُ عِنْدَ الصَّدْمَةِ الْأُولَى</div>
+  <div class="hadith-translation">প্রকৃত ধৈর্য হলো প্রথম আঘাতের সময় ধৈর্য ধারণ করা।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ১৩০২]</div>
+</div>
+<div class="section-title">৫৯. ন্যায়বিচার প্রতিষ্ঠা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নাহল</div>
+  <div class="arabic-verse">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ</div>
+  <div class="translation">নিশ্চয়ই আল্লাহ ন্যায়বিচার, ইহসান (উত্তম আচরণ) এবং নিকটাত্মীয়দের প্রতি দান করার নির্দেশ দেন।</div>
+  <div class="reference">[সূরা আন-নাহল ১৬:৯০]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-মায়িদা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا</div>
+  <div class="translation">হে ঈমানদারগণ! আল্লাহর জন্য ন্যায়বিচারের সাথে দৃঢ়ভাবে প্রতিষ্ঠিত হও এবং কোনো সম্প্রদায়ের প্রতি বিদ্বেষ যেন তোমাদেরকে ন্যায়বিচার থেকে বিচ্যুত না করে।</div>
+  <div class="reference">[সূরা আল-মায়িদা ৫:৮]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। ন্যায়বিচারকারীদের মর্যাদা</div>
+  <div class="hadith-arabic">إِنَّ الْمُقْسِطِينَ عِنْدَ اللَّهِ عَلَى مَنَابِرَ مِنْ نُورٍ</div>
+  <div class="hadith-translation">নিশ্চয়ই ন্যায়বিচারকারীরা আল্লাহর নিকট নূরের মিম্বরে থাকবে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৮২৭]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। জুলুমের বিরুদ্ধে হুঁশিয়ারি</div>
+  <div class="hadith-arabic">مَنْ ظَلَمَ مُعَاهِدًا أَوِ انْتَقَصَهُ حَقًّا أَوْ كَلَّفَهُ فَوْقَ طَاقَتِهِ فَأَنَا خَصْمُهُ يَوْمَ الْقِيَامَةِ</div>
+  <div class="hadith-translation">যে ব্যক্তি কোনো অমুসলিম নাগরিকের উপর জুলুম করে, তার অধিকার হরণ করে বা তার সাধ্যের বাইরে বোঝা চাপায়, আমি কিয়ামতের দিন তার বিরুদ্ধে মামলাকারী হব।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস: ৩০৫২]</div>
+</div>
+
+  <div class="section-title">৬০. সমাজে শান্তি প্রতিষ্ঠা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-আনফাল</div>
+  <div class="arabic-verse">وَإِنْ جَنَحُوا لِلسَّلْمِ فَاجْنَحْ لَهَا وَتَوَكَّلْ عَلَى اللَّهِ</div>
+  <div class="translation">যদি তারা শান্তির প্রতি ঝুঁকে, তাহলে তুমিও তার প্রতি ঝুঁক এবং আল্লাহর উপর ভরসা কর।</div>
+  <div class="reference">[সূরা আল-আনফাল ৮:৬১]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَالصُّلْحُ خَيْرٌ</div>
+  <div class="translation">এবং সমঝোতা উত্তম।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১২৮]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। পারস্পরিক ভালোবাসা ও ঈমান</div>
+  <div class="hadith-arabic">لَا تَدْخُلُونَ الْجَنَّةَ حَتَّى تُؤْمِنُوا وَلَا تُؤْمِنُوا حَتَّى تَحَابُّوا</div>
+  <div class="hadith-translation">তোমরা জান্নাতে প্রবেশ করবে না যতক্ষণ না ঈমান আনবে, এবং ঈমান আনবে না যতক্ষণ না একে অপরকে ভালোবাসবে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ৫৪]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। সমঝোতার ফজিলত</div>
+  <div class="hadith-arabic">إِصْلَاحُ ذَاتِ الْبَيْنِ أَفْضَلُ مِنْ عَامَّةِ الصَّلَاةِ وَالصِّيَامِ</div>
+  <div class="hadith-translation">মানুষের মধ্যে সমঝোতা স্থাপন করা সাধারণ নামায ও রোজার চেয়ে উত্তম।</div>
+  <div class="hadith-reference">[তিরমিযী, হাদিস: ২৫০৯]</div>
+</div>
+
+  
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
+    authDomain: "dawah-352eb.firebaseapp.com",
+    databaseURL: "https://dawah-352eb-default-rtdb.firebaseio.com",
+    projectId: "dawah-352eb",
+    storageBucket: "dawah-352eb.appspot.com",
+    messagingSenderId: "129702043179",
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Visitor Counter (গ্লোবাল, ডেইলি চেক)
+  const visitorRef = db.ref("visitorCount");
+  const today = new Date().toDateString();
+  if (localStorage.getItem('lastVisit') !== today) {
+    visitorRef.transaction(current => (current || 0) + 1);
+    localStorage.setItem('lastVisit', today);
+  }
+
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    const visitorEl = document.getElementById("visitor-count");
+    if (visitorEl) visitorEl.innerText = "ভিজিটরস: " + count;  // এটা skip হবে, কারণ ID নেই
+  });
+
+  // Online User Tracker (গ্লোবাল, userId পার্সিস্টেন্ট)
+  const onlineRef = db.ref("onlineUsers");
+  let userId = localStorage.getItem('dawahUserId');
+  if (!userId) {
+    userId = "user_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('dawahUserId', userId);
+  }
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    const onlineEl = document.getElementById("online-count");
+    if (onlineEl) onlineEl.innerText = "অনলাইনে: " + onlineCount + " জন";  // এটা skip হবে
+  });
+</script>
+
+</body>
+</html>
