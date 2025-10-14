@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াত ও হাদিস তালিকা</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet"/>
+
+<style>
+/* আরবি ফন্ট লোড */
+@font-face {
+  font-family: 'Al_Majeed_Quranic';
+  src: url('https://abubokarbd.github.io/rco/fonts/Al_Majeed_Quranic.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'SolaimanLipi', sans-serif;
+  background-color: #033E3E;
+  color: #FFFFFF;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border-left: 5px solid #FFD700;
+  color: #FFD700;
+}
+
+.verse-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #1E6B6B;
+}
+
+.verse-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.arabic-verse {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3s ease;
+  color: #E0E0E0;
+}
+
+.reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+.hadith-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-left: 5px solid #2A8C8C;
+}
+
+.hadith-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #A8D8D8;
+}
+
+.hadith-arabic {
+  font-family: 'Al_Majeed_Quranic', serif;
+  font-size: 28px;
+  text-align: right;
+  direction: rtl;
+  line-height: 2;
+  margin: 15px 0;
+  transition: font-size 0.3s ease;
+  color: #F0F0F0;
+}
+
+.hadith-translation {
+  font-size: 22px;
+  margin: 10px 0;
+  text-align: justify;
+  transition: font-size 0.3ease;
+  color: #E0E0E0;
+}
+
+.hadith-reference {
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+  color: #B8D8D8;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.zoom-arabic {
+  right: 20px;
+}
+
+.zoom-bangla {
+  left: 20px;
+}
+
+.zoom-controls button {
+  background: #1E6B6B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.zoom-controls button:hover {
+  background: #2A8C8C;
+}
+</style>
+</head>
+<body>
+
+<!-- হালাল উপার্জন সেকশন হেডিং -->
+<div class="section-title">৪১. হালাল উপার্জন</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا كُلُوا مِنْ طَيِّبَاتِ مَا رَزَقْنَاكُمْ وَاشْكُرُوا لِلَّهِ إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُونَ</div>
+  <div class="translation">হে ঈমানদারগণ! আমি তোমাদের যে পবিত্র রিযিক দিয়েছি, তা থেকে ভক্ষণ কর এবং আল্লাহর শুকরিয়া আদায় কর, যদি তোমরা তাঁরই ইবাদত কর।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৭২]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">وَلَا تَأْكُلُوا أَمْوَالَكُمْ بَيْنَكُمْ بِالْبَاطِلِ وَتُدْلُوا بِهَا إِلَى الْحُكَّامِ لِتَأْكُلُوا فَرِيقًا مِنْ أَمْوَالِ النَّاسِ بِالْإِثْمِ وَأَنْتُمْ تَعْلَمُونَ</div>
+  <div class="translation">তোমরা একে অপরের সম্পদ অন্যায়ভাবে ভক্ষণ করো না এবং জেনেশুনে পাপের মাধ্যমে মানুষের সম্পদের কিছু অংশ গ্রাস করার জন্য তা বিচারকদের কাছে পেশ করো না।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:১৮৮]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। হালাল উপার্জনের গুরুত্ব</div>
+  <div class="hadith-arabic">طَلَبُ كَسْبِ الْحَلَالِ فَرِيضَةٌ بَعْدَ الْفَرِيضَةِ</div>
+  <div class="hadith-translation">হালাল উপার্জনের চেষ্টা করা ফরযের পরে ফরয।</div>
+  <div class="hadith-reference">[বায়হাকী, শুয়াবুল ঈমান ৪/১৮৫, হাদিস: ৫১২৮]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। হালাল খাদ্যের প্রভাব</div>
+  <div class="hadith-arabic">مَنْ أَكَلَ الْحَلَالَ أَرْبَعِينَ يَوْمًا، نَوَّرَ اللَّهُ قَلْبَهُ، وَأَجْرَى حِكْمَتَهُ عَلَى لِسَانِهِ</div>
+  <div class="hadith-translation">যে ব্যক্তি চল্লিশ দিন হালাল খাদ্য গ্রহণ করে, আল্লাহ তার হৃদয়কে আলোকিত করেন এবং তার জিহ্বায় প্রজ্ঞা প্রবাহিত করেন।</div>
+  <div class="hadith-reference">[তাবারানী, মুজামুল কাবীর, হাদিস: ১০৩৪১]</div>
+</div>
+
+<div class="section-title">৪২. সুদ (রিবা) নিষিদ্ধকরণ</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">الَّذِينَ يَأْكُلُونَ الرِّبَا لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ الَّذِي يَتَخَبَّطُهُ الشَّيْطَانُ مِنَ الْمَسِّ</div>
+  <div class="translation">যারা সুদ খায়, তারা শয়তানের স্পর্শে পাগলের মতো দাঁড়ায়।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৭৫]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ ۗ وَاللَّهُ لَا يُحِبُّ كُلَّ كَفَّارٍ أَثِيمٍ</div>
+  <div class="translation">আল্লাহ সুদকে ধ্বংস করেন এবং দানকে বৃদ্ধি করেন। আর আল্লাহ কোনো অবাধ্য পাপীকে ভালোবাসেন না।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৭৬]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। সুদের উপর লানত</div>
+  <div class="hadith-arabic">لَعَنَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ آكِلَ الرِّبَا وَمُؤْكِلَهُ وَكَاتِبَهُ وَشَاهِدَيْهِ وَقَالَ هُمْ سَوَاءٌ</div>
+  <div class="hadith-translation">রাসূলুল্লাহ (সা.) সুদ গ্রহণকারী, সুদ প্রদানকারী, এর লেখক এবং এর সাক্ষীদের উপর লানত করেছেন এবং বলেছেন, তারা সবাই সমান।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৫৯৮]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। সুদের ভয়াবহতা</div>
+  <div class="hadith-arabic">دِرْهَمُ رِبًا يَأْكُلُهُ الرَّجُلُ وَهُوَ يَعْلَمُ أَشَدُّ مِنْ سِتَّةٍ وَثَلَاثِينَ زِنًا</div>
+  <div class="hadith-translation">এক দিরহাম সুদ জেনেশুনে খাওয়া ছত্রিশবার ব্যভিচারের চেয়েও মারাত্মক।</div>
+  <div class="hadith-reference">[মুসনাদ আহমদ, হাদিস: ২২৫৩৬]</div>
+</div>
+
+<div class="section-title">৪৩. ব্যবসায়ের নৈতিকতা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নিসা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا أَمْوَالَكُمْ بَيْنَكُمْ بِالْبَاطِلِ إِلَّا أَنْ تَكُونَ تِجَارَةً عَنْ تَرَاضٍ مِنْكُمْ</div>
+  <div class="translation">হে ঈমানদারগণ! তোমরা একে অপরের সম্পদ অন্যায়ভাবে ভক্ষণ করো না, তবে যদি তা পারস্পরিক সম্মতির ভিত্তিতে ব্যবসা হয়।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:২৯]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-আনআম</div>
+  <div class="arabic-verse">وَأَوْفُوا الْكَيْلَ وَالْمِيزَانَ بِالْقِسْطِ ۖ لَا نُكَلِّفُ نَفْسًا إِلَّا وُسْعَهَا</div>
+  <div class="translation">ওজন ও পরিমাপ পূর্ণ ন্যায়ের সাথে পূরণ করো; আমি কাউকে তার সাধ্যের বাইরে বোঝা চাপাই না।</div>
+  <div class="reference">[সূরা আল-আনআম ৬:১৫২]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। বিক্রয় চুক্তি</div>
+  <div class="hadith-arabic">الْبَيِّعَانِ بِالْخِيَارِ مَا لَمْ يَتَفَرَّقَا، فَإِذَا تَفَرَّقَا بَعْدَ أَنْ يَتَبَايَعَا فَقَدْ تَمَّ الْبَيْعُ</div>
+  <div class="hadith-translation">ক্রেতা ও বিক্রেতা উভয়েরই পছন্দের অধিকার থাকে যতক্ষণ তারা পৃথক না হয়। যখন তারা বিক্রয় সম্পন্ন করে পৃথক হয়, তখন বিক্রয় চূড়ান্ত হয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ২১১০]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। প্রতারণার নিষেধ</div>
+  <div class="hadith-arabic">مَنْ غَشَّنَا فَلَيْسَ مِنَّا</div>
+  <div class="hadith-translation">যে আমাদের সাথে প্রতারণা করে, সে আমাদের মধ্যে নয়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১০১]</div>
+</div>
+<div class="section-title">৪৪. ঋণ ও তার পরিশোধ</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا تَدَايَنْتُمْ بِدَيْنٍ إِلَىٰ أَجَلٍ مُسَمًّى فَاكْتُبُوهُ</div>
+  <div class="translation">হে ঈমানদারগণ! যখন তোমরা নির্দিষ্ট মেয়াদে ঋণের লেনদেন কর, তা লিখে রাখ।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৮২]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আত-তাওবা</div>
+  <div class="arabic-verse">إِنَّمَا الصَّدَقَاتُ لِلْفُقَرَاءِ وَالْمَسَاكِينِ وَالْعَامِلِينَ عَلَيْهَا وَالْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِي الرِّقَابِ وَالْغَارِمِينَ</div>
+  <div class="translation">নিশ্চয়ই যাকাত কেবল ফকির, মিসকিন, যাকাত সংগ্রহকারী, যাদের হৃদয় আকৃষ্ট করা প্রয়োজন, দাসমুক্তি এবং ঋণগ্রস্তদের জন্য।</div>
+  <div class="reference">[সূরা আত-তাওবা ৯:৬০]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। ঋণ পরিশোধের নিয়ত</div>
+  <div class="hadith-arabic">مَنْ أَخَذَ أَمْوَالَ النَّاسِ يُرِيدُ أَدَاءَهَا أَدَّى اللَّهُ عَنْهُ، وَمَنْ أَخَذَ يُرِيدُ إِتْلَافَهَا أَتْلَفَهُ اللَّهُ</div>
+  <div class="hadith-translation">যে ব্যক্তি মানুষের সম্পদ নেয় পরিশোধের নিয়তে, আল্লাহ তার পক্ষে পরিশোধ করেন। আর যে নষ্ট করার নিয়তে নেয়, আল্লাহ তাকে ধ্বংস করেন।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ২৩৮৭]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। ঋণ পরিশোধ না হওয়া পর্যন্ত</div>
+  <div class="hadith-arabic">نَفْسُ الْمُؤْمِنِ مُعَلَّقَةٌ بِدَيْنِهِ حَتَّى يُقْضَى عَنْهُ</div>
+  <div class="hadith-translation">মুমিনের আত্মা তার ঋণের সাথে সংযুক্ত থাকে যতক্ষণ না তা পরিশোধ করা হয়।</div>
+  <div class="hadith-reference">[তিরমিযী, হাদিস: ১০৭৮]</div>
+</div>
+<div class="section-title">৪৫. ক্রয়-বিক্রয়ের নিয়ম</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا</div>
+  <div class="translation">আল্লাহ ব্যবসাকে হালাল করেছেন এবং সুদকে হারাম করেছেন।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৭৫]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-মুতাফফিফিন</div>
+  <div class="arabic-verse">وَيْلٌ لِلْمُطَفِّفِينَ ۝ الَّذِينَ إِذَا اكْتَالُوا عَلَى النَّاسِ يَسْتَوْفُونَ ۝ وَإِذَا كَالُوهُمْ أَوْ وَزَنُوهُمْ يُخْسِرُونَ</div>
+  <div class="translation">ধ্বংস তাদের জন্য যারা পরিমাপে কম দেয়! যখন তারা অন্যের কাছ থেকে পরিমাপ নেয়, পূর্ণ নেয়, আর যখন অন্যকে পরিমাপ বা ওজন দেয়, তখন কম দেয়।</div>
+  <div class="reference">[সূরা আল-মুতাফফিফিন ৮৩:১-৩]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। দ্বৈত শর্তযুক্ত বিক্রয়</div>
+  <div class="hadith-arabic">مَنْ بَاعَ بَيْعَتَيْنِ فِي بَيْعَةٍ فَلَهُ أَدْنَاهُمَا أَوِ الرِّبَا</div>
+  <div class="hadith-translation">যে ব্যক্তি একটি বিক্রয়ে দুটি শর্তযুক্ত বিক্রয় করে, তার জন্য ন্যূনতম মূল্য বৈধ, নতুবা তা সুদ হবে।</div>
+  <div class="hadith-reference">[সুনান আবু দাউদ, হাদিস: ৩৪৬১]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। সোনার বিনিময় নিয়ম</div>
+  <div class="hadith-arabic">لَا تَبِيعُوا الذَّهَبَ بِالذَّهَبِ إِلَّا مِثْلًا بِمِثْلٍ وَلَا تُشِفُّوا بَعْضَهَا عَلَى بَعْضٍ</div>
+  <div class="hadith-translation">সোনাকে সোনার সাথে সমান পরিমাণে বিনিময় করো, একটিকে অপরটির উপর প্রাধান্য দিও না।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ২১৭৭]</div>
+</div>
+<div class="section-title">৪৬. সম্পদের বণ্টন</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আয-যারিয়াত</div>
+  <div class="arabic-verse">وَفِي أَمْوَالِهِمْ حَقٌّ لِلسَّائِلِ وَالْمَحْرُومِ</div>
+  <div class="translation">তাদের সম্পদে প্রার্থী ও বঞ্চিতদের জন্য নির্দিষ্ট অংশ রয়েছে।</div>
+  <div class="reference">[সূরা আয-যারিয়াত ৫১:১৯]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-হাশর</div>
+  <div class="arabic-verse">لِيَكُونَ دُولَةً بَيْنَ الْأَغْنِيَاءِ مِنْكُمْ</div>
+  <div class="translation">যাতে সম্পদ তোমাদের মধ্যে ধনীদের মধ্যে কুক্ষিগত না হয়।</div>
+  <div class="reference">[সূরা আল-হাশর ৫৯:৭]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। নিয়ামতের প্রভাব</div>
+  <div class="hadith-arabic">إِنَّ اللَّهَ يُحِبُّ أَنْ يُرَى أَثَرُ نِعْمَتِهِ عَلَى عَبْدِهِ</div>
+  <div class="hadith-translation">নিশ্চয়ই আল্লাহ ভালোবাসেন যে তাঁর নিয়ামতের প্রভাব তাঁর বান্দার উপর প্রকাশিত হয়।</div>
+  <div class="hadith-reference">[তিরমিযী, হাদিস: ২৮১৯]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। মানুষের উপকারিতা</div>
+  <div class="hadith-arabic">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
+  <div class="hadith-translation">মানুষের মধ্যে সর্বোত্তম হলো সেই ব্যক্তি যে মানুষের জন্য সবচেয়ে উপকারী।</div>
+  <div class="hadith-reference">[মুসনাদ আহমদ, হাদিস: ১৯৭১৮]</div>
+</div>
+<div class="section-title">৪৭. মিরাথ (উত্তরাধিকার)</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নিসা</div>
+  <div class="arabic-verse">يُوصِيكُمُ اللَّهُ فِي أَوْلَادِكُمْ ۖ لِلذَّكَرِ مِثْلُ حَظِّ الْأُنْثَيَيْنِ</div>
+  <div class="translation">আল্লাহ তোমাদেরকে তোমাদের সন্তানদের সম্পর্কে নির্দেশ দেন: পুরুষের জন্য দুই নারীর অংশের সমপরিমাণ।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১১]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">وَلِكُلٍّ جَعَلْنَا مَوَالِيَ مِمَّا تَرَكَ الْوَالِدَانِ وَالْأَقْرَبُونَ</div>
+  <div class="translation">প্রত্যেকের জন্য আমি উত্তরাধিকারী নির্ধারণ করেছি, যা পিতা-মাতা ও নিকটাত্মীয়রা রেখে যায়।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:৩৩]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। মিরাথ শিখার গুরুত্ব</div>
+  <div class="hadith-arabic">تَعَلَّمُوا الْفَرَائِضَ وَعَلِّمُوهَا فَإِنَّهَا نِصْفُ الْعِلْمِ</div>
+  <div class="hadith-translation">মিরাথের বিধান শিখো এবং তা শিক্ষা দাও, কারণ এটি জ্ঞানের অর্ধেক।</div>
+  <div class="hadith-reference">[ইবনু মাজাহ, হাদিস: ২৭১০]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। মুসলিম ও কাফিরের উত্তরাধিকার</div>
+  <div class="hadith-arabic">لَا يَرِثُ الْمُسْلِمُ الْكَافِرَ وَلَا الْكَافِرُ الْمُسْلِمَ</div>
+  <div class="hadith-translation">মুসলিম কাফিরের উত্তরাধিকারী হবে না, এবং কাফিরও মুসলিমের উত্তরাধিকারী হবে না।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৬৭৬৪]</div>
+</div>
+
+  <div class="section-title">৪৮. ওয়াকফ ও দান</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-ইমরান</div>
+  <div class="arabic-verse">لَنْ تَنَالُوا الْبِرَّ حَتَّىٰ تُنْفِقُوا مِمَّا تُحِبُّونَ</div>
+  <div class="translation">তোমরা কখনো পূর্ণ নেকি লাভ করবে না, যতক্ষণ না তোমরা তোমাদের প্রিয় জিনিস থেকে ব্যয় করবে।</div>
+  <div class="reference">[সূরা আল-ইমরান ৩:৯২]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আল-বাকারা</div>
+  <div class="arabic-verse">مَثَلُ الَّذِينَ يُنْفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنْبَتَتْ سَبْعَ سَنَابِلَ</div>
+  <div class="translation">যারা আল্লাহর পথে তাদের সম্পদ ব্যয় করে, তাদের উপমা এমন একটি বীজের মতো, যা সাতটি শিষ জন্মায়।</div>
+  <div class="reference">[সূরা আল-বাকারা ২:২৬১]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। স্থায়ী দানের ফজিলত</div>
+  <div class="hadith-arabic">إِذَا مَاتَ الْإِنْسَانُ انْقَطَعَ عَمَلُهُ إِلَّا مِنْ ثَلَاثٍ: صَدَقَةٌ جَارِيَةٌ، أَوْ عِلْمٌ يُنْتَفَعُ بِهِ، أَوْ وَلَدٌ صَالِحٌ يَدْعُو لَهُ</div>
+  <div class="hadith-translation">মানুষের মৃত্যুর পর তার আমল বন্ধ হয়ে যায়, তবে তিনটি বিষয় ছাড়া: স্থায়ী দান (ওয়াকফ), উপকারী জ্ঞান, এবং সৎ সন্তান যে তার জন্য দোয়া করে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৬৩১]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। দানকারীর জন্য ফেরেশতার দোয়া</div>
+  <div class="hadith-arabic">مَا مِنْ يَوْمٍ يُصْبِحُ الْعِبَادُ فِيهِ إِلَّا مَلَكَانِ يَنْزِلَانِ، فَيَقُولُ أَحَدُهُمَا: اللَّهُمَّ أَعْطِ مُنْفِقًا خَلَفًا</div>
+  <div class="hadith-translation">প্রতিদিন সকালে দুজন ফেরেশতা অবতরণ করেন, তাদের একজন বলেন: হে আল্লাহ! দানকারীকে উত্তম প্রতিদান দাও।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ১৪৪২]</div>
+</div>
+<div class="section-title">৪৯. অর্থনৈতিক ন্যায়বিচার</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আন-নাহল</div>
+  <div class="arabic-verse">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ</div>
+  <div class="translation">নিশ্চয়ই আল্লাহ ন্যায়বিচার, ইহসান (উত্তম আচরণ) এবং নিকটাত্মীয়দের প্রতি দান করার নির্দেশ দেন।</div>
+  <div class="reference">[সূরা আন-নাহল ১৬:৯০]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ</div>
+  <div class="translation">হে ঈমানদারগণ! ন্যায়বিচারের সাথে দৃঢ়ভাবে প্রতিষ্ঠিত হও এবং আল্লাহর জন্য সাক্ষ্যদানকারী হও।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:১৩৫]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। ন্যায়বিচারকারীদের মর্যাদা</div>
+  <div class="hadith-arabic">إِنَّ الْمُقْسِطِينَ عِنْدَ اللَّهِ عَلَى مَنَابِرَ مِنْ نُورٍ، الَّذِينَ يَعْدِلُونَ فِي حُكْمِهِمْ وَأَهْلِيهِمْ وَمَا وُلُّوا</div>
+  <div class="hadith-translation">নিশ্চয়ই ন্যায়বিচারকারীরা আল্লাহর নিকট নূরের মিম্বরে থাকবে, যারা তাদের বিচার, পরিবার এবং দায়িত্বে ন্যায়বিচার করে।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১৮২৭]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। অন্যায় জমি গ্রহণের শাস্তি</div>
+  <div class="hadith-arabic">مَنْ أَخَذَ مِنَ الْأَرْضِ بِغَيْرِ حَقِّهِ خُسِفَ بِهِ يَوْمَ الْقِيَامَةِ إِلَى سَبْعِ أَرَضِينَ</div>
+  <div class="hadith-translation">যে ব্যক্তি অন্যায়ভাবে জমি গ্রহণ করে, কিয়ামতের দিন তাকে সাত তল পর্যন্ত মাটিতে ধসিয়ে দেওয়া হবে।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ৩১৯]</div>
+</div>
+
+  <div class="section-title">৫০. বাজারে সততা</div>
+
+<!-- আয়াত ১ -->
+<div class="verse-container">
+  <div class="verse-title">১। সূরা আল-মুতাফফিফিন</div>
+  <div class="arabic-verse">وَيْلٌ لِلْمُطَفِّفِينَ ۝ الَّذِينَ إِذَا اكْتَالُوا عَلَى النَّاسِ يَسْتَوْفُونَ ۝ وَإِذَا كَالُوهُمْ أَوْ وَزَنُوهُمْ يُخْسِرُونَ</div>
+  <div class="translation">ধ্বংস তাদের জন্য যারা পরিমাপে কম দেয়! যখন তারা অন্যের কাছ থেকে পরিমাপ নেয়, পূর্ণ নেয়, আর যখন অন্যকে পরিমাপ বা ওজন দেয়, তখন কম দেয়।</div>
+  <div class="reference">[সূরা আল-মুতাফফিফিন ৮৩:১-৩]</div>
+</div>
+
+<!-- আয়াত ২ -->
+<div class="verse-container">
+  <div class="verse-title">২। সূরা আন-নিসা</div>
+  <div class="arabic-verse">يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا أَمْوَالَكُمْ بَيْنَكُمْ بِالْبَاطِلِ إِلَّا أَنْ تَكُونَ تِجَارَةً عَنْ تَرَاضٍ مِنْكُمْ</div>
+  <div class="translation">হে ঈমানদারগণ! তোমরা একে অপরের সম্পদ অন্যায়ভাবে ভক্ষণ করো না, তবে যদি তা পারস্পরিক সম্মতির ভিত্তিতে ব্যবসা হয়।</div>
+  <div class="reference">[সূরা আন-নিসা ৪:২৯]</div>
+</div>
+
+<!-- হাদিস ১ -->
+<div class="hadith-container">
+  <div class="hadith-title">১। প্রতারণার নিষেধ</div>
+  <div class="hadith-arabic">مَنْ غَشَّنَا فَلَيْسَ مِنَّا</div>
+  <div class="hadith-translation">যে আমাদের সাথে প্রতারণা করে, সে আমাদের মধ্যে নয়।</div>
+  <div class="hadith-reference">[সহীহ মুসলিম, হাদিস: ১০১]</div>
+</div>
+
+<!-- হাদিস ২ -->
+<div class="hadith-container">
+  <div class="hadith-title">২। বিক্রয় চুক্তির স্বাধীনতা</div>
+  <div class="hadith-arabic">الْبَيِّعَانِ بِالْخِيَارِ مَا لَمْ يَتَفَرَّقَا، فَإِذَا تَفَرَّقَا بَعْدَ أَنْ يَتَبَايَعَا فَقَدْ تَمَّ الْبَيْعُ</div>
+  <div class="hadith-translation">ক্রেতা ও বিক্রেতা উভয়েরই পছন্দের অধিকার থাকে যতক্ষণ তারা পৃথক না হয়। যখন তারা বিক্রয় সম্পন্ন করে পৃথক হয়, তখন বিক্রয় চূড়ান্ত হয়।</div>
+  <div class="hadith-reference">[সহীহ বুখারী, হাদিস: ২১১০]</div>
+</div>
+
+  
+<!-- Zoom Controls -->
+<div class="zoom-controls zoom-arabic">
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="in">＋</button>
+  <button data-target=".arabic-verse, .hadith-arabic" data-action="out">－</button>
+</div>
+
+<div class="zoom-controls zoom-bangla">
+  <button data-target=".translation, .hadith-translation" data-action="in">＋</button>
+  <button data-target=".translation, .hadith-translation" data-action="out">－</button>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('button[data-target]');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelectorAll(btn.getAttribute('data-target'));
+    const action = btn.getAttribute('data-action');
+    target.forEach(el => {
+      // WebView-র জন্য ফন্ট সাইজ ফিক্সড ইনলাইন থেকে নাও
+      let size = parseFloat(el.style.fontSize);
+      if(isNaN(size)) {
+        size = parseFloat(window.getComputedStyle(el).fontSize);
+      }
+      if(action === 'in') el.style.fontSize = (size + 2) + 'px';
+      if(action === 'out') el.style.fontSize = (size - 2) + 'px';
+    });
+  });
+});
+</script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyAx_Yl-Qdd5RABXAxBwwByNW0dnrcBkpV0",
+    authDomain: "dawah-352eb.firebaseapp.com",
+    databaseURL: "https://dawah-352eb-default-rtdb.firebaseio.com",
+    projectId: "dawah-352eb",
+    storageBucket: "dawah-352eb.appspot.com",
+    messagingSenderId: "129702043179",
+    appId: "1:129702043179:web:6318cd5c1b3c200810946e",
+    measurementId: "G-Z0E49NGVDG"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Visitor Counter (গ্লোবাল, ডেইলি চেক)
+  const visitorRef = db.ref("visitorCount");
+  const today = new Date().toDateString();
+  if (localStorage.getItem('lastVisit') !== today) {
+    visitorRef.transaction(current => (current || 0) + 1);
+    localStorage.setItem('lastVisit', today);
+  }
+
+  visitorRef.on("value", snapshot => {
+    const count = snapshot.val();
+    const visitorEl = document.getElementById("visitor-count");
+    if (visitorEl) visitorEl.innerText = "ভিজিটরস: " + count;  // এটা skip হবে, কারণ ID নেই
+  });
+
+  // Online User Tracker (গ্লোবাল, userId পার্সিস্টেন্ট)
+  const onlineRef = db.ref("onlineUsers");
+  let userId = localStorage.getItem('dawahUserId');
+  if (!userId) {
+    userId = "user_" + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('dawahUserId', userId);
+  }
+  onlineRef.child(userId).set(true);
+  onlineRef.child(userId).onDisconnect().remove();
+
+  onlineRef.on("value", snapshot => {
+    const onlineCount = snapshot.numChildren();
+    const onlineEl = document.getElementById("online-count");
+    if (onlineEl) onlineEl.innerText = "অনলাইনে: " + onlineCount + " জন";  // এটা skip হবে
+  });
+</script>
+
+</body>
+</html>
