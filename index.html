@@ -65,6 +65,13 @@
   .date-widget {
     margin-top: 10px;
     margin-bottom: -5px;
+    min-height: 60px; /* উইজেট না লোড হলে জায়গা রাখতে */
+  }
+
+  .date-widget-fallback {
+    font-size: 16px;
+    color: #AADDEE;
+    display: none; /* ডিফল্টভাবে লুকানো */
   }
 
   .scrolling-text {
@@ -185,6 +192,54 @@
     font-size: 16px;
     color: #00FFFF;
   }
+
+  /* পপআপ স্টাইল */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #046868, #022B2B);
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    z-index: 1000; /* z-index কমানো হয়েছে */
+    max-width: 90%;
+    width: 300px;
+    text-align: center;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+  }
+
+  .popup-content {
+    margin-bottom: 15px;
+  }
+
+  .popup-close {
+    background: #00FFFF;
+    color: #033E3E;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .popup-close:hover {
+    background: #0AAFAF;
+  }
+
+  @media (max-width: 600px) {
+    .popup {
+      width: 80%;
+      font-size: 14px;
+      padding: 15px;
+    }
+  }
 </style>
 </head>
 
@@ -196,9 +251,12 @@
   <div class="app-subtitle">আপনার কণ্ঠের প্রস্তুতি</div>
 
   <div class="date-widget">
-    <iframe src="https://abubokarbd.github.io/tools/bangla-hijri-eng-date-widget.html" 
+    <iframe id="dateWidget" src="https://abubokarbd.github.io/tools/bangla-hijri-eng-date-widget.html" 
             style="width:100%; height:60px; border:none; background:transparent; overflow:hidden;" 
-            scrolling="no" loading="lazy"></iframe>
+            scrolling="no"></iframe>
+    <div id="dateWidgetFallback" class="date-widget-fallback">
+      তারিখ লোড করতে ব্যর্থ। দয়া করে পুনরায় চেষ্টা করুন।
+    </div>
   </div>
 
   <div class="scrolling-text">
@@ -222,7 +280,7 @@
 
   <h2>খুতবাহ ও দারস</h2>
   <div class="button-row">
-    <a href="khutba-list.html" class="button">খুতবা <br> তালিকা</a>
+    <a href="khutba-list.html" class="button">খুতবা <br>তালিকা</a>
     <a href="on-test-page.html" class="button">দারসুল<br>কুরআন</a>
     <a href="on-test-page.html" class="button">দারসুল<br>হাদিস</a>
   </div>
@@ -245,10 +303,19 @@
     </div>
   </footer>
 
+  <!-- পপআপ HTML -->
+  <div id="sharePopup" class="popup">
+    <div class="popup-content">
+      এই ব্রাউজারে শেয়ার ফিচার সমর্থিত নয়।<br>লিঙ্ক কপি হয়েছে!
+    </div>
+    <button class="popup-close" onclick="closePopup()">বন্ধ করুন</button>
+  </div>
+
   <!-- Loader Script -->
   <script>
     window.addEventListener('load', function() {
       document.getElementById('loader').style.display = 'none';
+      checkIframeLoad(); // উইজেট লোড চেক করা
     });
   </script>
 
@@ -275,7 +342,7 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
-    // Visitor Counter (গ্লোবাল, ডেইলি চেক)
+    // Visitor Counter
     const visitorRef = db.ref("visitorCount");
     const today = new Date().toDateString();
     if (localStorage.getItem('lastVisit') !== today) {
@@ -289,7 +356,7 @@
       if (visitorEl) visitorEl.innerText = "ভিজিটরস: " + count;
     });
 
-    // Online User Tracker (গ্লোবাল, userId পার্সিস্টেন্ট)
+    // Online User Tracker
     const onlineRef = db.ref("onlineUsers");
     let userId = localStorage.getItem('dawahUserId');
     if (!userId) {
@@ -305,7 +372,22 @@
       if (onlineEl) onlineEl.innerText = "অনলাইনে: " + onlineCount + " জন";
     });
 
-    // App Share Functionality
+    // উইজেট লোড চেক করার ফাংশন
+    function checkIframeLoad() {
+      const iframe = document.getElementById('dateWidget');
+      const fallback = document.getElementById('dateWidgetFallback');
+      iframe.addEventListener('load', () => {
+        console.log('উইজেট লোড হয়েছে');
+      });
+      setTimeout(() => {
+        if (!iframe.contentWindow || iframe.contentWindow.document.body.innerHTML.includes('তারিখ লোড হচ্ছে...')) {
+          iframe.style.display = 'none';
+          fallback.style.display = 'block';
+        }
+      }, 5000); // ৫ সেকেন্ড পর চেক
+    }
+
+    // App Share Functionality with Custom Popup
     async function shareApp() {
       const shareUrl = 'https://drive.google.com/file/d/1N3HbNdnuFohRSyaSd_wd05aNBJVdCWBq/view';
       const shareData = {
@@ -329,10 +411,32 @@
           console.log('শেয়ার সফল হয়েছে');
         } catch (err) {
           console.error('শেয়ার করতে সমস্যা: ', err);
-          alert('শেয়ার করুন এই লিঙ্ক: ' + shareUrl);
+          showPopup();
         }
       } else {
-        alert('এই ব্রাউজারে শেয়ার ফিচার সমর্থিত নয়। লিঙ্ক কপি হয়েছে: ' + shareUrl);
+        showPopup();
+      }
+    }
+
+    // পপআপ দেখানোর ফাংশন
+    function showPopup() {
+      const popup = document.getElementById('sharePopup');
+      if (popup) {
+        popup.style.display = 'block';
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 3000); // ৩ সেকেন্ড পর বন্ধ
+      } else {
+        // ফলব্যাক অ্যালার্ট
+        alert('লিঙ্ক কপি হয়েছে: এইবার অন্যদের সাথে শেয়ার করুন।  ' + 'https://drive.google.com/file/d/1N3HbNdnuFohRSyaSd_wd05aNBJVdCWBq/view');
+      }
+    }
+
+    // পপআপ বন্ধ করার ফাংশন
+    function closePopup() {
+      const popup = document.getElementById('sharePopup');
+      if (popup) {
+        popup.style.display = 'none';
       }
     }
   </script>
