@@ -21,226 +21,241 @@
 
   <!-- Hind Siliguri ফন্ট -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Hind Siliguri', sans-serif;
-    background-color: #033E3E;
-    color: #FFFFFF;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
 
-  #loader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: #033E3E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #033E3E;
+      color: #FFFFFF;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-  .container {
-    max-width: 960px;
-    margin: auto;
-    padding: 20px;
-  }
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #033E3E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
 
-  .app-title {
-    font-size: 48px;
-    margin-top: 10px;
-    color: #00FFFF;
-    font-weight: bold;
-  }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
 
-  .app-subtitle {
-    font-size: 20px;
-    color: #AADDEE;
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
+    .app-title {
+      font-size: 48px;
+      margin-top: 10px;
+      color: #00FFFF;
+      font-weight: bold;
+    }
 
-  .date-widget {
-    margin-top: 10px;
-    margin-bottom: -5px;
-    min-height: 60px; /* উইজেট না লোড হলে জায়গা রাখতে */
-  }
+    .app-subtitle {
+      font-size: 20px;
+      color: #AADDEE;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
 
-  .date-widget-fallback {
-    font-size: 16px;
-    color: #AADDEE;
-    display: none; /* ডিফল্টভাবে লুকানো */
-  }
+    .date-widget {
+      margin-top: 10px;
+      margin-bottom: -5px;
+      min-height: 60px;
+    }
 
-  .scrolling-text {
-    font-size: 18px;
-    color: #AADDEE;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-    background: rgba(0,0,0,0.2);
-    padding: 10px 0;
-  }
+    .date-widget-fallback {
+      font-size: 16px;
+      color: #AADDEE;
+      display: none;
+    }
 
-  .scrolling-text span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 25s linear infinite;
-  }
-
-  @keyframes scroll-left {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }
-
-  .button-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  a.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background: linear-gradient(145deg, #046868, #022B2B);
-    color: white;
-    padding: 10px 8px;
-    border-radius: 14px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    line-height: 1.4;
-  }
-
-  a.button:hover {
-    background: linear-gradient(145deg, #0AAFAF, #055050);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-  }
-
-  a.button:active {
-    transform: scale(0.97);
-  }
-
-  @media (max-width: 600px) {
-    a.button {
+    .scrolling-text {
       font-size: 18px;
-      padding: 14px 8px;
-      min-height: 90px;
+      color: #AADDEE;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      padding: 10px 0;
     }
-    
+
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
     .button-row {
-      grid-template-columns: repeat(3, minmax(80px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    a.button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 10px 8px;
+      border-radius: 14px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      line-height: 1.4;
+    }
+
+    a.button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    }
+
+    a.button:active {
+      transform: scale(0.97);
+    }
+
+    @media (max-width: 600px) {
+      a.button {
+        font-size: 18px;
+        padding: 14px 8px;
+        min-height: 90px;
+      }
+      
+      .button-row {
+        grid-template-columns: repeat(3, minmax(80px, 1fr));
+        gap: 10px;
+      }
+    }
+
+    .about-button {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      width: 120px;
+      text-align: center;
+    }
+
+    .about-button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    }
+
+    .about-button:active {
+      transform: scale(0.97);
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: center;
       gap: 10px;
+      margin-bottom: 10px;
     }
-  }
 
-  .about-button {
-    display: inline-block;
-    text-decoration: none;
-    background: linear-gradient(145deg, #046868, #022B2B);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    margin-bottom: 10px;
-  }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #00FFFF;
+      border-radius: 3px;
+    }
 
-  .about-button:hover {
-    background: linear-gradient(145deg, #0AAFAF, #055050);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
-  }
-
-  .about-button:active {
-    transform: scale(0.97);
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #00FFFF;
-    border-radius: 3px;
-  }
-
-  footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #CCCCCC;
-  }
-
-  footer a {
-    color: #00FFFF;
-    text-decoration: none;
-  }
-
-  .counter-row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #00FFFF;
-  }
-
-  /* পপআপ স্টাইল */
-  .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(145deg, #046868, #022B2B);
-    color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-    z-index: 1000; /* z-index কমানো হয়েছে */
-    max-width: 90%;
-    width: 300px;
-    text-align: center;
-    font-family: 'Hind Siliguri', sans-serif;
-    font-size: 16px;
-  }
-
-  .popup-content {
-    margin-bottom: 15px;
-  }
-
-  .popup-close {
-    background: #00FFFF;
-    color: #033E3E;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.3s ease;
-  }
-
-  .popup-close:hover {
-    background: #0AAFAF;
-  }
-
-  @media (max-width: 600px) {
-    .popup {
-      width: 80%;
+    footer {
+      margin-top: 20px;
       font-size: 14px;
-      padding: 15px;
+      color: #CCCCCC;
     }
-  }
-</style>
+
+    footer a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+
+    .counter-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #00FFFF;
+    }
+
+    /* পপআপ স্টাইল */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      z-index: 2000; /* z-index বাড়ানো হয়েছে */
+      max-width: 90%;
+      width: 300px;
+      text-align: center;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 16px;
+    }
+
+    .popup-content {
+      margin-bottom: 15px;
+    }
+
+    .popup-close {
+      background: #00FFFF;
+      color: #033E3E;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .popup-close:hover {
+      background: #0AAFAF;
+    }
+
+    @media (max-width: 600px) {
+      .popup {
+        width: 80%;
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      .about-button {
+        width: 100px;
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -260,7 +275,7 @@
   </div>
 
   <div class="scrolling-text">
-    <span> App update: এপ্সে কিছু আপডেট করা হয়েছে, আপনার ডিভাইসের setting > apps > Dawah > Storage থেকে Data এবংCache ক্লিয়ার করুন।   </span>
+    <span> App update: এপ্সে কিছু আপডেট করা হয়েছে, আপনার ডিভাইসের setting > apps > Dawah > Storage থেকে Data এবং Cache ক্লিয়ার করুন।   </span>
   </div>
 
   <h2>সংক্ষিপ্ত আয়াত তালিকা</h2>
@@ -293,13 +308,12 @@
     <a href="dua.html" class="button">অর্থসহ <br>নামাজের <br>দোয়া</a>
     <a href="sura.html" class="button">কুরআনের <br>ছোট <br>সুরা</a>
   </div>
- <h2> দাওয়াহ ফোরাম </h2> 
-  <div class="button-row">
-    <a href="comment-forum.html" class="button"> ফোরামে <br> মন্তব্য <br> লিখুন </a>
 
-  </div>
   <footer>
-    <a href="#" class="about-button" onclick="shareApp(); return false;">App Share</a>
+    <div class="footer-buttons">
+      <a href="#" class="about-button" onclick="shareApp(); return false;">App Share</a>
+      <a href="comment-forum.html" class="about-button">ফোরাম</a>
+    </div>
     <p>
       © ২০২৫ দাওয়াহ | ডেভেলপার: <a href="https://abubokarbd.github.io/kankirhat/deve.html">মুহা আবুবকর ছিদ্দিক</a>
     </p>
@@ -321,7 +335,7 @@
   <script>
     window.addEventListener('load', function() {
       document.getElementById('loader').style.display = 'none';
-      checkIframeLoad(); // উইজেট লোড চেক করা
+      checkIframeLoad();
     });
   </script>
 
@@ -390,7 +404,7 @@
           iframe.style.display = 'none';
           fallback.style.display = 'block';
         }
-      }, 5000); // ৫ সেকেন্ড পর চেক
+      }, 5000);
     }
 
     // App Share Functionality with Custom Popup
@@ -402,7 +416,6 @@
         url: shareUrl
       };
 
-      // Copy the link to clipboard
       try {
         await navigator.clipboard.writeText(shareUrl);
         console.log('লিঙ্ক কপি হয়েছে');
@@ -410,7 +423,6 @@
         console.error('কপি করতে সমস্যা: ', err);
       }
 
-      // Trigger share dialog
       if (navigator.share) {
         try {
           await navigator.share(shareData);
@@ -431,9 +443,8 @@
         popup.style.display = 'block';
         setTimeout(() => {
           popup.style.display = 'none';
-        }, 3000); // ৩ সেকেন্ড পর বন্ধ
+        }, 3000);
       } else {
-        // ফলব্যাক অ্যালার্ট
         alert('লিঙ্ক কপি হয়েছে: এইবার অন্যদের সাথে শেয়ার করুন।  ' + 'https://drive.google.com/file/d/1N3HbNdnuFohRSyaSd_wd05aNBJVdCWBq/view');
       }
     }
