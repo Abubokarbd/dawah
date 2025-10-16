@@ -6,11 +6,11 @@
   <title>দাওয়াহ - কমেন্ট ফোরাম</title>
 
   <!-- SEO & Social Meta -->
-  <meta name="description" content="দাওয়াহ অ্যাপ: ইসলামী বিষয়ে কমেন্ট ফোরাম">
+  <meta name="description" content="দাওয়াহ অ্যাপ: ইসলামী বিষয়ে কমেন্ট ফোরাম">
   <meta name="keywords" content="দাওয়াহ, ইসলাম, কমেন্ট, ফোরাম, বাংলা">
   <meta name="author" content="Abubokar">
   <meta property="og:title" content="দাওয়াহ কমেন্ট ফোরাম">
-  <meta property="og:description" content="ইসলামী বিষয়ে আলোচনার জন্য দাওয়াহ ফোরামে যোগ দিন">
+  <meta property="og:description" content="ইসলামী বিষয়ে আলোচনার জন্য দাওয়াহ ফোরামে যোগ দিন">
   <meta property="og:image" content="https://abubokarbd.github.io/dawah/logo.png">
   <meta property="og:url" content="https://abubokarbd.github.io/dawah/comment-forum.html">
 
@@ -62,49 +62,6 @@
       margin-bottom: 20px;
     }
 
-    .admin-login {
-      margin: 20px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      display: none; /* ডিফল্টভাবে লুকানো */
-    }
-
-    .admin-login input {
-      width: 100%;
-      max-width: 300px;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #022B2B;
-      color: #FFFFFF;
-      font-family: 'Hind Siliguri', sans-serif;
-      font-size: 16px;
-    }
-
-    .admin-login button {
-      background: linear-gradient(145deg, #046868, #022B2B);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-
-    .admin-login button:hover {
-      background: linear-gradient(145deg, #0AAFAF, #055050);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.4);
-    }
-
-    .admin-login button:active {
-      transform: scale(0.97);
-    }
-
     .comment-form {
       margin: 20px 0;
       display: flex;
@@ -152,6 +109,13 @@
       transform: scale(0.97);
     }
 
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
     .comment-list {
       margin-top: 20px;
       display: flex;
@@ -168,7 +132,7 @@
     }
 
     .admin-comment {
-      border: 2px solid #FFD700; /* সোনালী বর্ডার এডমিনের জন্য */
+      border: 2px solid #FFD700;
       background: linear-gradient(145deg, #055050, #013636);
     }
 
@@ -255,7 +219,7 @@
     }
 
     .admin-reply {
-      border: 2px solid #FFD700; /* সোনালী বর্ডার এডমিন রিপ্লাইয়ের জন্য */
+      border: 2px solid #FFD700;
       background: linear-gradient(145deg, #044444, #013636);
     }
 
@@ -268,6 +232,95 @@
     .reply-body {
       font-size: 14px;
       color: #FFFFFF;
+    }
+
+    .load-more {
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .load-more:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    }
+
+    .load-more:active {
+      transform: scale(0.97);
+    }
+
+    /* লগইন পপআপ */
+    .login-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: #FFFFFF;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      z-index: 1001;
+      max-width: 90%;
+      width: 350px;
+      text-align: center;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+
+    .login-popup h3 {
+      color: #00FFFF;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .login-popup input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #022B2B;
+      color: #FFFFFF;
+      font-size: 16px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .login-popup button {
+      background: linear-gradient(145deg, #046868, #022B2B);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .login-popup button:hover {
+      background: linear-gradient(145deg, #0AAFAF, #055050);
+      transform: translateY(-2px);
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
     }
 
     .popup {
@@ -327,15 +380,6 @@
         padding: 8px 16px;
       }
 
-      .admin-login input {
-        font-size: 14px;
-      }
-
-      .admin-login button {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
-
       .comment {
         padding: 10px;
       }
@@ -347,6 +391,20 @@
       .comment-actions button {
         font-size: 12px;
         padding: 6px 10px;
+      }
+
+      .load-more {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .login-popup {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .login-popup h3 {
+        font-size: 18px;
       }
 
       .popup {
@@ -372,27 +430,36 @@
 
   <div class="container">
     <div class="app-title">দাওয়াহ ফোরাম</div>
-    <div class="app-subtitle">ইসলামী বিষয়ে আলোচনা করুন</div>
-
-    <!-- এডমিন লগইন ফর্ম -->
-    <div class="admin-login" id="adminLoginForm">
-      <input type="password" id="adminPassword" placeholder="এডমিন পাসওয়ার্ড লিখুন">
-      <button onclick="adminLogin()">লগইন করুন</button>
-    </div>
+    <div class="app-subtitle">ইসলামী বিষয়ে আলোচনা করুন</div>
 
     <!-- কমেন্ট ফর্ম -->
     <div class="comment-form">
       <input type="text" id="userName" placeholder="আপনার নাম (ঐচ্ছিক)" maxlength="50">
-      <textarea id="commentText" placeholder="আপনার মন্তব্য লিখুন..." maxlength="500"></textarea>
+      <textarea id="commentText" placeholder="আপনার মন্তব্য লিখুন (সর্বোচ্চ ২০০ শব্দ)..." maxlength="2000"></textarea>
       <button onclick="submitComment()">মন্তব্য জমা দিন</button>
-      <button onclick="toggleAdminLogin()">এডমিন লগইন</button>
-      <button onclick="adminLogout()" id="adminLogout" style="display: none;">লগআউট</button>
+      
+      <!-- অথেন্টিকেশন বোটাম -->
+      <div class="auth-buttons">
+        <button id="loginButton" onclick="showLoginPopup()">লগইন</button>
+        <button id="logoutButton" onclick="adminLogout()" style="display: none;">লগআউট</button>
+      </div>
     </div>
 
     <!-- কমেন্ট লিস্ট -->
     <div class="comment-list" id="commentList"></div>
+    <button class="load-more" id="loadMore" style="display: none;" onclick="loadMoreComments()">আরো মন্তব্য দেখুন</button>
 
-    <!-- পপআপ -->
+    <!-- লগইন পপআপ -->
+    <div class="popup-overlay" id="loginOverlay" onclick="hideLoginPopup()"></div>
+    <div class="login-popup" id="loginPopup">
+      <h3>এডমিন লগইন</h3>
+      <input type="password" id="adminPassword" placeholder="পাসওয়ার্ড লিখুন">
+      <br>
+      <button onclick="adminLogin()">লগইন করুন</button>
+      <button onclick="hideLoginPopup()">বাতিল</button>
+    </div>
+
+    <!-- সাধারণ পপআপ -->
     <div id="popup" class="popup">
       <div class="popup-content" id="popupMessage"></div>
       <button class="popup-close" onclick="closePopup()">বন্ধ করুন</button>
@@ -408,6 +475,7 @@
     window.addEventListener('load', function() {
       document.getElementById('loader').style.display = 'none';
       checkAdminStatus();
+      loadComments();
     });
 
     // Firebase কনফিগারেশন
@@ -426,8 +494,11 @@
     const db = firebase.database();
     const commentsRef = db.ref('comments');
 
-    // এডমিন পাসওয়ার্ড
-    const ADMIN_PASSWORD = "Fahim323015"; // আপনার নির্বাচিত পাসওয়ার্ড
+    // এডমিন পাসওয়ার্ড
+    const ADMIN_PASSWORD = "Fahim323015"; // আপনার নির্বাচিত পাসওয়ার্ড
+
+    // পেজিনেশনের জন্য ভেরিয়েবল
+    let lastCommentKey = null;
 
     // ইউজার আইডি জেনারেট
     function getUserId() {
@@ -439,32 +510,51 @@
       return userId;
     }
 
-    // এডমিন স্ট্যাটাস চেক
+    // এডমিন স্ট্যাটাস চেক এবং বোটাম আপডেট
     function checkAdminStatus() {
       const isAdmin = localStorage.getItem('isAdmin') === 'true';
-      const adminLoginForm = document.getElementById('adminLoginForm');
-      const adminLogoutButton = document.getElementById('adminLogout');
+      const loginButton = document.getElementById('loginButton');
+      const logoutButton = document.getElementById('logoutButton');
+
       if (isAdmin) {
-        adminLoginForm.style.display = 'none';
-        adminLogoutButton.style.display = 'block';
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
       } else {
-        adminLoginForm.style.display = 'flex';
-        adminLogoutButton.style.display = 'none';
+        loginButton.style.display = 'inline-block';
+        logoutButton.style.display = 'none';
       }
+    }
+
+    // লগইন পপআপ দেখানো
+    function showLoginPopup() {
+      document.getElementById('loginPopup').style.display = 'block';
+      document.getElementById('loginOverlay').style.display = 'block';
+      document.getElementById('adminPassword').value = '';
+      document.getElementById('adminPassword').focus();
+    }
+
+    // লগইন পপআপ লুকানো
+    function hideLoginPopup() {
+      document.getElementById('loginPopup').style.display = 'none';
+      document.getElementById('loginOverlay').style.display = 'none';
     }
 
     // এডমিন লগইন ফাংশন
     function adminLogin() {
       const passwordInput = document.getElementById('adminPassword');
       const password = passwordInput.value;
+      
       if (password === ADMIN_PASSWORD) {
         localStorage.setItem('isAdmin', 'true');
         localStorage.setItem('dawahUserId', 'admin_' + Math.random().toString(36).substr(2, 9));
         showPopup('এডমিন লগইন সফল!');
+        hideLoginPopup();
         checkAdminStatus();
-        passwordInput.value = '';
+        loadComments(); // রিফ্রেশ করে ডিলিট বোটাম দেখানোর জন্য
       } else {
-        showPopup('ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।');
+        showPopup('ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।');
+        passwordInput.value = '';
+        passwordInput.focus();
       }
     }
 
@@ -474,15 +564,15 @@
       localStorage.removeItem('dawahUserId');
       showPopup('এডমিন লগআউট সফল!');
       checkAdminStatus();
+      loadComments(); // রিফ্রেশ করে ডিলিট বোটাম লুকানোর জন্য
     }
 
-    // এডমিন লগইন ফর্ম টগল
-    function toggleAdminLogin() {
-      const adminLoginForm = document.getElementById('adminLoginForm');
-      adminLoginForm.style.display = adminLoginForm.style.display === 'none' ? 'flex' : 'none';
+    // শব্দ গণনা ফাংশন
+    function countWords(text) {
+      return text.trim().split(/\s+/).filter(word => word.length > 0).length;
     }
 
-    // কমেন্ট জমা দেওয়া
+    // কমেন্ট জমা দেওয়া
     function submitComment() {
       const nameInput = document.getElementById('userName');
       const commentInput = document.getElementById('commentText');
@@ -491,7 +581,12 @@
       const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
       if (!comment) {
-        showPopup('দয়া করে একটি মন্তব্য লিখুন!');
+        showPopup('দয়া করে একটি মন্তব্য লিখুন!');
+        return;
+      }
+
+      if (countWords(comment) > 200) {
+        showPopup('মন্তব্য সর্বোচ্চ ২০০ শব্দের মধ্যে হতে হবে!');
         return;
       }
 
@@ -506,15 +601,17 @@
       };
 
       commentsRef.push(commentData).then(() => {
-        showPopup('মন্তব্য সফলভাবে জমা দেওয়া হয়েছে!');
+        showPopup('মন্তব্য সফলভাবে জমা দেওয়া হয়েছে!');
         nameInput.value = '';
         commentInput.value = '';
+        lastCommentKey = null; // নতুন মন্তব্য যোগ হলে পেজিনেশন রিসেট করুন
+        loadComments();
       }).catch(error => {
         showPopup('মন্তব্য জমা দিতে সমস্যা: ' + error.message);
       });
     }
 
-    // রিপ্লাই জমা দেওয়া
+    // রিপ্লাই জমা দেওয়া
     function submitReply(commentId) {
       const replyInput = document.getElementById(`replyText-${commentId}`);
       const replyText = replyInput.value.trim();
@@ -522,7 +619,12 @@
       const isAdmin = localStorage.getItem('isAdmin') === 'true';
 
       if (!replyText) {
-        showPopup('দয়া করে একটি উত্তর লিখুন!');
+        showPopup('দয়া করে একটি উত্তর লিখুন!');
+        return;
+      }
+
+      if (countWords(replyText) > 200) {
+        showPopup('উত্তর সর্বোচ্চ ২০০ শব্দের মধ্যে হতে হবে!');
         return;
       }
 
@@ -535,7 +637,7 @@
       };
 
       commentsRef.child(`${commentId}/replies`).push(replyData).then(() => {
-        showPopup('উত্তর সফলভাবে জমা দেওয়া হয়েছে!');
+        showPopup('উত্তর সফলভাবে জমা দেওয়া হয়েছে!');
         replyInput.value = '';
         document.getElementById(`replyName-${commentId}`).value = '';
         toggleReplyForm(commentId);
@@ -552,7 +654,8 @@
       }
       if (confirm('আপনি কি এই মন্তব্যটি মুছতে চান?')) {
         commentsRef.child(commentId).remove().then(() => {
-          showPopup('মন্তব্য সফলভাবে মুছে ফেলা হয়েছে!');
+          showPopup('মন্তব্য সফলভাবে মুছে ফেলা হয়েছে!');
+          loadComments();
         }).catch(error => {
           showPopup('মন্তব্য মুছতে সমস্যা: ' + error.message);
         });
@@ -567,23 +670,12 @@
         if (!current) {
           return { type: type, timestamp: Date.now() };
         } else if (current.type === type) {
-          return null; // Remove vote
+          return null;
         } else {
-          return { type: type, timestamp: Date.now() }; // Switch vote
+          return { type: type, timestamp: Date.now() };
         }
-      }).then(result => {
-        if (result.snapshot.exists()) {
-          const newType = result.snapshot.val().type;
-          const countRef = db.ref(`comments/${commentId}/${newType === 'like' ? 'likes' : 'dislikes'}`);
-          countRef.transaction(count => (count || 0) + 1);
-          if (current && current.type !== newType) {
-            const oldCountRef = db.ref(`comments/${commentId}/${current.type === 'like' ? 'likes' : 'dislikes'}`);
-            oldCountRef.transaction(count => Math.max(0, (count || 0) - 1));
-          }
-        } else {
-          const oldCountRef = db.ref(`comments/${commentId}/${type === 'like' ? 'likes' : 'dislikes'}`);
-          oldCountRef.transaction(count => Math.max(0, (count || 0) - 1));
-        }
+      }).then(() => {
+        loadComments(); // ভোট পরিবর্তনের পর লিস্ট রিফ্রেশ
       });
     }
 
@@ -593,20 +685,43 @@
       replyForm.style.display = replyForm.style.display === 'none' ? 'flex' : 'none';
     }
 
-    // কমেন্ট লোড করা
-    commentsRef.on('value', snapshot => {
+    // কমেন্ট লোড করা (১০টি করে)
+    function loadComments() {
       const commentList = document.getElementById('commentList');
-      commentList.innerHTML = '';
-      const comments = snapshot.val();
+      const loadMoreButton = document.getElementById('loadMore');
       const isAdmin = localStorage.getItem('isAdmin') === 'true';
-      if (comments) {
-        Object.entries(comments).reverse().forEach(([key, data]) => {
+
+      // সর্বশেষ ১০টি মন্তব্য লোড করুন
+      let query = commentsRef.orderByChild('timestamp').limitToLast(10);
+      if (lastCommentKey) {
+        query = commentsRef.orderByChild('timestamp').endAt(lastCommentKey).limitToLast(11);
+      }
+
+      query.once('value', snapshot => {
+        const comments = snapshot.val();
+        if (!comments) {
+          commentList.innerHTML = '<p>কোনো মন্তব্য নেই। প্রথম মন্তব্য করুন!</p>';
+          loadMoreButton.style.display = 'none';
+          return;
+        }
+
+        const commentArray = Object.entries(comments).reverse();
+        
+        // যদি আরও লোড করা হয়, তাহলে প্রথমটি বাদ দিন (ডুপ্লিকেট)
+        if (lastCommentKey) {
+          commentArray.shift();
+        }
+
+        commentList.innerHTML = '';
+
+        commentArray.forEach(([key, data]) => {
           const commentDiv = document.createElement('div');
           commentDiv.className = `comment ${data.isAdmin ? 'admin-comment' : ''}`;
           const date = new Date(data.timestamp);
           const userId = getUserId();
           const hasLiked = data.userVotes && data.userVotes[userId] && data.userVotes[userId].type === 'like';
           const hasDisliked = data.userVotes && data.userVotes[userId] && data.userVotes[userId].type === 'dislike';
+          
           commentDiv.innerHTML = `
             <div class="comment-header">
               <span>${data.name}${data.isAdmin ? ' <span class="admin-badge">এডমিন</span>' : ''}</span>
@@ -623,9 +738,9 @@
               <button onclick="toggleReplyForm('${key}')">রিপ্লাই</button>
               ${isAdmin ? `<button class="delete-button" onclick="deleteComment('${key}')">ডিলিট</button>` : ''}
             </div>
-            <div class="reply-form" id="replyForm-${key}">
+            <div class="reply-form" id="replyForm-${key}" style="display: none;">
               <input type="text" id="replyName-${key}" placeholder="আপনার নাম (ঐচ্ছিক)" maxlength="50">
-              <textarea id="replyText-${key}" placeholder="আপনার উত্তর লিখুন..." maxlength="500"></textarea>
+              <textarea id="replyText-${key}" placeholder="আপনার উত্তর লিখুন (সর্বোচ্চ ২০০ শব্দ)..." maxlength="2000"></textarea>
               <button onclick="submitReply('${key}')">উত্তর জমা দিন</button>
             </div>
             <div class="replies">
@@ -642,10 +757,23 @@
           `;
           commentList.appendChild(commentDiv);
         });
-      } else {
-        commentList.innerHTML = '<p>কোনো মন্তব্য নেই। প্রথম মন্তব্য করুন!</p>';
-      }
-    });
+
+        // আরো মন্তব্য আছে কিনা চেক করুন
+        if (commentArray.length > 0) {
+          lastCommentKey = commentArray[commentArray.length - 1][1].timestamp;
+        }
+
+        // আরো মন্তব্য থাকলে বোটাম দেখান
+        commentsRef.orderByChild('timestamp').endBefore(lastCommentKey).limitToLast(1).once('value', snapshot => {
+          loadMoreButton.style.display = snapshot.val() && Object.keys(snapshot.val() || {}).length > 0 ? 'block' : 'none';
+        });
+      });
+    }
+
+    // আরো মন্তব্য লোড করা
+    function loadMoreComments() {
+      loadComments();
+    }
 
     // পপআপ দেখানো
     function showPopup(message) {
